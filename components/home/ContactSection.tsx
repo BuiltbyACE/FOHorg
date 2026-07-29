@@ -144,6 +144,7 @@ export default function ContactSection() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:border-[#E91E63] focus:bg-white transition-colors"
+                      suppressHydrationWarning
                     />
                   </div>
 
@@ -158,6 +159,7 @@ export default function ContactSection() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:border-[#E91E63] focus:bg-white transition-colors"
+                      suppressHydrationWarning
                     />
                   </div>
                 </div>
@@ -170,6 +172,7 @@ export default function ContactSection() {
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                     className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:border-[#E91E63] focus:bg-white transition-colors"
+                    suppressHydrationWarning
                   >
                     <option value="General Inquiry">General Inquiry</option>
                     <option value="Donation & Sponsorship">Donation & Sponsorship</option>
@@ -190,6 +193,7 @@ export default function ContactSection() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:border-[#E91E63] focus:bg-white transition-colors resize-none"
+                    suppressHydrationWarning
                   />
                 </div>
 

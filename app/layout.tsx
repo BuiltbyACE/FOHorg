@@ -30,12 +30,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-<<<<<<< HEAD
-      className={`${plusJakarta.variable} ${inter.variable} h-full antialiased scroll-smooth`}
-=======
       data-scroll-behavior="smooth"
       className={`${plusJakarta.variable} ${inter.variable} h-full antialiased`}
->>>>>>> 1c0ffee (Merge remote changes and restore stashed work)
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col font-sans bg-slate-50 text-slate-900 selection:bg-pink-500 selection:text-white">
         <Header />

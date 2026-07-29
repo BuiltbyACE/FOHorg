@@ -123,10 +123,12 @@ export default function Footer() {
                   placeholder="Enter your email address"
                   className="h-12 px-5 rounded-full bg-white/10 text-white text-sm placeholder-slate-400 border border-white/20 focus:outline-none focus:border-[#E91E63] transition-colors"
                   aria-label="Email address for newsletter"
+                  suppressHydrationWarning
                 />
                 <button
                   type="submit"
                   className="h-12 px-6 rounded-full bg-gradient-to-r from-[#E91E63] to-[#D81B60] text-white text-xs font-bold uppercase tracking-wider hover:shadow-lg hover:shadow-pink-500/30 transition-all duration-300 cursor-pointer"
+                  suppressHydrationWarning
                 >
                   Subscribe to Newsletter
                 </button>
