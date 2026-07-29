@@ -1,14 +1,21 @@
-import PageBanner from "@/components/common/PageBanner";
+import HeroSection from '@/components/donations/HeroSection';
+import ImpactStats from '@/components/donations/ImpactStats';
+import DonationMethods from '@/components/donations/DonationMethods';
+import HowItWorks from '@/components/donations/HowItWorks';
+import TransparencyPanel from '@/components/donations/TransparencyPanel';
+import Testimonials from '@/components/donations/Testimonials';
+import CtaBanner from '@/components/donations/CtaBanner';
 
 export default function DonationsPage() {
   return (
     <>
-      <PageBanner title="Donations" subtitle="Your generosity fuels our mission. Every contribution makes a difference." />
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
-          <p className="text-gray-500">Donations page content coming soon.</p>
-        </div>
-      </section>
+      <HeroSection />
+      <ImpactStats />
+      <DonationMethods />
+      <HowItWorks />
+      <TransparencyPanel />
+      <Testimonials />
+      <CtaBanner />
     </>
   );
 }
