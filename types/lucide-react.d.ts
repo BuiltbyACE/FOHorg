@@ -116,7 +116,10 @@ declare module 'lucide-react' {
   export const Search: Icon;
   export const Send: Icon;
   export const SendHorizontal: Icon;
+<<<<<<< HEAD
   export const Shield: Icon;
+=======
+>>>>>>> 1d5475c (Home page)
   export const ShieldCheck: Icon;
   export const Smartphone: Icon;
   export const Sparkles: Icon;
