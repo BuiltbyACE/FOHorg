@@ -38,6 +38,13 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
+<<<<<<< HEAD
+=======
+html {
+  scroll-behavior: smooth;
+}
+
+>>>>>>> 1c0ffee (Merge remote changes and restore stashed work)
 body {
   font-family: var(--font-sans), 'Inter', sans-serif;
   background-color: var(--background);
