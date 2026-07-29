@@ -1,14 +1,23 @@
-import PageBanner from "@/components/common/PageBanner";
+import ProgramsHero from '@/components/programs/ProgramsHero';
+import ProgramsOverview from '@/components/programs/ProgramsOverview';
+import ProgramsGrid from '@/components/programs/ProgramsGrid';
+import ImpactBanner from '@/components/programs/ImpactBanner';
+import ProgramApproach from '@/components/programs/ProgramApproach';
+import FeaturedStory from '@/components/programs/FeaturedStory';
+import Testimonials from '@/components/programs/Testimonials';
+import ProgramsCTA from '@/components/programs/ProgramsCTA';
 
 export default function ProgramsPage() {
   return (
-    <>
-      <PageBanner title="Our Programs" subtitle="Explore our initiatives in education, healthcare, community development, and emergency relief." />
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
-          <p className="text-gray-500">Programs page content coming soon.</p>
-        </div>
-      </section>
-    </>
+    <div className="flex flex-col w-full overflow-hidden">
+      <ProgramsHero />
+      <ProgramsOverview />
+      <ProgramsGrid />
+      <ImpactBanner />
+      <ProgramApproach />
+      <FeaturedStory />
+      <Testimonials />
+      <ProgramsCTA />
+    </div>
   );
 }

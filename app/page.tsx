@@ -1,12 +1,42 @@
-import Heading from "@/components/common/Heading";
+import HeroSection from '@/components/home/HeroSection';
+import ProgramsSection from '@/components/home/ProgramsSection';
+import ImpactSection from '@/components/home/ImpactSection';
+import PartnershipsSection from '@/components/home/PartnershipsSection';
+import SponsorshipBanner from '@/components/home/SponsorshipBanner';
+import GallerySection from '@/components/home/GallerySection';
+import DonationCTASection from '@/components/home/DonationCTASection';
+import AboutSection from '@/components/home/AboutSection';
+import ContactSection from '@/components/home/ContactSection';
 
 export default function HomePage() {
   return (
-    <section className="flex items-center justify-center min-h-[calc(100vh-90px)]">
-      <div className="text-center">
-        <Heading as="h1">Foundation of Hope</Heading>
-        <p className="mt-4 text-gray-500 text-lg">Home page content coming soon.</p>
-      </div>
-    </section>
+    <div className="flex flex-col w-full overflow-hidden">
+      {/* 2. Hero Section */}
+      <HeroSection />
+
+      {/* 3. Programs */}
+      <ProgramsSection />
+
+      {/* 4. Impact Section */}
+      <ImpactSection />
+
+      {/* 5. Partnerships */}
+      <PartnershipsSection />
+
+      {/* 6. Sponsorship Banner */}
+      <SponsorshipBanner />
+
+      {/* 7. Gallery */}
+      <GallerySection />
+
+      {/* 8. Donation CTA */}
+      <DonationCTASection />
+
+      {/* 9. About Section */}
+      <AboutSection />
+
+      {/* 10. Contact */}
+      <ContactSection />
+    </div>
   );
 }
