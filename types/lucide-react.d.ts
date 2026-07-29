@@ -13,6 +13,7 @@ declare module 'lucide-react' {
   export const Menu: Icon;
   export const X: Icon;
   export const Heart: Icon;
+<<<<<<< HEAD
   export const Target: Icon;
   export const Eye: Icon;
   export const Users: Icon;
@@ -29,4 +30,20 @@ declare module 'lucide-react' {
   export const Trees: Icon;
   export const Home: Icon;
   export const Stethoscope: Icon;
+=======
+  export const Phone: Icon;
+  export const Mail: Icon;
+  export const MapPin: Icon;
+  export const Clock: Icon;
+  export const Globe: Icon;
+  export const SendHorizontal: Icon;
+  export const ArrowRight: Icon;
+  export const Check: Icon;
+  export const Plus: Icon;
+  export const User: Icon;
+  export const MessageSquare: Icon;
+  export const Handshake: Icon;
+  export const UserPlus: Icon;
+  export const Mic: Icon;
+>>>>>>> fd994e6482ef8fd84b7a3b958ea4d5a626fc4db9
 }

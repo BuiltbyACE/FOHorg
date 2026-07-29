@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #0F172A;
+  --foreground: #1B1F3B;
 }
 
 @theme inline {
@@ -10,12 +10,27 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --color-primary: #E11D48;
-  --color-primary-dark: #BE123C;
-  --color-navy: #0F172A;
-  --color-navy-light: #1E293B;
-  --color-muted: #64748B;
-  --color-border: #E2E8F0;
+
+  /* Brand Core */
+  --color-primary: #E91E63;
+  --color-primary-dark: #C2185B;
+  --color-primary-bright: #F72585;
+  --color-navy: #0A1E5E;
+  --color-navy-light: #142B72;
+  --color-navy-dark: #08163F;
+  --color-dark-text: #1B1F3B;
+
+  /* Neutrals */
+  --color-muted: #6C757D;
+  --color-border: #EEF1F7;
+  --color-light-gray: #F7F8FC;
+
+  /* Pink tones */
+  --color-light-pink: #FFF3F8;
+
+  /* Footer / Dark bg tones */
+  --color-footer-text: #D5D9E8;
+  --color-stat-label: #D6DAE8;
 }
 
 body {
