@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 :root {
-<<<<<<< Updated upstream
   --background: #ffffff;
   --foreground: #1B1F3B;
 }
@@ -9,8 +8,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans), 'Inter', sans-serif;
+  --font-heading: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
 
   /* Brand Core */
   --color-primary: #E91E63;
@@ -32,36 +31,11 @@
   /* Footer / Dark bg tones */
   --color-footer-text: #D5D9E8;
   --color-stat-label: #D6DAE8;
-=======
-  --background: #f8fafc;
-  --foreground: #081b63;
-  --navy: #081b63;
-  --navy-dark: #040e36;
-  --navy-light: #102a8c;
-  --pink: #e91e63;
-  --pink-dark: #c2185b;
-  --pink-light: #f48fb1;
-  --pink-soft: #fce4ec;
-}
-
-@theme inline {
-  --color-navy: #081b63;
-  --color-navy-dark: #040e36;
-  --color-navy-light: #102a8c;
-  --color-pink: #e91e63;
-  --color-pink-dark: #c2185b;
-  --color-pink-light: #f48fb1;
-  --color-pink-soft: #fce4ec;
-  --color-primary: #e91e63;
-  --color-primary-dark: #c2185b;
-  --font-heading: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
-  --font-sans: var(--font-sans), 'Inter', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
   letter-spacing: -0.02em;
->>>>>>> Stashed changes
 }
 
 body {
