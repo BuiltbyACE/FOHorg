@@ -29,6 +29,7 @@ declare module "lucide-react" {
   export const ClipboardList: LucideIcon;
   export const Clock: LucideIcon;
   export const Compass: LucideIcon;
+  export const Download: LucideIcon;
   export const Droplets: LucideIcon;
   export const Eye: LucideIcon;
   export const FileText: LucideIcon;
@@ -42,11 +43,14 @@ declare module "lucide-react" {
   export const HeartPulse: LucideIcon;
   export const Home: LucideIcon;
   export const Info: LucideIcon;
+  export const Landmark: LucideIcon;
   export const Leaf: LucideIcon;
   export const Mail: LucideIcon;
   export const MapPin: LucideIcon;
   export const Maximize2: LucideIcon;
+  export const Megaphone: LucideIcon;
   export const Menu: LucideIcon;
+  export const MessageCircle: LucideIcon;
   export const Mic: LucideIcon;
   export const Pause: LucideIcon;
   export const Phone: LucideIcon;
@@ -70,9 +74,9 @@ declare module "lucide-react" {
   export const UserCheck: LucideIcon;
   export const UserPlus: LucideIcon;
   export const Users: LucideIcon;
+  export const UsersRound: LucideIcon;
   export const Volume2: LucideIcon;
   export const VolumeX: LucideIcon;
   export const X: LucideIcon;
   export const Zap: LucideIcon;
-  export const UsersRound: LucideIcon;
 }

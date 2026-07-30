@@ -30,7 +30,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${plusJakarta.variable} ${inter.variable} h-full antialiased scroll-smooth`}
+      data-scroll-behavior="smooth"
+      className={`${plusJakarta.variable} ${inter.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col font-sans bg-slate-50 text-slate-900 selection:bg-pink-500 selection:text-white">
         <Header />

@@ -18,8 +18,8 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-500 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-xl shadow-md shadow-slate-900/5 border-b border-slate-100/80 py-0'
-          : 'bg-transparent py-2'
+          ? 'bg-white/98 backdrop-blur-xl shadow-md shadow-slate-900/5 border-b border-slate-100/80'
+          : 'bg-white border-b border-slate-100/60'
       }`}
     >
       <Navbar

@@ -15,7 +15,7 @@ export default function Logo({ className, height = 65, width = 180, priority = t
       <Image
         src={siteConfig.logoPath}
         alt={siteConfig.name}
-        width={width}
+        width={0}
         height={height}
         className="object-contain"
         style={{ height: `${height}px`, width: 'auto' }}
