@@ -1,94 +1,78 @@
-declare module 'lucide-react' {
-  import { FC, SVGProps, ForwardRefExoticComponent, RefAttributes } from 'react';
+declare module "lucide-react" {
+  import * as React from "react";
 
-  interface IconProps extends SVGProps<SVGSVGElement> {
+  interface LucideProps extends React.SVGProps<SVGSVGElement> {
     size?: number | string;
-    color?: string;
-    strokeWidth?: number | string;
     absoluteStrokeWidth?: boolean;
   }
 
-  type Icon = ForwardRefExoticComponent<IconProps & RefAttributes<SVGSVGElement>>;
+  type LucideIcon = React.ForwardRefExoticComponent<
+    Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>
+  >;
 
-  export type LucideIcon = ForwardRefExoticComponent<IconProps & RefAttributes<SVGSVGElement>>;
-
-  export const AlertCircle: Icon;
-  export const ArrowRight: Icon;
-  export const ArrowUpRight: Icon;
-  export const Award: Icon;
-  export const BarChart3: Icon;
-  export const BookOpen: Icon;
-  export const Building2: Icon;
-  export const Check: Icon;
-  export const CheckCheck: Icon;
-  export const CheckCircle: Icon;
-  export const CheckCircle2: Icon;
-  export const ChevronDown: Icon;
-  export const ChevronRight: Icon;
-  export const CircleCheckBig: Icon;
-  export const ClipboardList: Icon;
-  export const Clock: Icon;
-  export const Compass: Icon;
-  export const Droplets: Icon;
-  export const Globe: Icon;
-  export const HandHeart: Icon;
-  export const Handshake: Icon;
-  export const Heart: Icon;
-  export const HeartHandshake: Icon;
-  export const HeartPulse: Icon;
-  export const Info: Icon;
-  export const Leaf: Icon;
-  export const Mail: Icon;
-  export const MapPin: Icon;
-  export const Maximize2: Icon;
-  export const Menu: Icon;
-  export const Mic: Icon;
-<<<<<<< HEAD
-  export const Pause: Icon;
-  export const Phone: Icon;
-  export const Play: Icon;
-  export const Plus: Icon;
-  export const Quote: Icon;
-  export const Send: Icon;
-  export const SendHorizontal: Icon;
-  export const ShieldCheck: Icon;
-  export const Sparkles: Icon;
-  export const Star: Icon;
-  export const Target: Icon;
-  export const UserCheck: Icon;
-  export const UserPlus: Icon;
-  export const Users: Icon;
-  export const Volume2: Icon;
-  export const VolumeX: Icon;
-  export const X: Icon;
-  export const Zap: Icon;
-=======
-  export const Target: Icon;
-  export const Eye: Icon;
-  export const Users: Icon;
-  export const GraduationCap: Icon;
-  export const Shield: Icon;
-  export const HandHeart: Icon;
-  export const BookOpen: Icon;
-  export const Building2: Icon;
-  export const Sparkles: Icon;
-  export const BarChart3: Icon;
-  export const Award: Icon;
-  export const Trees: Icon;
-  export const Home: Icon;
-  export const Stethoscope: Icon;
-  export const Gift: Icon;
-  export const Smartphone: Icon;
-  export const Calendar: Icon;
-  export const HeartHandshake: Icon;
-  export const TrendingUp: Icon;
-  export const Search: Icon;
-  export const ShieldCheck: Icon;
-  export const PieChart: Icon;
-  export const FileText: Icon;
-  export const ChevronRight: Icon;
-  export const CheckCircle: Icon;
-  export const ChevronLeft: Icon;
-  export const HeartPulse: Icon;
->>>>>>> 19d4b82e04745693f2a2394f9d5703c094902eef
+  export const AlertCircle: LucideIcon;
+  export const ArrowRight: LucideIcon;
+  export const ArrowUpRight: LucideIcon;
+  export const Award: LucideIcon;
+  export const BarChart3: LucideIcon;
+  export const BookOpen: LucideIcon;
+  export const Building2: LucideIcon;
+  export const Camera: LucideIcon;
+  export const Check: LucideIcon;
+  export const CheckCheck: LucideIcon;
+  export const CheckCircle: LucideIcon;
+  export const CheckCircle2: LucideIcon;
+  export const ChevronDown: LucideIcon;
+  export const ChevronLeft: LucideIcon;
+  export const ChevronRight: LucideIcon;
+  export const CircleCheckBig: LucideIcon;
+  export const ClipboardList: LucideIcon;
+  export const Clock: LucideIcon;
+  export const Compass: LucideIcon;
+  export const Droplets: LucideIcon;
+  export const Eye: LucideIcon;
+  export const FileText: LucideIcon;
+  export const Gift: LucideIcon;
+  export const Globe: LucideIcon;
+  export const GraduationCap: LucideIcon;
+  export const HandHeart: LucideIcon;
+  export const Handshake: LucideIcon;
+  export const Heart: LucideIcon;
+  export const HeartHandshake: LucideIcon;
+  export const HeartPulse: LucideIcon;
+  export const Home: LucideIcon;
+  export const Info: LucideIcon;
+  export const Leaf: LucideIcon;
+  export const Mail: LucideIcon;
+  export const MapPin: LucideIcon;
+  export const Maximize2: LucideIcon;
+  export const Menu: LucideIcon;
+  export const Mic: LucideIcon;
+  export const Pause: LucideIcon;
+  export const Phone: LucideIcon;
+  export const PieChart: LucideIcon;
+  export const Play: LucideIcon;
+  export const Plus: LucideIcon;
+  export const Quote: LucideIcon;
+  export const Search: LucideIcon;
+  export const Send: LucideIcon;
+  export const SendHorizontal: LucideIcon;
+  export const Shield: LucideIcon;
+  export const ShieldCheck: LucideIcon;
+  export const Smartphone: LucideIcon;
+  export const Sparkles: LucideIcon;
+  export const Star: LucideIcon;
+  export const Stethoscope: LucideIcon;
+  export const Target: LucideIcon;
+  export const TreePine: LucideIcon;
+  export const Trees: LucideIcon;
+  export const TrendingUp: LucideIcon;
+  export const UserCheck: LucideIcon;
+  export const UserPlus: LucideIcon;
+  export const Users: LucideIcon;
+  export const Volume2: LucideIcon;
+  export const VolumeX: LucideIcon;
+  export const X: LucideIcon;
+  export const Zap: LucideIcon;
+  export const UsersRound: LucideIcon;
 }
