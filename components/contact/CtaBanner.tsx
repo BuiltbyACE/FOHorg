@@ -1,36 +1,64 @@
-import Button from '@/components/common/Button';
-import { Heart } from 'lucide-react';
+'use client';
+
+import { motion } from 'framer-motion';
+import { Heart, ArrowRight, Send } from 'lucide-react';
 
 export default function CtaBanner() {
   return (
-    <section className="py-16 md:py-24">
-      <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
-        <div className="bg-navy rounded-2xl p-8 md:p-12 lg:p-16 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-          <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary/5 rounded-full translate-y-1/2 -translate-x-1/2" />
-          <div className="absolute top-1/2 left-1/4 w-3 h-3 border border-primary/20 rounded-full" />
-          <div className="absolute top-1/3 right-1/3 w-2 h-2 border border-primary/20 rounded-full" />
-          <div className="absolute bottom-1/4 right-1/4 w-2.5 h-2.5 border border-primary/20 rounded-full" />
+    <section className="bg-[#081B63] py-20 md:py-28 relative overflow-hidden">
+      {/* Decorative rings */}
+      <div className="absolute -right-20 -top-20 w-72 h-72 rounded-full border-[50px] border-white/8 pointer-events-none" />
+      <div className="absolute -right-8 top-8 w-40 h-40 rounded-full border-[20px] border-white/6 pointer-events-none" />
+      <div className="absolute -left-20 -bottom-20 w-80 h-80 rounded-full border-[55px] border-[#E91E63]/10 pointer-events-none" />
+      <div className="absolute left-10 bottom-10 w-20 h-20 rounded-full border-[10px] border-[#E91E63]/12 pointer-events-none" />
 
-          <div className="relative z-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-            <div className="hidden lg:flex items-center justify-center w-20 h-20 rounded-2xl bg-primary/10 flex-shrink-0">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-primary"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/><path d="M15.5 7.5L11 12l-2.5-2.5" stroke="currentColor"/></svg>
-            </div>
+      <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-16 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-20">
 
-            <div className="text-center lg:text-left flex-1">
-              <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
-                TOGETHER, WE CAN BUILD A <span className="text-primary">BETTER TOMORROW</span>
-              </h2>
-              <p className="text-footer-text mt-4 text-base leading-relaxed max-w-[600px] mx-auto lg:mx-0">
-                Every connection counts. Reach out today and be part of the change.
-              </p>
-            </div>
+          <motion.div
+            className="text-center lg:text-left"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <p className="text-[#E91E63] text-[11px] font-bold uppercase tracking-[0.22em] mb-4">
+              Every Connection Counts
+            </p>
+            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-white leading-tight tracking-tight max-w-[580px]">
+              Together, We Can Build
+              <br />
+              a <span className="text-[#E91E63]">Better Tomorrow</span>
+            </h2>
+            <p className="text-white/55 mt-5 text-base leading-relaxed max-w-[500px] mx-auto lg:mx-0">
+              Reach out today. Whether you want to donate, volunteer, partner, or simply
+              learn more — our door is always open.
+            </p>
+          </motion.div>
 
-            <Button href="/donate" size="lg">
-              DONATE NOW
-              <Heart size={18} className="fill-white" />
-            </Button>
-          </div>
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 flex-shrink-0"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <a
+              href="#contact-form"
+              className="inline-flex items-center justify-center gap-2 h-[52px] px-8 rounded-[6px] bg-[#E91E63] text-white font-bold text-sm uppercase tracking-[0.07em] shadow-lg shadow-pink-500/20 hover:-translate-y-0.5 hover:bg-[#C2185B] transition-all duration-300"
+            >
+              Send a Message
+              <Send size={15} />
+            </a>
+            <a
+              href="/donate"
+              className="inline-flex items-center justify-center gap-2 h-[52px] px-8 rounded-[6px] border-2 border-white/30 text-white font-bold text-sm uppercase tracking-[0.07em] hover:bg-white hover:text-[#081B63] hover:border-white transition-all duration-300"
+            >
+              Donate Now
+              <Heart size={15} className="fill-current" />
+            </a>
+          </motion.div>
+
         </div>
       </div>
     </section>

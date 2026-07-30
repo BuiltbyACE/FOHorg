@@ -1,53 +1,117 @@
-import Button from '@/components/common/Button';
-import { SendHorizontal, ArrowRight } from 'lucide-react';
+'use client';
+
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { SendHorizontal, ArrowRight, Clock, MessageCircle, CheckCircle } from 'lucide-react';
+
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 24 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] as const },
+});
+
+const trustItems = [
+  { icon: Clock, label: 'Response within 24h' },
+  { icon: MessageCircle, label: 'Friendly support team' },
+  { icon: CheckCircle, label: 'Every inquiry answered' },
+];
 
 export default function HeroSection() {
   return (
-    <section className="py-16 md:py-24">
-      <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div>
-            <span className="inline-block text-primary font-semibold uppercase tracking-[0.05em] text-sm">
-              Contact Us
-            </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-navy leading-[1.1] mt-4">
-              WE&apos;D <span className="text-primary">LOVE</span> TO HEAR FROM YOU
-            </h1>
-            <p className="text-muted text-lg mt-6 leading-relaxed max-w-[540px]">
-              Have a question, partnership idea, or want to get involved? We are here to listen and help.
-            </p>
-            <div className="flex flex-wrap gap-4 mt-8">
-              <Button href="#contact-form">
-                SEND US A MESSAGE
+    <section className="pt-[84px] pb-20 lg:pb-28 bg-white relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(233,30,99,0.04)_0%,transparent_55%)] pointer-events-none" />
+
+      <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-16 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+          {/* Left */}
+          <div className="lg:col-span-6">
+            <motion.p {...fadeUp(0)} className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#E91E63] mb-4">
+              Get in Touch
+            </motion.p>
+
+            <motion.h1
+              {...fadeUp(0.08)}
+              className="text-4xl sm:text-5xl lg:text-[54px] font-extrabold leading-[1.05] tracking-tight"
+            >
+              <span className="text-[#081B63]">We&apos;d Love</span>
+              <br />
+              <span className="text-[#081B63]">to Hear</span>
+              <br />
+              <span className="text-[#E91E63]">From You</span>
+            </motion.h1>
+
+            <motion.div {...fadeUp(0.14)} className="w-10 h-[3px] bg-[#E91E63] mt-4 mb-6" />
+
+            <motion.p {...fadeUp(0.20)} className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-[520px]">
+              Have a question, partnership idea, or want to get involved? Our team is here
+              to listen, connect, and help you make a real difference.
+            </motion.p>
+
+            <motion.div {...fadeUp(0.28)} className="flex flex-wrap gap-4 mt-8">
+              <a
+                href="#contact-form"
+                className="inline-flex items-center gap-2 h-[52px] px-8 rounded-[6px] bg-[#E91E63] text-white font-bold text-sm uppercase tracking-[0.07em] shadow-md shadow-pink-500/25 hover:-translate-y-0.5 hover:bg-[#C2185B] transition-all duration-300"
+              >
+                Send a Message
                 <SendHorizontal size={16} />
-              </Button>
-              <Button href="/partnerships" variant="outline">
-                PARTNER WITH US
+              </a>
+              <a
+                href="/partnerships"
+                className="inline-flex items-center gap-2 h-[52px] px-8 rounded-[6px] bg-white border border-slate-200 text-[#081B63] font-bold text-sm uppercase tracking-[0.07em] hover:border-[#081B63] hover:-translate-y-0.5 transition-all duration-300"
+              >
+                Partner With Us
                 <ArrowRight size={16} />
-              </Button>
-            </div>
-          </div>
-          <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-primary/10 via-primary/5 to-navy/5 aspect-[4/3]">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(233,30,99,0.08)_0%,transparent_60%),radial-gradient(circle_at_70%_60%,rgba(10,30,94,0.06)_0%,transparent_50%)]" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="grid grid-cols-3 gap-3 mb-4">
-                    <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center text-2xl">👧</div>
-                    <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center text-2xl">👦</div>
-                    <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center text-2xl">👧</div>
-                  </div>
-                  <p className="text-navy/40 text-xs font-medium uppercase tracking-wider">Hero Image Placeholder</p>
+              </a>
+            </motion.div>
+
+            {/* Trust badges */}
+            <motion.div {...fadeUp(0.36)} className="flex flex-col sm:flex-row gap-4 mt-8 pt-8 border-t border-slate-100">
+              {trustItems.map(({ icon: Icon, label }) => (
+                <div key={label} className="flex items-center gap-2 text-slate-500 text-xs font-semibold">
+                  <Icon size={14} className="text-[#E91E63]" />
+                  {label}
                 </div>
-              </div>
-            </div>
-            <div className="absolute -bottom-6 -left-6 lg:-left-8 bg-navy rounded-xl p-6 shadow-xl max-w-[260px]">
-              <span className="text-primary text-5xl font-serif leading-none">&ldquo;</span>
-              <p className="text-white/90 text-sm leading-relaxed italic mt-1">
-                Your message can bring hope and change a life today.
-              </p>
-            </div>
+              ))}
+            </motion.div>
           </div>
+
+          {/* Right */}
+          <motion.div
+            className="lg:col-span-6 relative"
+            initial={{ opacity: 0, scale: 0.97 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <div className="relative rounded-3xl overflow-hidden aspect-[4/5] lg:aspect-[5/6]">
+              <Image
+                src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=900&q=80"
+                alt="Our team connecting with communities"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+                unoptimized
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#081B63]/40 via-transparent to-transparent" />
+            </div>
+
+            {/* Floating response card */}
+            <div className="glass-dark absolute bottom-6 left-4 sm:left-6 rounded-2xl p-5 max-w-[220px]">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-white/70 text-xs font-semibold uppercase tracking-wide">We&apos;re Online</span>
+              </div>
+              <p className="text-white text-sm font-bold leading-snug">Average reply time</p>
+              <p className="text-[#E91E63] text-2xl font-extrabold mt-1">Under 24h</p>
+              <p className="text-white/50 text-xs mt-0.5">Mon – Fri, 8AM–5PM EAT</p>
+            </div>
+
+            {/* Decorative ring */}
+            <div className="absolute -top-4 -right-4 w-28 h-28 rounded-full border-[18px] border-[#E91E63]/10 pointer-events-none" />
+            <div className="absolute top-8 -right-2 w-10 h-10 rounded-full border-[6px] border-[#E91E63]/15 pointer-events-none" />
+          </motion.div>
+
         </div>
       </div>
     </section>

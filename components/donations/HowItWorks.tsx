@@ -1,72 +1,86 @@
-import { Heart, HeartHandshake, Users, TrendingUp, Globe } from 'lucide-react';
+'use client';
+
+import { motion } from 'framer-motion';
+import { HeartHandshake, Users, TrendingUp, Heart, Globe } from 'lucide-react';
 
 const steps = [
   {
-    icon: HeartHandshake,
-    number: '1.',
-    title: 'YOU GIVE',
-    desc: 'You make a donation in the way that is most convenient for you.',
+    Icon: HeartHandshake,
+    number: '01',
+    title: 'You Give',
+    desc: 'You make a donation in the way that is most convenient and meaningful for you.',
   },
   {
-    icon: Users,
-    number: '2.',
-    title: 'WE RECEIVE',
-    desc: 'We receive your support and allocate it where it\'s needed most.',
+    Icon: Users,
+    number: '02',
+    title: 'We Receive',
+    desc: 'We receive your support and allocate it where it is needed most, with full accountability.',
   },
   {
-    icon: TrendingUp,
-    number: '3.',
-    title: 'WE ACT',
-    desc: 'We implement programs that address real needs in our communities.',
+    Icon: TrendingUp,
+    number: '03',
+    title: 'We Act',
+    desc: 'We implement programs that address real, urgent needs in our communities on the ground.',
   },
   {
-    icon: Heart,
-    number: '4.',
-    title: 'LIVES CHANGE',
-    desc: 'Your support creates opportunities and transforms lives.',
+    Icon: Heart,
+    number: '04',
+    title: 'Lives Change',
+    desc: 'Your support creates real opportunities and transforms the lives of those who need it most.',
   },
   {
-    icon: Globe,
-    number: '5.',
-    title: 'BETTER TOMORROW',
-    desc: 'Together, we build stronger, healthier, and more hopeful communities.',
+    Icon: Globe,
+    number: '05',
+    title: 'Better Tomorrow',
+    desc: 'Together, we build stronger, healthier, and more hopeful communities for the future.',
   },
 ];
 
 export default function HowItWorks() {
   return (
-    <section className="bg-[#FDF6F8] py-16 md:py-24">
-      <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
-        <div className="text-center mb-14">
-          <h2 className="text-[#131B40] text-2xl md:text-[28px] font-extrabold uppercase tracking-[0.02em]">
-            HOW YOUR DONATION WORKS
+    <section className="bg-white py-16 md:py-24">
+      <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-16">
+        <div className="text-center mb-16">
+          <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#E91E63] mb-3">
+            The Process
+          </p>
+          <h2 className="text-[#081B63] text-2xl md:text-[32px] font-extrabold leading-tight tracking-tight">
+            How Your Donation Works
           </h2>
-          <div className="flex items-center justify-center gap-1 mt-3">
-            <Heart size={16} className="text-[#D6266F] fill-[#D6266F]" />
-          </div>
+          <p className="text-slate-500 text-base mt-4 max-w-xl mx-auto">
+            From your gift to real-world change — here is how every donation makes its journey.
+          </p>
         </div>
 
         <div className="relative">
-          <div className="hidden lg:block absolute top-[50px] left-[10%] right-[10%] h-0 border-t-2 border-dashed border-[#D6266F]/40 -translate-y-1/2 z-0" />
+          {/* Connecting dashed line */}
+          <div className="hidden lg:block absolute top-[28px] left-[calc(10%+28px)] right-[calc(10%+28px)] h-px border-t-2 border-dashed border-[#E91E63]/30 z-0" />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-6 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-10 lg:gap-6 relative z-10">
             {steps.map((step, index) => {
-              const Icon = step.icon;
+              const Icon = step.Icon;
               return (
-                <div key={step.number} className="flex flex-col items-center text-center">
-                  <div className="w-16 h-16 rounded-full border-2 border-[#D6266F] bg-white flex items-center justify-center text-[#D6266F] relative">
-                    <Icon size={26} />
-                    {index < steps.length - 1 && (
-                      <div className="hidden lg:block absolute -right-[calc(50%+20px)] top-1/2 -translate-y-1/2" />
-                    )}
+                <motion.div
+                  key={step.number}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ duration: 0.5, delay: index * 0.1, ease: 'easeOut' }}
+                  className="flex flex-col items-center text-center"
+                >
+                  <div className="w-14 h-14 rounded-full bg-[#E91E63] flex items-center justify-center text-white shadow-md shadow-pink-500/25 relative">
+                    <Icon size={24} />
                   </div>
-                  <h3 className="text-[#131B40] font-bold text-sm uppercase tracking-[0.03em] mt-4">
-                    {step.number} {step.title}
+                  <p className="text-[#E91E63] text-xs font-bold uppercase tracking-[0.14em] mt-4">
+                    Step {step.number}
+                  </p>
+                  <h3 className="text-[#081B63] font-bold text-base mt-1 mb-2">
+                    {step.title}
                   </h3>
-                  <p className="text-[#515767] text-[13.5px] leading-relaxed mt-1 max-w-[200px]">
+                  <p className="text-slate-500 text-[13.5px] leading-relaxed max-w-[180px]">
                     {step.desc}
                   </p>
-                </div>
+                </motion.div>
               );
             })}
           </div>

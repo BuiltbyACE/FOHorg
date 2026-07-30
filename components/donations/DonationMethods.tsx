@@ -1,83 +1,106 @@
-import { Heart, HeartHandshake, GraduationCap, Gift, Building2, Smartphone } from 'lucide-react';
+'use client';
+
+import { motion } from 'framer-motion';
+import { HeartHandshake, GraduationCap, Gift, Building2, Smartphone, Heart } from 'lucide-react';
+
+const CalendarIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+    <line x1="16" y1="2" x2="16" y2="6" />
+    <line x1="8" y1="2" x2="8" y2="6" />
+    <line x1="3" y1="10" x2="21" y2="10" />
+  </svg>
+);
 
 const methods = [
   {
-    icon: HeartHandshake,
-    title: 'ONE-TIME DONATION',
-    desc: 'Make a single contribution to support our ongoing programs and projects.',
-    accent: '#B8123E',
+    Icon: HeartHandshake,
+    title: 'One-Time Donation',
+    desc: 'Make a single contribution to support our ongoing programs and projects wherever they are needed most.',
+    accent: '#E91E63',
   },
   {
-    icon: Heart, // using Heart as calendar - actually let me use Calendar icon
-    title: 'MONTHLY PARTNERSHIP',
-    desc: 'Become a monthly donor and help us plan, sustain, and grow our impact.',
-    accent: '#131B40',
+    Icon: null,
+    CustomIcon: CalendarIcon,
+    title: 'Monthly Partnership',
+    desc: 'Become a monthly donor and help us plan, sustain, and grow our impact with predictable funding.',
+    accent: '#081B63',
   },
   {
-    icon: GraduationCap,
-    title: 'SPONSOR A CHILD',
-    desc: 'Provide education, care, and hope by sponsoring a child\'s future.',
-    accent: '#B8123E',
+    Icon: GraduationCap,
+    title: 'Sponsor a Child',
+    desc: "Provide education, care, and hope by directly sponsoring a child's future and journey to success.",
+    accent: '#E91E63',
   },
   {
-    icon: Gift,
-    title: 'IN-KIND DONATION',
-    desc: 'Donate goods, materials, or services that help empower communities.',
-    accent: '#131B40',
+    Icon: Gift,
+    title: 'In-Kind Donation',
+    desc: 'Donate goods, materials, or services that directly help empower communities and individuals.',
+    accent: '#081B63',
   },
   {
-    icon: Building2,
-    title: 'BANK TRANSFER',
-    desc: 'Support us directly through secure bank transfers.',
-    accent: '#B8123E',
+    Icon: Building2,
+    title: 'Bank Transfer',
+    desc: 'Support us directly through secure, fully traceable bank transfers to our verified accounts.',
+    accent: '#E91E63',
   },
   {
-    icon: Smartphone,
-    title: 'M-PESA DONATION',
-    desc: 'Quick and easy giving using M-PESA to reach more people in need.',
-    accent: '#131B40',
+    Icon: Smartphone,
+    title: 'M-Pesa Donation',
+    desc: 'Quick and easy giving using M-Pesa mobile money — ideal for reaching those in need across Kenya.',
+    accent: '#081B63',
   },
 ];
 
-const CalendarIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-);
-
 export default function DonationMethods() {
   return (
-    <section className="py-16 md:py-24">
-      <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
-        <div className="text-center mb-12">
-          <h2 className="text-[#131B40] text-2xl md:text-[28px] font-extrabold uppercase tracking-[0.02em]">
-            CHOOSE A WAY TO GIVE
+    <section className="py-16 md:py-24 bg-slate-50">
+      <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-16">
+        <div className="text-center mb-14">
+          <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#E91E63] mb-3">
+            Ways to Give
+          </p>
+          <h2 className="text-[#081B63] text-2xl md:text-[32px] font-extrabold leading-tight tracking-tight">
+            Choose a Way to Give
           </h2>
-          <div className="flex items-center justify-center gap-1 mt-3">
-            <Heart size={16} className="text-[#D6266F] fill-[#D6266F]" />
-          </div>
+          <p className="text-slate-500 text-base mt-4 max-w-xl mx-auto">
+            Every form of generosity matters. Find the giving method that works best for you.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {methods.map((method) => {
-            const Icon = method.icon;
+          {methods.map((method, i) => {
+            const Icon = method.Icon;
+            const CustomIcon = method.CustomIcon;
             return (
-              <div
+              <motion.div
                 key={method.title}
-                className="bg-white rounded-xl border border-[#EFEFF4] shadow-[0_4px_20px_rgba(19,27,64,0.06)] p-6 md:p-7 text-center flex flex-col items-center relative overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.5, delay: i * 0.07, ease: 'easeOut' }}
+                className="group bg-white rounded-2xl border border-slate-100 shadow-[0_4px_24px_rgba(8,27,99,0.06)] p-7 flex flex-col items-start relative overflow-hidden hover:shadow-[0_8px_40px_rgba(233,30,99,0.12)] hover:-translate-y-1 transition-all duration-300"
               >
+                {/* Bottom accent bar */}
                 <div
-                  className="absolute bottom-0 left-0 right-0 h-[3px]"
+                  className="absolute bottom-0 left-0 right-0 h-[3px] opacity-60 group-hover:opacity-100 transition-opacity"
                   style={{ backgroundColor: method.accent }}
                 />
-                <div className="w-14 h-14 rounded-full bg-[#131B40] flex items-center justify-center text-white">
-                  {method.icon === Heart ? <CalendarIcon /> : <Icon size={24} />}
+
+                <div
+                  className="w-14 h-14 rounded-2xl flex items-center justify-center text-white mb-5 transition-transform duration-300 group-hover:scale-110"
+                  style={{ backgroundColor: method.accent }}
+                >
+                  {Icon ? <Icon size={24} /> : CustomIcon ? <CustomIcon /> : null}
                 </div>
-                <h3 className="text-[#131B40] font-bold text-sm uppercase tracking-[0.03em] mt-5 mb-2">
+
+                <h3 className="text-[#081B63] font-bold text-base tracking-tight mb-2">
                   {method.title}
                 </h3>
-                <p className="text-[#515767] text-[13.5px] leading-relaxed">
+                <p className="text-slate-500 text-[13.5px] leading-relaxed">
                   {method.desc}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
         </div>

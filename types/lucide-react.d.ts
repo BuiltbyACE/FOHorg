@@ -38,6 +38,7 @@ declare module 'lucide-react' {
   export const Globe: Icon;
   export const GraduationCap: Icon;
   export const HandHeart: Icon;
+  export const HelpCircle: Icon;
   export const Handshake: Icon;
   export const Heart: Icon;
   export const HeartHandshake: Icon;

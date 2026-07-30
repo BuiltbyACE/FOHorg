@@ -1,72 +1,195 @@
-import { Heart, ChevronRight } from 'lucide-react';
+'use client';
+
+import { useState } from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { Heart, ShieldCheck, ArrowRight } from 'lucide-react';
+
+const donationOptions = [
+  { amount: 10, impact: 'Provides meals for a family for a week' },
+  { amount: 25, impact: 'Supplies school materials for one child' },
+  { amount: 50, impact: 'Covers a medical consultation for 3 families' },
+  { amount: 100, impact: 'Funds clean water access for a village household' },
+];
+
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 24 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] as const },
+});
 
 export default function HeroSection() {
+  const [selected, setSelected] = useState(25);
+  const [isCustom, setIsCustom] = useState(false);
+  const [custom, setCustom] = useState('');
+
+  const activeAmount = isCustom ? Number(custom) || 0 : selected;
+  const activeOption = donationOptions.find((o) => o.amount === activeAmount);
+
   return (
-    <section className="py-16 md:py-24">
-      <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
+    <section className="pt-[84px] pb-20 lg:pb-28 bg-white relative overflow-hidden">
+      {/* Background tint */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(233,30,99,0.05)_0%,transparent_60%)] pointer-events-none" />
+
+      <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+          {/* Left */}
           <div className="lg:col-span-6">
-            <p className="font-['Pacifico',_cursive] text-[#D6266F] text-xl md:text-2xl italic">
+            <motion.p
+              {...fadeUp(0)}
+              className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#E91E63] mb-4"
+            >
               Give Hope. Change Lives.
-            </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-[48px] font-extrabold leading-[1.1] mt-2">
-              <span className="text-[#131B40]">TOGETHER, WE CAN</span>
+            </motion.p>
+
+            <motion.h1
+              {...fadeUp(0.08)}
+              className="text-4xl sm:text-5xl lg:text-[54px] font-extrabold leading-[1.05] tracking-tight"
+            >
+              <span className="text-[#081B63]">Together,</span>
               <br />
-              <span className="text-[#D6266F]">TRANSFORM LIVES</span>
-            </h1>
-            <div className="mt-6 space-y-3 text-[#515767] text-base leading-relaxed max-w-[540px]">
-              <p>
-                Your generosity empowers communities, uplifts the vulnerable, and creates opportunities for a brighter tomorrow.
+              <span className="text-[#081B63]">We Can</span>
+              <br />
+              <span className="text-[#E91E63]">Transform Lives</span>
+            </motion.h1>
+
+            <motion.div {...fadeUp(0.16)} className="w-10 h-[3px] bg-[#E91E63] mt-4 mb-6" />
+
+            <motion.p
+              {...fadeUp(0.22)}
+              className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-[520px]"
+            >
+              Your generosity empowers communities, uplifts the vulnerable, and creates
+              opportunities for a brighter tomorrow. Every gift — no matter the size —
+              ripples outward for generations.
+            </motion.p>
+
+            {/* Amount Selector */}
+            <motion.div {...fadeUp(0.30)} className="mt-8">
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#081B63] mb-3">
+                Choose your gift amount
               </p>
-              <p>
-                Every donation, no matter the size, creates a ripple of hope that lasts for generations.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-4 mt-8">
+              <div className="flex flex-wrap gap-3 mb-3">
+                {donationOptions.map((opt) => (
+                  <button
+                    key={opt.amount}
+                    onClick={() => { setSelected(opt.amount); setIsCustom(false); }}
+                    className={`h-11 px-6 rounded-[6px] text-sm font-bold uppercase tracking-[0.07em] transition-all duration-200 ${
+                      !isCustom && selected === opt.amount
+                        ? 'bg-[#E91E63] text-white shadow-md shadow-pink-500/25'
+                        : 'bg-white border border-slate-200 text-[#081B63] hover:border-[#E91E63] hover:text-[#E91E63]'
+                    }`}
+                  >
+                    ${opt.amount}
+                  </button>
+                ))}
+                <button
+                  onClick={() => setIsCustom(true)}
+                  className={`h-11 px-6 rounded-[6px] text-sm font-bold uppercase tracking-[0.07em] transition-all duration-200 ${
+                    isCustom
+                      ? 'bg-[#E91E63] text-white shadow-md shadow-pink-500/25'
+                      : 'bg-white border border-slate-200 text-[#081B63] hover:border-[#E91E63] hover:text-[#E91E63]'
+                  }`}
+                >
+                  Other
+                </button>
+              </div>
+
+              {isCustom && (
+                <div className="relative mb-3">
+                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold text-sm">$</span>
+                  <input
+                    type="number"
+                    min="1"
+                    placeholder="Enter amount"
+                    value={custom}
+                    onChange={(e) => setCustom(e.target.value)}
+                    className="w-full h-11 pl-8 pr-4 rounded-[6px] border border-[#E91E63] bg-pink-50/30 text-[#081B63] text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#E91E63]/30 placeholder-slate-400"
+                    suppressHydrationWarning
+                  />
+                </div>
+              )}
+
+              {activeOption && (
+                <p className="text-[13px] text-slate-500 italic mt-1 flex items-center gap-1.5">
+                  <Heart size={12} className="text-[#E91E63] fill-[#E91E63] flex-shrink-0" />
+                  {activeOption.impact}
+                </p>
+              )}
+            </motion.div>
+
+            {/* CTAs */}
+            <motion.div {...fadeUp(0.38)} className="flex flex-wrap gap-4 mt-7">
               <a
-                href="/donate"
-                className="inline-flex items-center gap-2 h-[52px] px-8 rounded-full bg-[#B8123E] text-white font-bold text-sm uppercase tracking-[0.03em] hover:brightness-110 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-[250ms]"
+                href={`/donate?amount=${activeAmount}`}
+                className="inline-flex items-center gap-2 h-[52px] px-8 rounded-[6px] bg-[#E91E63] text-white font-bold text-sm uppercase tracking-[0.07em] shadow-md shadow-pink-500/25 hover:-translate-y-0.5 hover:bg-[#C2185B] transition-all duration-300"
               >
-                DONATE NOW
+                Donate Now
                 <Heart size={16} className="fill-white" />
               </a>
               <a
                 href="#impact"
-                className="inline-flex items-center gap-2 h-[52px] px-8 rounded-full bg-white border border-[#515767] text-[#131B40] font-bold text-sm uppercase tracking-[0.03em] hover:bg-[#131B40] hover:text-white hover:border-[#131B40] transition-all duration-[250ms]"
+                className="inline-flex items-center gap-2 h-[52px] px-8 rounded-[6px] bg-white border border-slate-200 text-[#081B63] font-bold text-sm uppercase tracking-[0.07em] hover:border-[#081B63] hover:-translate-y-0.5 transition-all duration-300"
               >
-                SEE THE IMPACT
-                <ChevronRight size={16} />
+                See the Impact
+                <ArrowRight size={16} />
               </a>
-            </div>
+            </motion.div>
+
+            {/* Trust badges */}
+            <motion.div {...fadeUp(0.46)} className="flex flex-wrap items-center gap-5 mt-7 pt-7 border-t border-slate-100">
+              <div className="flex items-center gap-2 text-slate-500 text-xs font-semibold">
+                <ShieldCheck size={15} className="text-emerald-500" />
+                Secure Giving
+              </div>
+              <div className="flex items-center gap-2 text-slate-500 text-xs font-semibold">
+                <ShieldCheck size={15} className="text-emerald-500" />
+                Tax-Deductible
+              </div>
+              <div className="flex items-center gap-2 text-slate-500 text-xs font-semibold">
+                <ShieldCheck size={15} className="text-emerald-500" />
+                Cancel Anytime
+              </div>
+            </motion.div>
           </div>
 
-          <div className="lg:col-span-6 relative">
-            <div className="relative">
-              <svg className="absolute -left-6 -top-6 w-[110%] h-[110%] z-0" viewBox="0 0 600 500" fill="none" preserveAspectRatio="none">
-                <path
-                  d="M30,80 C60,40 120,20 200,30 C280,40 340,10 420,25 C500,40 560,60 580,100 C600,140 590,200 580,260 C570,320 560,380 540,420 C520,460 460,480 380,470 C300,460 240,490 160,475 C80,460 20,440 10,400 C0,360 10,300 20,240 C30,180 40,120 30,80Z"
-                  fill="#131B40"
-                  opacity="0.08"
-                />
-              </svg>
-              <div className="relative z-10 rounded-3xl overflow-hidden bg-gradient-to-br from-[#D6266F]/10 via-[#D6266F]/5 to-[#131B40]/5 aspect-[5/4] border border-[#E7E7EF]">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_50%,rgba(214,38,111,0.08)_0%,transparent_60%),radial-gradient(circle_at_70%_30%,rgba(19,27,64,0.05)_0%,transparent_50%)]" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-24 h-24 mx-auto rounded-full bg-[#D6266F]/20 flex items-center justify-center text-4xl">🧒</div>
-                    <p className="text-[#131B40]/40 text-xs font-medium uppercase tracking-wider mt-4">Hero Image Placeholder</p>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute -bottom-4 -right-4 bg-white/90 backdrop-blur-sm rounded-xl p-4 md:p-5 shadow-lg max-w-[240px] z-20 border border-[#E7E7EF]">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D6266F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /></svg>
-                <p className="text-[#131B40] text-sm italic leading-snug mt-1">
-                  Be the reason someone believes in the goodness of people.
-                </p>
-                <div className="w-8 h-0.5 bg-[#D6266F] mt-2" />
-              </div>
+          {/* Right — Image */}
+          <motion.div
+            className="lg:col-span-6 relative"
+            initial={{ opacity: 0, scale: 0.97 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <div className="relative rounded-3xl overflow-hidden aspect-[4/5] lg:aspect-[5/6]">
+              <Image
+                src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=900&q=80"
+                alt="Children benefiting from Fountain of Hope programs"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+                unoptimized
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#081B63]/30 via-transparent to-transparent" />
             </div>
-          </div>
+
+            {/* Floating stat card */}
+            <div className="glass-dark absolute bottom-6 left-4 sm:left-6 rounded-2xl p-5 max-w-[230px]">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-8 h-8 rounded-full bg-[#E91E63]/20 flex items-center justify-center">
+                  <Heart size={14} className="text-[#E91E63] fill-[#E91E63]" />
+                </div>
+                <span className="text-white/70 text-xs font-semibold uppercase tracking-wide">Impact Today</span>
+              </div>
+              <p className="text-white text-2xl font-extrabold leading-none">12,500+</p>
+              <p className="text-white/60 text-xs mt-1">Lives changed through your support</p>
+            </div>
+
+            {/* Decorative ring */}
+            <div className="absolute -top-4 -right-4 w-32 h-32 rounded-full border-[20px] border-[#E91E63]/10 pointer-events-none" />
+          </motion.div>
+
         </div>
       </div>
     </section>
