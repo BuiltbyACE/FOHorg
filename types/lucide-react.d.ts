@@ -79,5 +79,15 @@ declare module "lucide-react" {
   export const Volume2: LucideIcon;
   export const VolumeX: LucideIcon;
   export const X: LucideIcon;
+  export const User: LucideIcon;
+  export const Medal: LucideIcon;
+  export const Gem: LucideIcon;
+  export const GitBranch: LucideIcon;
+  export const Footprints: LucideIcon;
+  export const Sprout: LucideIcon;
+  export const HandMetal: LucideIcon;
+  export const Book: LucideIcon;
+  export const Hand: LucideIcon;
+  export const HandHeart: LucideIcon;
   export const Zap: LucideIcon;
 }
