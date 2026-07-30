@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, CheckCircle, Heart, Globe } from 'lucide-react';
+import SocialLinks from '@/components/common/SocialLinks';
 import Button from '@/components/common/Button';
 
 export default function ContactSection() {
@@ -91,18 +92,7 @@ export default function ContactSection() {
             {/* Social Links */}
             <div className="pt-6 border-t border-white/15">
               <div className="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-3">Connect With Us</div>
-              <div className="flex items-center gap-3">
-                {['Twitter', 'Facebook', 'Instagram', 'LinkedIn', 'YouTube'].map((network) => (
-                  <a
-                    key={network}
-                    href="#"
-                    aria-label={`Follow Fountain of Hope on ${network}`}
-                    className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#E91E63] text-white flex items-center justify-center text-xs font-bold transition-colors"
-                  >
-                    {network[0]}
-                  </a>
-                ))}
-              </div>
+              <SocialLinks variant="dark" />
             </div>
           </motion.div>
 
