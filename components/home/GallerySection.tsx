@@ -11,11 +11,7 @@ const galleryItems = [
     title: 'Clean Water Well Inauguration',
     location: 'Turkana County, Kenya',
     category: 'Water Mission',
-<<<<<<< HEAD
     image: 'https://images.unsplash.com/photo-1541252260730-0412e8e2108e?q=80&w=1200&auto=format&fit=crop',
-=======
-    image: 'https://images.unsplash.com/photo-1594818379496-da1e345b0ded?q=80&w=1200&auto=format&fit=crop',
->>>>>>> 1c0ffee (Merge remote changes and restore stashed work)
     span: 'col-span-1 md:col-span-2 lg:col-span-2 row-span-2',
   },
   {
