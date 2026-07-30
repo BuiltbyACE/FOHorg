@@ -69,7 +69,7 @@ export default function SponsorshipBanner() {
             <div className="lg:col-span-5 relative">
               <div className="relative mx-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 aspect-[4/4] sm:aspect-[4/3.8] group">
                 <Image
-                  src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1000&auto=format&fit=crop"
+                  src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1000&auto=format&fit=crop"
                   alt="Happy smiling African child supported by Fountain of Hope"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
