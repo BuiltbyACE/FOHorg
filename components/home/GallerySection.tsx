@@ -8,14 +8,14 @@ import { X, MapPin } from 'lucide-react';
 const collageImages = [
   {
     id: 'featured',
-    src: 'https://images.unsplash.com/photo-1541252260730-0412e8e2108e?q=80&w=1200&auto=format&fit=crop',
+    src: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?q=80&w=1200&auto=format&fit=crop',
     title: 'Clean Water Brings Hope to Turkana',
     location: 'Turkana County, Kenya',
     span: 'col-span-3 row-span-6',
   },
   {
     id: 'img2',
-    src: 'https://images.unsplash.com/photo-1496307042754-b4e0b1f14293?q=80&w=600&auto=format&fit=crop',
+    src: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=600&auto=format&fit=crop',
     title: 'Bright Futures Begin in the Classroom',
     location: 'Kumasi, Ghana',
     span: 'col-span-1 row-span-2',

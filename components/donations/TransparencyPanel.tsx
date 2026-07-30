@@ -84,7 +84,7 @@ export default function TransparencyPanel() {
             >
               <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
                 <Image
-                  src="https://images.unsplash.com/photo-1524069290683-0457abfe42c3?w=800&q=80"
+                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80"
                   alt="Accountability and transparency at Fountain of Hope"
                   fill
                   className="object-cover"
