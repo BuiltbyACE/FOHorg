@@ -2,165 +2,136 @@
 
 import { useEffect, useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Users, Droplets, BookOpen, HeartPulse, ShieldCheck, Heart } from 'lucide-react';
+import { Users, HeartHandshake, BookOpen, Globe, Award } from 'lucide-react';
 
 const stats = [
-  {
-    id: 'lives',
-    value: 50000,
-    suffix: '+',
-    label: 'Lives Impacted Directly',
-    description: 'Children, mothers, and families empowered with vital support.',
-    icon: Users,
-  },
-  {
-    id: 'communities',
-    value: 120,
-    suffix: '+',
-    label: 'Rural Communities Reached',
-    description: 'Active field projects across East and West Africa.',
-    icon: ShieldCheck,
-  },
-  {
-    id: 'water',
-    value: 85,
-    suffix: '+',
-    label: 'Clean Water Systems Built',
-    description: 'Providing sustainable clean water access daily.',
-    icon: Droplets,
-  },
-  {
-    id: 'students',
-    value: 15000,
-    suffix: '+',
-    label: 'Students Educated',
-    description: 'Classrooms built, teachers trained, scholarships awarded.',
-    icon: BookOpen,
-  },
-  {
-    id: 'funding',
-    value: 95,
-    suffix: '%',
-    label: 'Direct Program Funding',
-    description: 'Going directly into transparent field operations.',
-    icon: Heart,
-  },
+  { value: '12,500+', label: 'Lives Impacted', icon: Users },
+  { value: '4.5k+', label: 'Women Empowered', icon: HeartHandshake },
+  { value: '3k+', label: 'Children Educated', icon: BookOpen },
+  { value: '15k+', label: 'Community Members Engaged', icon: Globe },
+  { value: '15+', label: 'Awards Received', icon: Award },
 ];
 
-function CountUpNumber({ value, suffix }: { value: number; suffix: string }) {
-  const [count, setCount] = useState(0);
+function CountUpText({ value }: { value: string }) {
+  const [display, setDisplay] = useState('');
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
 
   useEffect(() => {
     if (!isInView) return;
 
+    // 1. Isolate the formatting suffix (+, etc.)
+    const suffix = value.replace(/[\d.,kK]+/g, '');
+    
+    // 2. Extract pure numeric digits, including decimals
+    const numStr = value.replace(/[^0-9.]/g, '');
+    const target = parseFloat(numStr);
+    
+    const useK = value.toLowerCase().includes('k');
+    const hasComma = value.includes(',');
+
+    if (isNaN(target)) {
+      setDisplay(value);
+      return;
+    }
+
     let start = 0;
-    const duration = 2000;
+    const duration = 2000; // 2 seconds animation duration
     const steps = 60;
-    const increment = value / steps;
+    const increment = target / steps;
     const stepTime = duration / steps;
 
     const timer = setInterval(() => {
       start += increment;
-      if (start >= value) {
-        setCount(value);
+      if (start >= target) {
         clearInterval(timer);
+        if (useK) {
+          setDisplay(`${target}k${suffix}`);
+        } else if (hasComma) {
+          setDisplay(`${Math.round(target).toLocaleString()}${suffix}`);
+        } else {
+          setDisplay(`${Math.round(target)}${suffix}`);
+        }
       } else {
-        setCount(Math.floor(start));
+        if (useK) {
+          setDisplay(`${start.toFixed(1)}k${suffix}`);
+        } else if (hasComma) {
+          setDisplay(`${Math.floor(start).toLocaleString()}${suffix}`);
+        } else {
+          setDisplay(`${Math.floor(start)}${suffix}`);
+        }
       }
     }, stepTime);
 
     return () => clearInterval(timer);
   }, [isInView, value]);
 
-  return (
-    <span ref={ref} className="font-extrabold tracking-tight">
-      {count.toLocaleString()}{suffix}
-    </span>
-  );
+  return <span ref={ref}>{display || '0'}</span>;
 }
 
 export default function ImpactSection() {
   return (
-    <section className="py-24 lg:py-32 bg-[#081B63] text-white relative overflow-hidden">
-      {/* Background Decorative Glow Elements */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-navy-900/40 via-[#081B63] to-[#040E36] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        
-        {/* Header Title */}
-        <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-pink-300 text-xs font-semibold uppercase tracking-wider mb-4 border border-white/15 backdrop-blur-md">
-            Measurable Global Reach
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-6 leading-tight">
-            Our Transparent Impact in Numbers
-          </h2>
-          <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
-            Every donation directly feeds, educates, protects, and sustains lives. Here is what we have accomplished together with our global partners and donors.
-          </p>
-        </div>
-
-        {/* Stats Grid Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8">
-          {stats.map((stat, index) => {
-            const Icon = stat.icon;
-            return (
-              <motion.div
-                key={stat.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="relative rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 p-6 sm:p-8 flex flex-col justify-between hover:bg-white/10 hover:border-pink-500/40 transition-all duration-300 group"
-              >
-                {/* Icon Badge */}
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#E91E63] to-pink-400 flex items-center justify-center text-white mb-6 shadow-lg shadow-pink-500/20 group-hover:scale-110 transition-transform">
-                  <Icon size={24} />
-                </div>
-
-                {/* Animated Count Up Stat */}
-                <div>
-                  <div className="text-3xl sm:text-4xl lg:text-4xl font-extrabold text-white mb-2 text-pink-400 group-hover:text-pink-300 transition-colors">
-                    <CountUpNumber value={stat.value} suffix={stat.suffix} />
-                  </div>
-                  <h3 className="text-base font-bold text-white mb-2">{stat.label}</h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">{stat.description}</p>
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* Bottom Transparency Guarantee Banner */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-16 rounded-2xl bg-gradient-to-r from-pink-500/20 via-white/5 to-blue-500/20 border border-white/15 p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left"
-        >
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full bg-pink-500/20 border border-pink-400/40 flex items-center justify-center text-pink-400 flex-shrink-0">
-              <ShieldCheck size={26} />
-            </div>
-            <div>
-              <h4 className="text-lg font-bold text-white">Full Financial Transparency & Accountability</h4>
-              <p className="text-sm text-slate-300">Audited annually by independent international accounting firms.</p>
-            </div>
-          </div>
+    <section className="bg-[#0D1B2A] py-16 lg:py-20 w-full overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
           
-          <a
-            href="/about"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-xs uppercase tracking-wider transition-colors border border-white/20 flex-shrink-0"
+          {/* ─── Left: Text Intro ─── */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:w-[28%] flex-shrink-0 text-center lg:text-left"
           >
-            View Financial Reports
-          </a>
-        </motion.div>
+            <p className="text-[#D11A5B] text-xs sm:text-sm font-bold uppercase tracking-[0.08em] mb-3">
+              Our Impact in Pictures
+            </p>
+            <p className="text-white/85 text-base sm:text-lg leading-relaxed">
+              Every statistic tells a story of hope, resilience, and transformation.
+            </p>
+          </motion.div>
 
+          {/* ─── Right: Statistics Metrics Grid ─── */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ staggerChildren: 0.08 }}
+            className="lg:flex-1 w-full"
+          >
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-6">
+              {stats.map((stat) => {
+                const Icon = stat.icon;
+                return (
+                  <motion.div
+                    key={stat.label}
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+                    }}
+                    className="flex flex-col items-center lg:items-start text-center lg:text-left group"
+                  >
+                    {/* Floating circular icon container */}
+                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-[#D11A5B]/20 group-hover:text-[#D11A5B] transition-all duration-300 mb-3">
+                      <Icon size={18} />
+                    </div>
+                    
+                    {/* Counter text value */}
+                    <span className="text-white font-heading font-extrabold text-2xl sm:text-3xl lg:text-[34px] leading-none tracking-tight group-hover:text-[#D11A5B] transition-colors duration-300">
+                      <CountUpText value={stat.value} />
+                    </span>
+                    
+                    {/* Description label text */}
+                    <span className="text-white/50 text-xs sm:text-sm font-medium mt-2 leading-snug">
+                      {stat.label}
+                    </span>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </motion.div>
+          
+        </div>
       </div>
     </section>
   );
