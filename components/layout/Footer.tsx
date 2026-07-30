@@ -233,7 +233,6 @@ export default function Footer() {
                 <button
                   type="submit"
                   className="h-11 px-6 rounded-full bg-gradient-to-r from-[#E91E63] to-[#D81B60] text-white text-xs font-bold uppercase tracking-wider hover:shadow-lg hover:shadow-pink-500/25 transition-all duration-300 flex items-center justify-center gap-2 flex-shrink-0 cursor-pointer">
-                >
                   <Send size={14} />
                   Subscribe
                 </button>
