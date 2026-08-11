@@ -287,7 +287,7 @@ export default function ContactGrid() {
               <div className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-white rounded-xl shadow-lg px-4 py-3 max-w-[200px] z-20 text-center">
                 <p className="text-[#081B63] font-bold text-xs">Fountain of Hope</p>
                 <p className="text-slate-400 text-[10px] leading-snug mt-0.5">
-                  Kilimani, Chania Avenue,<br />Kidgrove Court, Nairobi
+                  Garissa County,<br />North Eastern Region, Kenya
                 </p>
               </div>
 

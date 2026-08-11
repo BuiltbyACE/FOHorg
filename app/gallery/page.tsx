@@ -24,49 +24,49 @@ const categories = [
 ];
 
 const galleryItems = [
-  { id: '1',  title: 'Bright Futures Begin in the Classroom',      location: 'Turkana County, Kenya',  category: 'education',   aspect: 'aspect-[3/4]',  image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1200&auto=format&fit=crop' },
-  { id: '2',  title: 'Mobile Medical Clinic Reaching Villages',     location: 'Gulu District, Uganda',  category: 'healthcare',  aspect: 'aspect-[4/3]',  image: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=1000&auto=format&fit=crop' },
-  { id: '3',  title: 'Women Artisans Building Independence',        location: 'Kigali, Rwanda',          category: 'women',       aspect: 'aspect-[3/4]',  image: 'https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?q=80&w=1000&auto=format&fit=crop' },
-  { id: '4',  title: 'Community Agricultural Training Program',     location: 'Lilongwe, Malawi',        category: 'community',   aspect: 'aspect-[16/9]', image: 'https://images.unsplash.com/photo-1467043237213-65f2da53396f?q=80&w=1200&auto=format&fit=crop' },
-  { id: '5',  title: 'Youth Leadership & Coding Workshop',          location: 'Nairobi, Kenya',          category: 'education',   aspect: 'aspect-[4/3]',  image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1000&auto=format&fit=crop' },
-  { id: '6',  title: 'Tree Planting & Environmental Conservation',  location: 'Nyeri County, Kenya',     category: 'environment', aspect: 'aspect-[3/4]',  image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1000&auto=format&fit=crop' },
-  { id: '7',  title: 'Community Sports & Recreation Day',           location: 'Kampala, Uganda',         category: 'events',      aspect: 'aspect-[4/3]',  image: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=1000&auto=format&fit=crop' },
-  { id: '8',  title: 'Food Distribution & Nutrition Support',       location: 'Turkana County, Kenya',   category: 'community',   aspect: 'aspect-[4/3]',  image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1000&auto=format&fit=crop' },
-  { id: '9',  title: 'Reading Circles Inspire Young Minds',         location: 'Kumasi, Ghana',           category: 'education',   aspect: 'aspect-[3/4]',  image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1000&auto=format&fit=crop' },
-  { id: '10', title: 'Clean Water Well Inauguration Ceremony',      location: 'Turkana County, Kenya',   category: 'events',      aspect: 'aspect-[3/4]',  image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?q=80&w=1200&auto=format&fit=crop' },
-  { id: '11', title: 'Volunteers Building School Classrooms',       location: 'Kisumu, Kenya',           category: 'community',   aspect: 'aspect-[4/3]',  image: 'https://images.unsplash.com/photo-1469571486292-b53601010b89?q=80&w=1000&auto=format&fit=crop' },
-  { id: '12', title: 'Celebrating Graduation & New Beginnings',     location: 'Nairobi, Kenya',          category: 'education',   aspect: 'aspect-[3/4]',  image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1000&auto=format&fit=crop' },
-  { id: '13', title: 'Healthcare Workers on the Frontline',         location: 'Gulu District, Uganda',   category: 'healthcare',  aspect: 'aspect-[4/3]',  image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop' },
-  { id: '14', title: 'Community Clean-Up & Sanitation Drive',       location: 'Kampala, Uganda',         category: 'environment', aspect: 'aspect-[16/9]', image: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?q=80&w=1000&auto=format&fit=crop' },
-  { id: '15', title: 'Smiles of Hope and Transformation',           location: 'Turkana County, Kenya',   category: 'community',   aspect: 'aspect-[3/4]',  image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1000&auto=format&fit=crop' },
+  { id: '1',  title: 'Bright Futures Begin in the Classroom',      location: 'Fafi, Kenya',              category: 'education',   aspect: 'aspect-[3/4]',  image: '/images/foh1.jpeg' },
+  { id: '2',  title: 'Maternal Health Outreach in the Community',   location: 'Dadaab, Kenya',            category: 'healthcare',  aspect: 'aspect-[4/3]',  image: '/images/foh2.jpeg' },
+  { id: '3',  title: 'Women Artisans Building Independence',        location: 'Ijara, Kenya',             category: 'women',       aspect: 'aspect-[3/4]',  image: '/images/foh3.jpeg' },
+  { id: '4',  title: 'Community Health & Resilience Training',      location: 'Balambala, Kenya',         category: 'community',   aspect: 'aspect-[16/9]', image: '/images/foh4.jpeg' },
+  { id: '5',  title: 'Youth Leadership Workshop',                  location: 'Lagdera, Kenya',           category: 'education',   aspect: 'aspect-[4/3]',  image: '/images/foh5.jpeg' },
+  { id: '6',  title: 'Safe Motherhood Awareness Campaign',          location: 'Hulugho, Kenya',           category: 'environment', aspect: 'aspect-[3/4]',  image: '/images/foh6.jpeg' },
+  { id: '7',  title: 'Community Sports & Recreation Day',           location: 'Garissa Town, Kenya',      category: 'events',      aspect: 'aspect-[4/3]',  image: '/images/foh7.jpeg' },
+  { id: '8',  title: 'Education Support & School Supplies',         location: 'Garissa County, Kenya',    category: 'community',   aspect: 'aspect-[4/3]',  image: '/images/foh8.jpeg' },
+  { id: '9',  title: 'Reading Circles Inspire Young Minds',         location: 'Fafi, Kenya',              category: 'education',   aspect: 'aspect-[3/4]',  image: '/images/foh10.jpeg' },
+  { id: '10', title: 'Faith Leaders on Child Spacing',             location: 'Garissa Town, Kenya',      category: 'events',      aspect: 'aspect-[3/4]',  image: '/images/foh11.jpeg' },
+  { id: '11', title: 'Community Health Volunteers in Action',       location: 'Dadaab, Kenya',            category: 'community',   aspect: 'aspect-[4/3]',  image: '/images/foh12.jpeg' },
+  { id: '12', title: 'Celebrating Graduation & New Beginnings',     location: 'Balambala, Kenya',         category: 'education',   aspect: 'aspect-[3/4]',  image: '/images/foh13.jpeg' },
+  { id: '13', title: 'Healthcare Workers on the Frontline',         location: 'Ijara, Kenya',             category: 'healthcare',  aspect: 'aspect-[4/3]',  image: '/images/foh15.jpeg' },
+  { id: '14', title: 'Peacebuilding & Social Cohesion Dialogues',   location: 'Lagdera, Kenya',           category: 'events',      aspect: 'aspect-[16/9]', image: '/images/foh16.jpeg' },
+  { id: '15', title: 'Smiles of Hope and Transformation',           location: 'Hulugho, Kenya',           category: 'community',   aspect: 'aspect-[3/4]',  image: '/images/foh17.jpeg' },
 ];
 
 const stats = [
-  { icon: Users,          target: 50000, suffix: '+', label: 'Lives Impacted' },
-  { icon: Globe,          target: 150,   suffix: '+', label: 'Communities Reached' },
-  { icon: HeartHandshake, target: 85,    suffix: '+', label: 'Programs Launched' },
-  { icon: Award,          target: 2000,  suffix: '+', label: 'Active Volunteers' },
-  { icon: ShieldCheck,    target: 20,    suffix: '+', label: 'Partner Nations' },
+  { icon: BookOpen,       target: 10500, suffix: '+', label: 'Children in Education' },
+  { icon: Users,          target: 3500,  suffix: '+', label: 'Youth Trained' },
+  { icon: HeartHandshake, target: 1400,  suffix: '+', label: 'CHVs & CBDs Trained' },
+  { icon: Globe,          target: 300000, suffix: '+', label: 'Radio Reached' },
+  { icon: ShieldCheck,    target: 40,    suffix: '+', label: 'Faith Leaders Engaged' },
 ];
 
 const testimonials = [
   {
-    name: 'Grace Akinyi',
-    role: 'Education Program Beneficiary',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop',
-    quote: 'Thanks to Fountain of Hope, I received a scholarship that changed my entire future. Today I am a nurse serving my own community. Hope is real.',
+    name: 'County Director of Health',
+    role: 'Ministry of Health, Garissa',
+    image: '/images/kidssited.jpeg',
+    quote: 'The persistently high maternal and child mortality rates in Garissa remain one of our most urgent challenges. We must come together and strengthen our responsive systems in maternal and child health services.',
   },
   {
-    name: 'James Omondi',
-    role: 'Community Volunteer Leader',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop',
-    quote: 'The clean water project transformed our village. Our children no longer walk miles for water. We are forever grateful for this life-changing support.',
+    name: 'Women Religious Leader',
+    role: 'Faith Leader, Garissa',
+    image: '/images/speech.jpeg',
+    quote: 'Our religion, Islam, allows us to do child spacing and breastfeed our babies for 24 months. We will use our gatherings to inform our congregation about what we learned in this meeting.',
   },
   {
-    name: 'Sarah Wanjiku',
-    role: 'Women Empowerment Coordinator',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop',
-    quote: 'The micro-grant program empowered over 200 women in our cooperative. We now run thriving businesses and support our families with dignity.',
+    name: 'Chair, County Assembly Health Committee',
+    role: 'Garissa County Assembly',
+    image: '/images/certificategiving.jpeg',
+    quote: 'We, as county assembly members, commit to championing maternal health by advocating for adequate financial resources and ensuring every part of our health system functions effectively.',
   },
 ];
 
@@ -210,34 +210,34 @@ export default function GalleryPage() {
                 {/* Main tall left image */}
                 <div className="col-span-7 row-span-10 relative rounded-3xl overflow-hidden shadow-xl shadow-black/10">
                   <Image
-                    src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?q=80&w=800&auto=format&fit=crop"
+                    src="/images/heropage14.jpeg"
                     alt="Smiling children" fill priority unoptimized
-                    sizes="40vw" className="object-cover hover:scale-105 transition-transform duration-700"
+                    sizes="40vw" className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#081B63]/40 to-transparent" />
                 </div>
                 {/* Top right large */}
                 <div className="col-span-5 row-span-5 relative rounded-3xl overflow-hidden shadow-lg shadow-black/10">
                   <Image
-                    src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=600&auto=format&fit=crop"
+                    src="/images/foh20.jpeg"
                     alt="Classroom" fill priority unoptimized
-                    sizes="25vw" className="object-cover hover:scale-105 transition-transform duration-700"
+                    sizes="25vw" className="object-cover"
                   />
                 </div>
                 {/* Bottom right left */}
                 <div className="col-span-2 row-span-5 relative rounded-3xl overflow-hidden shadow-md shadow-black/8">
                   <Image
-                    src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?q=80&w=400&auto=format&fit=crop"
+                    src="/images/foh21.jpeg"
                     alt="Women" fill priority unoptimized
-                    sizes="10vw" className="object-cover hover:scale-105 transition-transform duration-700"
+                    sizes="10vw" className="object-cover"
                   />
                 </div>
                 {/* Bottom right main */}
                 <div className="col-span-3 row-span-5 relative rounded-3xl overflow-hidden shadow-md shadow-black/8">
                   <Image
-                    src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=400&auto=format&fit=crop"
+                    src="/images/foh22.jpeg"
                     alt="Community" fill priority unoptimized
-                    sizes="15vw" className="object-cover hover:scale-105 transition-transform duration-700"
+                    sizes="15vw" className="object-cover"
                   />
                 </div>
               </div>
@@ -358,13 +358,13 @@ export default function GalleryPage() {
                       alt={item.title}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="object-cover"
                       unoptimized
                     />
                     {/* Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent opacity-60" />
                     {/* Info */}
-                    <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <div className="absolute bottom-0 left-0 right-0 p-5">
                       <span className="inline-block px-2.5 py-0.5 rounded-full bg-[#E91E63] text-white text-[10px] font-bold uppercase tracking-[0.1em] mb-2 capitalize">
                         {item.category}
                       </span>
@@ -525,7 +525,7 @@ export default function GalleryPage() {
               </h2>
               <p className="text-white/70 mt-5 text-base leading-relaxed max-w-[480px] mx-auto lg:mx-0">
                 Join our mission to transform lives. Every contribution brings hope,
-                education, and opportunity to communities across Africa.
+                education, and opportunity to communities across Garissa County.
               </p>
             </motion.div>
 

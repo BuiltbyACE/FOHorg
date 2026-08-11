@@ -5,35 +5,29 @@ import { motion, useInView } from 'framer-motion';
 import { Users, HeartHandshake, BookOpen, Globe, Award } from 'lucide-react';
 
 const stats = [
-  { value: '12,500+', label: 'Lives Impacted', icon: Users },
-  { value: '4.5k+', label: 'Women Empowered', icon: HeartHandshake },
-  { value: '3k+', label: 'Children Educated', icon: BookOpen },
-  { value: '15k+', label: 'Community Members Engaged', icon: Globe },
-  { value: '15+', label: 'Awards Received', icon: Award },
+  { value: '10,500+', label: 'Children in Education', icon: BookOpen },
+  { value: '3,500+', label: 'Youth Trained', icon: Users },
+  { value: '1,400+', label: 'CHVs & CBDs Trained', icon: HeartHandshake },
+  { value: '300,000+', label: 'Reached via Community Radio', icon: Globe },
+  { value: '14,000+', label: 'Peacebuilding Sensitized', icon: Award },
 ];
 
 function CountUpText({ value }: { value: string }) {
-  const [display, setDisplay] = useState('');
+  const target = parseFloat(value.replace(/[^0-9.]/g, ''));
+  const isNaNParsed = isNaN(target);
+  const [display, setDisplay] = useState(isNaNParsed ? value : '');
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
 
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView || isNaNParsed) return;
 
     // 1. Isolate the formatting suffix (+, etc.)
     const suffix = value.replace(/[\d.,kK]+/g, '');
     
     // 2. Extract pure numeric digits, including decimals
-    const numStr = value.replace(/[^0-9.]/g, '');
-    const target = parseFloat(numStr);
-    
     const useK = value.toLowerCase().includes('k');
     const hasComma = value.includes(',');
-
-    if (isNaN(target)) {
-      setDisplay(value);
-      return;
-    }
 
     let start = 0;
     const duration = 2000; // 2 seconds animation duration
@@ -64,7 +58,7 @@ function CountUpText({ value }: { value: string }) {
     }, stepTime);
 
     return () => clearInterval(timer);
-  }, [isInView, value]);
+  }, [isInView, value, target, isNaNParsed]);
 
   return <span ref={ref}>{display || '0'}</span>;
 }
@@ -81,7 +75,7 @@ export default function ImpactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:w-[28%] flex-shrink-0 text-center lg:text-left"
+            className="lg:w-[22%] shrink-0 text-center lg:text-left"
           >
             <p className="text-[#D11A5B] text-xs sm:text-sm font-bold uppercase tracking-[0.08em] mb-3">
               Our Impact in Pictures
@@ -97,9 +91,9 @@ export default function ImpactSection() {
             whileInView="visible"
             viewport={{ once: true, margin: '-50px' }}
             transition={{ staggerChildren: 0.08 }}
-            className="lg:flex-1 w-full"
+            className="lg:w-[78%] w-full"
           >
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5 sm:gap-6 lg:gap-4 xl:gap-6">
               {stats.map((stat) => {
                 const Icon = stat.icon;
                 return (
@@ -109,7 +103,7 @@ export default function ImpactSection() {
                       hidden: { opacity: 0, y: 20 },
                       visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
                     }}
-                    className="flex flex-col items-center lg:items-start text-center lg:text-left group"
+                    className="flex flex-col items-center lg:items-start text-center lg:text-left group min-w-0"
                   >
                     {/* Floating circular icon container */}
                     <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-[#D11A5B]/20 group-hover:text-[#D11A5B] transition-all duration-300 mb-3">
@@ -117,7 +111,7 @@ export default function ImpactSection() {
                     </div>
                     
                     {/* Counter text value */}
-                    <span className="text-white font-heading font-extrabold text-2xl sm:text-3xl lg:text-[34px] leading-none tracking-tight group-hover:text-[#D11A5B] transition-colors duration-300">
+                    <span className="text-white font-heading font-extrabold text-2xl sm:text-3xl lg:text-[24px] xl:text-[28px] leading-none tracking-tight whitespace-nowrap group-hover:text-[#D11A5B] transition-colors duration-300">
                       <CountUpText value={stat.value} />
                     </span>
                     

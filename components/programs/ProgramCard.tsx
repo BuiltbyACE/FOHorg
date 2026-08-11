@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Check } from 'lucide-react';
@@ -27,7 +28,7 @@ export default function ProgramCard({ program, index }: ProgramCardProps) {
           alt={program.title}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
 
@@ -55,12 +56,15 @@ export default function ProgramCard({ program, index }: ProgramCardProps) {
           ))}
         </ul>
 
-        <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-[#081B63] group-hover:text-[#E91E63] transition-colors">
+        <Link
+          href={`/programs#${program.id}`}
+          className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-[#081B63] group-hover:text-[#E91E63] transition-colors"
+        >
           <span>Learn More</span>
           <div className="w-8 h-8 rounded-full bg-slate-100 group-hover:bg-pink-50 flex items-center justify-center transition-colors">
             <ArrowUpRight size={16} className="transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </div>
-        </div>
+        </Link>
       </div>
     </motion.div>
   );

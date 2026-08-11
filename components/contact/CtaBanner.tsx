@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Heart, ArrowRight, Send } from 'lucide-react';
+import { Heart, Send } from 'lucide-react';
 
 export default function CtaBanner() {
   return (
@@ -51,7 +51,7 @@ export default function CtaBanner() {
               <Send size={15} />
             </a>
             <a
-              href="/donate"
+              href="/donations"
               className="inline-flex items-center justify-center gap-2 h-[52px] px-8 rounded-[6px] border-2 border-white/30 text-white font-bold text-sm uppercase tracking-[0.07em] hover:bg-white hover:text-[#081B63] hover:border-white transition-all duration-300"
             >
               Donate Now

@@ -6,10 +6,10 @@ import { motion } from 'framer-motion';
 import { Heart, ShieldCheck, ArrowRight } from 'lucide-react';
 
 const donationOptions = [
-  { amount: 10, impact: 'Provides meals for a family for a week' },
+  { amount: 10, impact: 'Provides school supplies for a Garissa child' },
   { amount: 25, impact: 'Supplies school materials for one child' },
-  { amount: 50, impact: 'Covers a medical consultation for 3 families' },
-  { amount: 100, impact: 'Funds clean water access for a village household' },
+  { amount: 50, impact: 'Powers a community radio health message' },
+  { amount: 100, impact: 'Funds antenatal supplies for expectant mothers' },
 ];
 
 const fadeUp = (delay = 0) => ({
@@ -163,7 +163,7 @@ export default function HeroSection() {
           >
             <div className="relative rounded-3xl overflow-hidden aspect-[4/5] lg:aspect-[5/6]">
               <Image
-                src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=900&q=80"
+                src="/images/foh8.jpeg"
                 alt="Children benefiting from Fountain of Hope programs"
                 fill
                 className="object-cover"
@@ -182,8 +182,8 @@ export default function HeroSection() {
                 </div>
                 <span className="text-white/70 text-xs font-semibold uppercase tracking-wide">Impact Today</span>
               </div>
-              <p className="text-white text-2xl font-extrabold leading-none">12,500+</p>
-              <p className="text-white/60 text-xs mt-1">Lives changed through your support</p>
+              <p className="text-white text-2xl font-extrabold leading-none">300,000+</p>
+              <p className="text-white/60 text-xs mt-1">Reached through community radio</p>
             </div>
 
             {/* Decorative ring */}

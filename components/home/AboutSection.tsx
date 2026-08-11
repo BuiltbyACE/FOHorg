@@ -24,11 +24,11 @@ export default function AboutSection() {
               {/* Main Photo Card */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/4.5] group">
                 <Image
-                  src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200&auto=format&fit=crop"
-                  alt="Fountain of Hope volunteers working with local community members"
+                  src="/images/foh15.jpeg"
+                  alt="Fountain of Hope volunteers working with local community members in Garissa"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#081B63]/60 via-transparent to-transparent" />
               </div>
@@ -39,9 +39,9 @@ export default function AboutSection() {
                   <div className="w-10 h-10 rounded-full bg-pink-500/20 text-pink-400 flex items-center justify-center">
                     <HeartHandshake size={22} />
                   </div>
-                  <span className="text-2xl font-extrabold text-white">15+ Years</span>
+                  <span className="text-2xl font-extrabold text-white">1,400+</span>
                 </div>
-                <p className="text-xs text-slate-300 font-medium">Of dedicated community work and sustainable impact.</p>
+                <p className="text-xs text-slate-300 font-medium">Community health volunteers (CHVs) &amp; CBDs trained in Garissa.</p>
               </div>
 
             </div>
@@ -65,26 +65,31 @@ export default function AboutSection() {
             </h2>
 
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
-              Founded with the firm belief that every human being deserves clean water, health, and quality education, Fountain of Hope works hand-in-hand with African leaders to build resilient, self-sustaining communities.
+              Our vision is a healthy, literate and wealthy Garissa community.
+              Fountain of Hope works hand-in-hand with county leadership, faith
+              networks and young people to build resilient, self-sustaining
+              communities across Garissa County.
             </p>
 
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-8">
-              Rather than providing short-term handouts, we invest in long-term infrastructure, local leadership, and sustainable economic opportunities that transform lives for generations.
+              Rather than short-term handouts, we invest in strategic partnerships
+              and sustainable programs — from maternal and newborn health advocacy
+              to education, vocational training and economic empowerment.
             </p>
 
             {/* Core Values Bullets */}
             <div className="space-y-3 mb-8 w-full">
               <div className="flex items-center gap-3 text-slate-800 font-semibold text-sm sm:text-base">
                 <CircleCheckBig size={20} className="text-[#E91E63] flex-shrink-0" />
-                <span>Community-Led Development Programs</span>
+                <span>Strategic Partnerships & County Collaboration</span>
               </div>
               <div className="flex items-center gap-3 text-slate-800 font-semibold text-sm sm:text-base">
                 <CircleCheckBig size={20} className="text-[#E91E63] flex-shrink-0" />
-                <span>Zero Overhead Waste — Direct Field Allocation</span>
+                <span>Community Health Structures — 1,400+ CHVs &amp; CBDs</span>
               </div>
               <div className="flex items-center gap-3 text-slate-800 font-semibold text-sm sm:text-base">
                 <CircleCheckBig size={20} className="text-[#E91E63] flex-shrink-0" />
-                <span>Empowering Women & Youth as Transformation Agents</span>
+                <span>Empowering Women, Youth &amp; Faith Leaders</span>
               </div>
             </div>
 

@@ -30,7 +30,9 @@ export default function ProgramsHero() {
             </h1>
 
             <p className="text-lg sm:text-xl text-slate-600 font-normal leading-relaxed mb-8 max-w-2xl">
-              From education and healthcare to women empowerment and environmental sustainability, our comprehensive programs are designed to create lasting, measurable impact in communities across Africa.
+              From maternal and newborn health to education, vocational training
+              and peacebuilding, our programs are designed to create lasting,
+              measurable impact in communities across Garissa County.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 sm:gap-5 w-full sm:w-auto mb-10">
@@ -53,11 +55,11 @@ export default function ProgramsHero() {
             <div className="relative mx-auto max-w-md lg:max-w-none">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-navy-950/15 border-4 border-white aspect-[4/5] sm:aspect-[4/4.5]">
                 <Image
-                  src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200&auto=format&fit=crop"
-                  alt="Community programs transforming lives across Africa"
+                  src="/images/foh1.jpeg"
+                  alt="Community programs transforming lives across Garissa County"
                   fill
                   sizes="(max-width: 1024px) 100vw, 45vw"
-                  className="object-cover transition-transform duration-700 hover:scale-105"
+                  className="object-cover"
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#081B63]/60 via-transparent to-transparent" />

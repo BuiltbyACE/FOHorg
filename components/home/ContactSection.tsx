@@ -51,9 +51,9 @@ export default function ContactSection() {
             {/* Background Glow */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl pointer-events-none" />
 
-            <h3 className="text-2xl font-bold text-white mb-6">Foundation Headquarters</h3>
+            <h3 className="text-2xl font-bold text-white mb-6">Our Offices</h3>
             <p className="text-slate-300 text-sm leading-relaxed mb-8">
-              Reach out to our global team or local field offices. We respond to all inquiries within 24 business hours.
+              Reach out to our Garissa County team. We respond to all inquiries within 24 business hours.
             </p>
 
             {/* Info Cards */}
@@ -63,8 +63,8 @@ export default function ContactSection() {
                   <MapPin size={20} />
                 </div>
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-0.5">Headquarters Address</div>
-                  <div className="text-sm font-semibold text-white">100 Hope Boulevard, Suite 400<br />Nairobi, Kenya &bull; Washington D.C., USA</div>
+                  <div className="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-0.5">Office Address</div>
+                  <div className="text-sm font-semibold text-white">Garissa County,<br />North Eastern Region, Kenya</div>
                 </div>
               </div>
 
@@ -84,7 +84,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <div className="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-0.5">Call Our Office</div>
-                  <div className="text-sm font-semibold text-white">+254 700 000 000 / +1 (800) 555-HOPE</div>
+                  <div className="text-sm font-semibold text-white">+254 700 123 456</div>
                 </div>
               </div>
             </div>
@@ -130,7 +130,7 @@ export default function ContactSection() {
                     <input
                       type="text"
                       required
-                      placeholder="Jane Doe"
+                      placeholder="Your full name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:border-[#E91E63] focus:bg-white transition-colors"
@@ -145,7 +145,7 @@ export default function ContactSection() {
                     <input
                       type="email"
                       required
-                      placeholder="jane@example.com"
+                      placeholder="you@example.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:border-[#E91E63] focus:bg-white transition-colors"

@@ -2,7 +2,7 @@
 
 import { useRef, useState, useCallback, useLayoutEffect } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   Heart,
   Target,
@@ -15,15 +15,11 @@ import {
   Globe,
   BarChart3,
   Star,
-  ArrowRight,
   ShieldCheck,
-  HeartPulse,
-  GraduationCap,
   UserCheck,
   CircleCheckBig,
   Sparkles,
-  Zap,
-  Building2,
+  ChevronRight,
 } from 'lucide-react';
 import Container from '@/components/layout/Container';
 import Button from '@/components/common/Button';
@@ -77,64 +73,133 @@ const heroChecklist = [
 ];
 
 const impactStats = [
-  { icon: Heart, number: 12500, suffix: '+', title: 'Lives Impacted', desc: 'Across 70 communities' },
-  { icon: Target, number: 45, suffix: '+', title: 'Programs Implemented', desc: 'Education, health, empowerment & more' },
-  { icon: Globe, number: 78, suffix: '+', title: 'Communities Reached', desc: 'Urban, rural & hard-to-reach areas' },
-  { icon: Users, number: 100, suffix: '+', title: 'Volunteers Engaged', desc: 'Dedicated hearts working hand-in-hand' },
-  { icon: HandHeart, number: 30, suffix: '+', title: 'Partner Organizations', desc: 'Working hand-in-hand for greater impact' },
-  { icon: Award, number: 15, suffix: '+', title: 'Awards & Recognitions', desc: 'Honoring our commitment to excellence' },
+  { icon: Heart, number: 10500, suffix: '+', title: 'Children in Education', desc: 'Kept in school across Garissa County' },
+  { icon: Target, number: 3500, suffix: '+', title: 'Youth Trained', desc: 'In vocational skills & leadership' },
+  { icon: Globe, number: 300000, suffix: '+', title: 'Radio Reached', desc: 'Via Star FM health talk shows' },
+  { icon: Users, number: 1400, suffix: '+', title: 'CHVs & CBDs Trained', desc: 'Community health structures strengthened' },
+  { icon: HandHeart, number: 14000, suffix: '+', title: 'Peacebuilding Sensitized', desc: 'Against violent extremism & radicalization' },
+  { icon: Award, number: 40, suffix: '+', title: 'Faith Leaders Engaged', desc: 'Women religious leaders mobilized for health' },
 ];
 
 const programAreas = [
-  { icon: BookOpen, color: '#E91E63', title: 'Education', number: '8,500+', desc: 'Children enroll in quality education programs and supported to stay in school' },
-  { icon: Stethoscope, color: '#0EA5E9', title: 'Healthcare', number: '6,200+', desc: 'Individuals received essential healthcare, check-ups, and maternal care support' },
-  { icon: Compass, color: '#10B981', title: 'Youth Development', number: '4,100+', desc: 'Young people empowered with skills, mentorship, and leadership opportunities' },
-  { icon: UserCheck, color: '#F59E0B', title: 'Women Empowerment', number: '3,000+', desc: 'Women trained, supported, and equipped to build sustainable livelihoods' },
-  { icon: HandHeart, color: '#8B5CF6', title: 'Community Outreach', number: '25,000+', desc: 'People reached through outreach services, donations, and awareness campaigns' },
-  { icon: ShieldCheck, color: '#06B6D4', title: 'Environment & Sustainability', number: '12,000+', desc: 'Trees planted and communities educated on conservation and sustainability' },
+  { icon: BookOpen, color: '#E91E63', title: 'Education', number: '10,500+', desc: 'Boys and girls kept in school with scholarships, learning materials, and teacher support' },
+  { icon: Stethoscope, color: '#0EA5E9', title: 'Maternal & Newborn Health', number: '300,000+', desc: 'Reached through OMMI radio advocacy, faith leaders, and youth champions' },
+  { icon: UserCheck, color: '#10B981', title: 'Youth & Vocational Training', number: '3,500+', desc: 'Young people trained in trade crafts, digital skills, and leadership' },
+  { icon: Compass, color: '#F59E0B', title: 'Family Planning & Child Spacing', number: '40+', desc: 'Women religious leaders engaged; 423 married women reached through PPFP' },
+  { icon: HandHeart, color: '#8B5CF6', title: 'Peacebuilding & Resilience', number: '14,000+', desc: 'Women and men sensitized against violent extremism and radicalization' },
+  { icon: ShieldCheck, color: '#06B6D4', title: 'Economic Empowerment', number: '10,500+', desc: 'Refugees and host community residents supported with sustainable livelihoods' },
 ];
 
 const timeline = [
-  { year: '2016', title: 'Foundation', icon: Star, desc: 'Fountain of Hope was founded with a mission to bring hope and opportunity to vulnerable communities.' },
-  { year: '2017', title: 'First Programs', icon: Heart, desc: 'Launched our first education and feeding programs, reaching 100+ children in 5 communities.' },
-  { year: '2018', title: 'Strong Partnerships', icon: HandHeart, desc: 'Built strategic partnerships with organizations and volunteers to expand our reach.' },
-  { year: '2019', title: 'Expanding Impact', icon: Users, desc: 'Expanded to 20+ communities and launched women empowerment initiatives.' },
-  { year: '2021', title: 'Growing Stronger', icon: BarChart3, desc: 'Reached over 10,000 lives and introduced youth mentorship and skills training programs.' },
-  { year: '2023', title: 'Recognized for Impact', icon: Award, desc: 'Received national recognition for outstanding contribution to community development.' },
-  { year: '2025', title: 'Building the Future', icon: Star, desc: 'Continuing to innovate, collaborate, and create sustainable change for generations to come.' },
+  { year: '2019', title: 'FP2020 Project', icon: Star, desc: 'Launched post-partum family planning advocacy with a $50,000 FP2020 grant, the foundation of our maternal health work.' },
+  { year: '2020', title: 'First PPFP Circular', icon: Heart, desc: 'Garissa issued its first county PPFP circular — 423 married women reached during six months of implementation.' },
+  { year: '2022', title: 'Evidence for Action', icon: HandHeart, desc: 'KDHS 2022 showed Garissa mCPR rising from 5.5% to 11%, while MMR at 646/100,000 confirmed the urgent need for advocacy.' },
+  { year: '2024', title: 'Jhpiego Partnership', icon: Users, desc: 'Launched a $20,000 gender-lensed RMNCAH-N and SGBV advocacy project to address systemic barriers for women.' },
+  { year: '2025', title: 'OMMI Initiative Launches', icon: BarChart3, desc: 'With ICRHK, the Okoa Mama na Mtoto Initiative begins — landscaping with county health leadership and faith networks.' },
+  { year: '2025', title: 'Radio & Faith Mobilization', icon: Award, desc: 'Star FM talk show reaches 300,000+; 40 women religious leaders and 15 youth champions trained to champion safe motherhood.' },
+  { year: '2025', title: 'County Executive Commitment', icon: Star, desc: 'Executive advocacy meeting chaired by the Deputy County Secretary commits the county to strengthened maternal health systems.' },
 ];
 
 const stories = [
   {
-    title: 'From Struggle to Success',
-    desc: 'Daniel now dreams of becoming an engineer thanks to our scholarship program.',
-    img: '/images/First.png',
+    title: 'Counting the Cost of Motherhood',
+    date: 'April 2025',
+    tag: 'County Health Landscaping',
+    img: '/images/foh2.jpeg',
+    stat: '30+',
+    statLabel: 'Health managers in the analysis room',
+    excerpt: 'Before we could change outcomes, we had to understand them. FoH and the County Health Management Team sat down with years of maternal health data to find out exactly why mothers were dying.',
+    story:
+      'The review covered service utilization trends, facility readiness and health outcomes, bringing together more than 30 county and sub-county health managers. It revealed genuine progress — immunization coverage and skilled delivery were rising — but also persistent gaps in access and quality of care. The meeting produced a shared action list: strengthen the availability of blood and blood products, improve referral systems, and speed up decision-making for mothers in danger. Every subsequent OMMI intervention was built on this evidence base.',
+    quote: {
+      text: 'The persistently high maternal and child mortality rates in Garissa remain one of our most urgent challenges. Our priority is to close the existing gaps in referral, blood availability and timely decision-making so that no mother or child is lost to preventable causes.',
+      author: 'County Director of Health',
+    },
   },
   {
-    title: 'Empowered to Inspire',
-    desc: 'Mariam turned her skills training into a thriving business that supports her family.',
-    img: '/images/Second.png',
+    title: 'Women of Faith, Voices of Change',
+    date: 'May 2025',
+    tag: 'Women Religious Leaders',
+    img: '/images/foh6.jpeg',
+    stat: '40',
+    statLabel: 'Women religious leaders mobilized',
+    excerpt: 'In a county where faith shapes daily life, FoH brought forty women religious leaders together to make safe motherhood a message of faith.',
+    story:
+      'The consultative session equipped the leaders with evidence on antenatal care, facility-based delivery and newborn care, and aligned OMMI\u2019s objectives with religious values. Nearly all pledged to carry the message into their sermons, religious forums and women\u2019s gatherings — creating a trusted, culturally resonant channel for health information across the community.',
+    quote: {
+      text: 'Our religion Islam allows us to do child spacing and breastfeed our baby for 24 months. This is meant to take care of the mother\u2019s health and give time for the child to grow. We will use our gathering to inform our congregation about what we learnt in this meeting.',
+      author: 'Women Religious Leader, Garissa',
+    },
   },
   {
-    title: 'Healthy Communities',
-    desc: 'Our mobile health camps bring essential healthcare to families who need it most.',
-    img: '/images/hero page.png',
+    title: 'Champions on the Frontline',
+    date: 'June 2025',
+    tag: 'Youth Champions',
+    img: '/images/foh7.jpeg',
+    stat: '15',
+    statLabel: 'Young peer educators trained',
+    excerpt: 'Fifteen young people stepped up to become the county\u2019s newest advocates for maternal and newborn health.',
+    story:
+      'Trained as peer educators on antenatal and postnatal care, the importance of skilled delivery and the danger signs of pregnancy, the champions were urged to use the platforms they already live on — WhatsApp, TikTok and Facebook — to share health messages, mobilize their peers and families to support pregnant women, and promote girls\u2019 education. The training also encouraged young men to walk with their partners through pregnancy and childbirth, breaking down stigma around family planning and building trust in hospital deliveries.',
   },
   {
-    title: 'Hope for Tomorrow',
-    desc: 'Together we are building a greener future for the people and the planet.',
-    img: '/images/First.png',
+    title: 'Healing Over the Airwaves',
+    date: 'July 2025',
+    tag: 'Community Radio',
+    img: '/images/certificategiving.jpeg',
+    stat: '300,000+',
+    statLabel: 'Listeners reached across the county',
+    excerpt: 'FoH took the conversation about safe motherhood to one of Garissa\u2019s most trusted platforms — Star FM.',
+    story:
+      'Partnering with Star FM, which covers more than 70% of the county, FoH aired a live talk show in both Somali and Swahili. Listeners called in from every sub-county to ask why a pregnancy visit matters, whether hospital delivery is free, what to do if a wife is bleeding, and why a facility birth beats a home birth. The show reached an estimated 300,000+ people and confirmed radio as one of the most powerful tools for changing public perception in pastoralist settings.',
+  },
+  {
+    title: 'The Power of the Purse',
+    date: 'August 2025',
+    tag: 'County Assembly Advocacy',
+    img: '/images/foh8.jpeg',
+    stat: '70%',
+    statLabel: 'Of the health budget spent on salaries, not services',
+    excerpt: 'Advocacy reached the decision-makers who hold the budget — the Members of the County Assembly.',
+    story:
+      'FoH convened MCAs, the CECM for Health, the Chief Officer and the Director of Health to deliberate on maternal and newborn health financing. The session revealed that although health receives the largest share of the county budget, over 70% goes to salaries — leaving little for service delivery. It also exposed a data problem: deaths of referred mothers from neighbouring Tana River County were being recorded as Garissa\u2019s, inflating the mortality figures. Leaders committed to joint data frameworks, fairer budget allocation and presenting maternal health before the full Assembly.',
+    quote: {
+      text: 'We as County Assembly members commit to championing maternal health by advocating for adequate financial resources and ensuring that every part of our health system functions effectively.',
+      author: 'Chair, County Assembly Health Committee',
+    },
+  },
+  {
+    title: 'Commitment from the Top',
+    date: 'October 2025',
+    tag: 'County Executive Meeting',
+    img: '/images/foh11.jpeg',
+    stat: 'Quarterly',
+    statLabel: 'Reviews of MNCH performance agreed',
+    excerpt: 'On 29 October 2025, the county\u2019s executive leadership met — chaired by the Deputy County Secretary — to turn advocacy into commitment.',
+    story:
+      'The high-level meeting brought together the Deputy County Secretary, CECM representatives, the Chief Officer and Director of Health, the heads of Family Health and Curative Services, the Assembly Health and Budget committees, and the OMMI advocacy team. They agreed on concrete priorities: increasing domestic financing for RMNCAH, expanding Social Health Authority coverage for expectant mothers, strengthening community health strategies, and adopting MNCH scorecards to track progress. The county committed to quarterly reviews, upgraded rural health facilities, quarterly supply of essential commodities and round-the-clock skilled birth attendance — so that no mother or child is left behind.',
+    quote: {
+      text: 'No mother or child should be left behind.',
+      author: 'Deputy County Secretary, Garissa',
+    },
   },
 ];
 
 const awards = [
-  { title: 'Community Impact Award 2021', desc: 'For outstanding contribution to social development.' },
-  { title: 'Humanitarian Excellence Award 2022', desc: 'For exceptional service to vulnerable communities.' },
-  { title: 'NGO of the Year 2023', desc: 'Recognized for innovation, transparency & impact.' },
-  { title: 'Partner of the Year 2024', desc: 'For strong collaboration and lasting impact.' },
+  { title: 'FP2020 Grant (2019\u20132020)', desc: '$50,000 for post-partum family planning advocacy in Garissa — 423 married women reached during six months of implementation.' },
+  { title: 'First County PPFP Circular (2020)', desc: 'Garissa issued its first PPFP circular directing medical superintendents and facility in-charges to upscale post-partum family planning.' },
+  { title: 'Jhpiego Partnership (2024)', desc: '$20,000 gender-lensed RMNCAH-N & SGBV advocacy — 30 FP champions signed a joint communiqu\u00e9.' },
+  { title: 'KDHS 2022 Milestone', desc: 'Garissa mCPR grew from 5.5% to 11%, with a 25% increase in male involvement in child spacing.' },
+  { title: 'ICRHK Partnership (2025)', desc: 'Okoa Mama na Mtoto Initiative (OMMI) — a year-one advocacy package to reduce maternal, newborn & child mortality.' },
+  { title: 'Radio Reach Milestone (2025)', desc: 'Star FM talk shows in Somali & Swahili reached an estimated 300,000+ listeners across the county.' },
+  { title: 'Faith & Youth Champions (2025)', desc: '40 women religious leaders and 15 youth champions equipped to champion safe motherhood across the sub-counties.' },
+  { title: 'County Executive Commitment (2025)', desc: 'Executive meeting chaired by the Deputy County Secretary committed to quarterly MNCH reviews, upgraded rural facilities and round-the-clock skilled birth attendance.' },
 ];
 
 export default function AchievementsPage() {
+  const [openStory, setOpenStory] = useState<string | null>(null);
+  const [showAllAwards, setShowAllAwards] = useState(false);
+
   return (
     <div className="flex flex-col w-full overflow-hidden">
       {/* ─── HERO ─── */}
@@ -195,13 +260,13 @@ export default function AchievementsPage() {
               {/* Collage grid with diagonal dividers */}
               <div className="grid grid-cols-2 gap-0 rounded-2xl overflow-hidden shadow-2xl shadow-black/30">
                 <div className="relative h-48 md:h-56 overflow-hidden" style={{ clipPath: 'polygon(0 0, 100% 0, 75% 100%, 0 100%)' }}>
-                  <Image src="/images/First.png" alt="Community" fill className="object-cover" />
+                  <Image src="/images/foh15.jpeg" alt="Community" fill className="object-cover" />
                 </div>
                 <div className="relative h-48 md:h-56 overflow-hidden" style={{ clipPath: 'polygon(25% 0, 100% 0, 100% 100%, 0 100%)' }}>
-                  <Image src="/images/Second.png" alt="Community" fill className="object-cover" />
+                  <Image src="/images/foh16.jpeg" alt="Community" fill className="object-cover" />
                 </div>
                 <div className="relative h-48 md:h-56 col-span-2 overflow-hidden" style={{ clipPath: 'polygon(0 0, 92% 0, 100% 100%, 0 100%)' }}>
-                  <Image src="/images/hero page.png" alt="Community" fill className="object-cover" />
+                  <Image src="/images/foh17.jpeg" alt="Community" fill className="object-cover" />
                 </div>
               </div>
 
@@ -247,17 +312,17 @@ export default function AchievementsPage() {
                 return (
                   <motion.div
                     key={stat.title}
-                    className="p-6 lg:p-8 text-center group hover:bg-gray-50/50 transition-colors duration-300"
+                    className="p-4 sm:p-6 lg:p-6 text-center group hover:bg-gray-50/50 transition-colors duration-300 min-w-0"
                     {...fadeUpChild}
                   >
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                      <Icon size={24} className="text-primary group-hover:text-white transition-colors duration-300" />
+                    <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                      <Icon size={22} className="text-primary group-hover:text-white transition-colors duration-300" />
                     </div>
-                    <div className="text-3xl sm:text-4xl font-bold text-navy mb-1">
+                    <div className="text-2xl sm:text-3xl lg:text-[26px] xl:text-3xl font-bold text-navy mb-1 whitespace-nowrap tracking-tight">
                       <CountUp end={stat.number} suffix={stat.suffix} />
                     </div>
-                    <p className="text-navy font-semibold text-sm mb-1">{stat.title}</p>
-                    <p className="text-gray-400 text-xs">{stat.desc}</p>
+                    <p className="text-navy font-semibold text-xs sm:text-sm mb-1">{stat.title}</p>
+                    <p className="text-gray-400 text-[11px] leading-snug">{stat.desc}</p>
                   </motion.div>
                 );
               })}
@@ -329,31 +394,77 @@ export default function AchievementsPage() {
               </motion.div>
 
               <div className="grid sm:grid-cols-2 gap-5">
-                {stories.map((story, i) => (
-                  <motion.div
-                    key={story.title}
-                    className="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group"
-                    {...fadeUpChild}
-                  >
-                    <div className="relative h-48 overflow-hidden">
-                      <Image
-                        src={story.img}
-                        alt={story.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                    </div>
-                    <div className="p-5">
-                      <h3 className="text-lg font-bold text-navy mb-2">{story.title}</h3>
-                      <p className="text-gray-500 text-sm leading-relaxed mb-3">{story.desc}</p>
-                      <span className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm group-hover:gap-2.5 transition-all duration-300">
-                        Read Story
-                        <ArrowRight size={14} />
-                      </span>
-                    </div>
-                  </motion.div>
-                ))}
+                {stories.map((story) => {
+                  const isOpen = openStory === story.title;
+                  return (
+                    <motion.div
+                      key={story.title}
+                      className="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 flex flex-col"
+                      {...fadeUpChild}
+                    >
+                      <div className="relative h-48 overflow-hidden">
+                        <Image
+                          src={story.img}
+                          alt={story.title}
+                          fill
+                          className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+                        <span className="absolute bottom-3 left-4 px-3 py-1 rounded-full bg-[#E91E63] text-white text-[10px] font-bold uppercase tracking-wider">
+                          {story.tag}
+                        </span>
+                      </div>
+                      <div className="p-6 flex-1 flex flex-col">
+                        <div className="flex items-center gap-2 text-gray-400 text-xs font-semibold uppercase tracking-wider mb-2">
+                          {story.date}
+                        </div>
+                        <h3 className="text-lg font-bold text-navy mb-2">{story.title}</h3>
+                        <p className="text-gray-500 text-sm leading-relaxed mb-4">{story.excerpt}</p>
+
+                        <AnimatePresence initial={false}>
+                          {isOpen && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: 'auto', opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.3 }}
+                              className="overflow-hidden"
+                            >
+                              <div className="flex items-center gap-3 mb-4 rounded-xl bg-primary/5 border border-primary/15 p-4">
+                                <span className="text-2xl font-extrabold text-[#E91E63]">{story.stat}</span>
+                                <span className="text-xs font-semibold text-navy uppercase tracking-wide">
+                                  {story.statLabel}
+                                </span>
+                              </div>
+                              <p className="text-gray-600 text-sm leading-relaxed">{story.story}</p>
+                              {story.quote && (
+                                <blockquote className="mt-4 border-l-4 border-[#E91E63] bg-pink-50/60 rounded-r-xl p-4">
+                                  <p className="text-gray-700 text-sm italic leading-relaxed">
+                                    &ldquo;{story.quote.text}&rdquo;
+                                  </p>
+                                  <footer className="mt-2 text-xs font-bold text-[#081B63] uppercase tracking-wide">
+                                    — {story.quote.author}
+                                  </footer>
+                                </blockquote>
+                              )}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+
+                        <button
+                          onClick={() => setOpenStory(isOpen ? null : story.title)}
+                          className="mt-auto inline-flex items-center gap-2 pt-4 text-[#E91E63] font-bold text-sm uppercase tracking-wider hover:gap-3 transition-all duration-300 cursor-pointer"
+                        >
+                          {isOpen ? 'Read Less' : 'Read Full Story'}
+                          <ChevronRight
+                            size={16}
+                            className={`transition-transform duration-300 ${isOpen ? 'rotate-90' : ''}`}
+                          />
+                        </button>
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
 
@@ -370,7 +481,7 @@ export default function AchievementsPage() {
                 {...fadeUp}
               >
                 <div className="space-y-6">
-                  {awards.map((award, i) => (
+                  {(showAllAwards ? awards : awards.slice(0, 4)).map((award) => (
                     <motion.div
                       key={award.title}
                       className="flex items-start gap-4 pb-6 border-b border-gray-100 last:border-b-0 last:pb-0"
@@ -388,9 +499,17 @@ export default function AchievementsPage() {
                 </div>
 
                 <div className="mt-8">
-                  <Button href="#" variant="outline" size="md" className="w-full">
-                    View All Awards
-                    <ArrowRight size={16} />
+                  <Button
+                    variant="outline"
+                    size="md"
+                    className="w-full"
+                    onClick={() => setShowAllAwards((prev) => !prev)}
+                  >
+                    {showAllAwards ? 'Show Less' : 'View All Awards'}
+                    <ChevronRight
+                      size={16}
+                      className={`transition-transform duration-300 ${showAllAwards ? 'rotate-90' : ''}`}
+                    />
                   </Button>
                 </div>
               </motion.div>
@@ -561,7 +680,7 @@ function TimelineWave({ items }: { items: typeof timeline }) {
 
             return (
               <div
-                key={item.year}
+                key={item.title}
                 className="absolute top-0"
                 style={{
                   left: `${(i / (items.length - 1)) * 100}%`,
@@ -635,7 +754,7 @@ function TimelineWave({ items }: { items: typeof timeline }) {
             const side = i % 2 === 0 ? 'left' : 'right';
             return (
               <motion.div
-                key={item.year}
+                key={item.title}
                 className={`relative flex items-start gap-5 ${side === 'right' ? 'flex-row-reverse' : ''}`}
                 initial={{ opacity: 0, x: side === 'left' ? -20 : 20 }}
                 whileInView={{ opacity: 1, x: 0 }}

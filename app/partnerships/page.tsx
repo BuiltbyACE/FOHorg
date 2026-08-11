@@ -10,7 +10,7 @@ import CTABannerSection from '@/components/partnerships/CTABannerSection';
 export const metadata: Metadata = {
   title: 'Partnerships | Fountain of Hope Foundation',
   description:
-    'Partner with Fountain of Hope to create lasting change in communities across Africa. Explore corporate, institutional, NGO, government, and individual partnership opportunities.',
+    'Partner with Fountain of Hope to create lasting change in Garissa County. Explore corporate, institutional, NGO, government, and individual partnership opportunities.',
 };
 
 export default function PartnershipsPage() {

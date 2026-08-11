@@ -13,37 +13,37 @@ interface ImpactItem {
 
 const impacts: ImpactItem[] = [
   {
-    image: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&q=80',
+    image: '/images/foh15.jpeg',
     icon: Book,
     title: 'Education for All',
     desc: 'Providing quality education and learning resources to children in underserved communities.',
   },
   {
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80',
+    image: '/images/foh16.jpeg',
     icon: Heart,
     title: 'Healthcare & Wellness',
     desc: 'Ensuring access to essential healthcare services and wellness programs.',
   },
   {
-    image: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=600&q=80',
+    image: '/images/foh17.jpeg',
     icon: Footprints,
     title: 'Youth Development',
     desc: 'Empowering young people through sports, mentorship, and leadership training.',
   },
   {
-    image: 'https://images.unsplash.com/photo-1602872030210-fbacc1b26e72?w=600&q=80',
+    image: '/images/foh20.jpeg',
     icon: Leaf,
     title: 'Women Empowerment',
     desc: 'Supporting women with skills training, resources, and economic opportunities.',
   },
   {
-    image: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80',
+    image: '/images/foh21.jpeg',
     icon: HandMetal,
     title: 'Community Outreach',
     desc: 'Reaching vulnerable families with essential supplies and support services.',
   },
   {
-    image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&q=80',
+    image: '/images/foh22.jpeg',
     icon: Sprout,
     title: 'Environment & Sustainability',
     desc: 'Promoting environmental conservation and sustainable community practices.',
@@ -100,7 +100,7 @@ export default function ImpactGrid() {
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    className="object-cover object-center"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     unoptimized
                   />

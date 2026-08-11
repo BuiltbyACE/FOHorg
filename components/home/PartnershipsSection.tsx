@@ -4,12 +4,12 @@ import { motion } from 'framer-motion';
 import { Globe, Building2, Heart, Award, ShieldCheck, Zap } from 'lucide-react';
 
 const partners = [
-  { name: 'Global Health Alliance', category: 'Medical Partner', icon: Heart },
-  { name: 'United Nations Water Initiative', category: 'Clean Water Partner', icon: Globe },
-  { name: 'Africa Education Foundation', category: 'Literacy Sponsor', icon: Award },
-  { name: 'Apex Tech Cares', category: 'Corporate Philanthropy', icon: Building2 },
-  { name: 'Beacon Trust Org', category: 'Financial Auditor', icon: ShieldCheck },
-  { name: 'Horizon Renewable Energy', category: 'Solar Borehole Partner', icon: Zap },
+  { name: 'ICRH Kenya', category: 'MNH Advocacy Partner', icon: Heart },
+  { name: 'County Government of Garissa', category: 'County Health Partner', icon: Globe },
+  { name: 'Star FM Garissa', category: 'Community Radio Partner', icon: Zap },
+  { name: 'FP2020', category: 'Family Planning Funder', icon: ShieldCheck },
+  { name: 'Jhpiego', category: 'Gender-Lensed Advocacy', icon: Award },
+  { name: 'BMG', category: 'Corporate Partner', icon: Building2 },
 ];
 
 export default function PartnershipsSection() {
@@ -20,10 +20,10 @@ export default function PartnershipsSection() {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-slate-100 text-[#081B63] text-xs font-semibold uppercase tracking-wider mb-3">
-            Global Collaboration
+            Our Collaborations
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#081B63] tracking-tight">
-            Trusted by World-Class Organizations & Corporate Partners
+            Trusted Partners Working Hand-in-Hand
           </h2>
         </div>
 

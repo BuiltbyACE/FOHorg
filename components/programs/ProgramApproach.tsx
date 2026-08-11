@@ -7,7 +7,7 @@ import ApproachItem from './ApproachItem';
 
 export default function ProgramApproach() {
   return (
-    <section className="py-24 lg:py-32 bg-slate-50 relative overflow-hidden">
+    <section id="approach" className="py-24 lg:py-32 bg-slate-50 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">

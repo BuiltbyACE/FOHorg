@@ -5,12 +5,12 @@ import { motion, useInView } from 'framer-motion';
 import { Users, GraduationCap, HeartPulse, HeartHandshake, Globe, Award } from 'lucide-react';
 
 const stats = [
-  { icon: Users,          value: 12500, suffix: '+', label: 'Lives Impacted' },
-  { icon: GraduationCap, value: 45,    suffix: '+', label: 'Programs Running' },
-  { icon: HeartPulse,    value: 78,    suffix: '+', label: 'Communities Reached' },
-  { icon: HeartHandshake,value: 100,   suffix: '+', label: 'Volunteers Engaged' },
-  { icon: Globe,         value: 30,    suffix: '+', label: 'Partner Organizations' },
-  { icon: Award,         value: 15,    suffix: '+', label: 'Awards & Recognitions' },
+  { icon: Users,          value: 10500, suffix: '+', label: 'Children in Education' },
+  { icon: GraduationCap, value: 3500,  suffix: '+', label: 'Youth Trained' },
+  { icon: HeartPulse,    value: 1400,  suffix: '+', label: 'CHVs & CBDs Trained' },
+  { icon: HeartHandshake,value: 300000, suffix: '+', label: 'Reached via Radio' },
+  { icon: Globe,         value: 14000, suffix: '+', label: 'Peacebuilding Reached' },
+  { icon: Award,         value: 40,    suffix: '+', label: 'Faith Leaders Engaged' },
 ];
 
 function CountUpNumber({ target, suffix, active }: { target: number; suffix: string; active: boolean }) {

@@ -4,12 +4,12 @@ import { motion } from 'framer-motion';
 import { Users, HeartHandshake, MapPin, User, Handshake, Award } from 'lucide-react';
 
 const stats = [
-  { icon: Users, value: '12,500+', label: 'Lives Impacted' },
-  { icon: HeartHandshake, value: '45+', label: 'Programs Running' },
-  { icon: MapPin, value: '78+', label: 'Communities Reached' },
-  { icon: User, value: '100+', label: 'Volunteers Engaged' },
-  { icon: Handshake, value: '30+', label: 'Partner Organizations' },
-  { icon: Award, value: '15+', label: 'Awards & Recognitions' },
+  { icon: Users, value: '10,500+', label: 'Children in Education' },
+  { icon: HeartHandshake, value: '3,500+', label: 'Youth Trained' },
+  { icon: MapPin, value: '1,400+', label: 'CHVs & CBDs Trained' },
+  { icon: User, value: '300,000+', label: 'Reached via Radio' },
+  { icon: Handshake, value: '14,000+', label: 'Peacebuilding Reached' },
+  { icon: Award, value: '40+', label: 'Faith Leaders Engaged' },
 ];
 
 const containerVariants = {

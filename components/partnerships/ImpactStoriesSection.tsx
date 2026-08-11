@@ -7,25 +7,25 @@ import { ArrowRight } from 'lucide-react';
 
 const stories = [
   {
-    image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80',
+    image: '/images/foh6.jpeg',
     alt: 'Students in classroom',
     title: 'Education for All',
     desc: 'Thanks to our partners, we have built classrooms, provided learning materials, and supported thousands of children to stay in school.',
   },
   {
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&q=80',
+    image: '/images/foh7.jpeg',
     alt: 'Community healthcare workers',
     title: 'Healthier Communities',
     desc: 'Our health programs have reached remote communities through the support of our healthcare partners.',
   },
   {
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80',
+    image: '/images/foh8.jpeg',
     alt: 'Women in empowerment program',
     title: 'Empowering Women & Youth',
     desc: 'Together with our partners, we provide skills training, mentorship, and resources for a better future.',
   },
   {
-    image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&q=80',
+    image: '/images/foh10.jpeg',
     alt: 'Hands holding a plant',
     title: 'Sustainable Futures',
     desc: 'Our environmental initiatives promote conservation, climate action, and sustainable livelihoods.',

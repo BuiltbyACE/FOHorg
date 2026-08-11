@@ -28,7 +28,7 @@ export default function SponsorshipBanner() {
             <div className="lg:col-span-7 flex flex-col items-start">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-pink-200 text-xs font-semibold uppercase tracking-wider mb-6 border border-white/20">
                 <Sparkles size={15} />
-                <span>Direct 1-to-1 Child Sponsorship</span>
+                <span>Education Sponsorship in Garissa</span>
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-6">
@@ -36,7 +36,9 @@ export default function SponsorshipBanner() {
               </h2>
 
               <p className="text-slate-200 text-base sm:text-lg leading-relaxed mb-8 max-w-xl">
-                For just $35 a month, you provide a child with quality education, daily nutritious meals, healthcare checkups, and a safe learning environment.
+                For just $35 a month, you provide a Garissa child with school fees,
+                textbooks, healthcare checkups, and mentorship that keep them in
+                school and on the path to independence.
               </p>
 
               {/* Benefits Checklist */}
@@ -47,15 +49,15 @@ export default function SponsorshipBanner() {
                 </div>
                 <div className="flex items-center gap-3 text-sm text-slate-100 font-medium">
                   <CheckCircle2 size={18} className="text-pink-300 flex-shrink-0" />
-                  <span>Medical & Dental Care</span>
+                  <span>Healthcare Checkups & Nutrition</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm text-slate-100 font-medium">
                   <CheckCircle2 size={18} className="text-pink-300 flex-shrink-0" />
-                  <span>Nutritious Daily Meals</span>
+                  <span>Learning Materials & School Kits</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm text-slate-100 font-medium">
                   <CheckCircle2 size={18} className="text-pink-300 flex-shrink-0" />
-                  <span>Personal Letters & Progress Reports</span>
+                  <span>Mentorship & Progress Reports</span>
                 </div>
               </div>
 
@@ -67,18 +69,18 @@ export default function SponsorshipBanner() {
 
             {/* Right Rounded Image */}
             <div className="lg:col-span-5 relative">
-              <div className="relative mx-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 aspect-[4/4] sm:aspect-[4/3.8] group">
+              <div className="relative mx-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 aspect-[4/4] sm:aspect-[4/3.8]">
                 <Image
-                  src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1000&auto=format&fit=crop"
-                  alt="Happy smiling African child supported by Fountain of Hope"
+                  src="/images/foh16.jpeg"
+                  alt="Smiling child supported through Fountain of Hope education sponsorship"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#081B63]/80 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <div className="text-lg font-bold">1,200+ Children Awaiting Sponsors</div>
-                  <div className="text-xs text-pink-200">Start your sponsorship journey today</div>
+                  <div className="text-lg font-bold">10,500+ Children in Our Education Program</div>
+                  <div className="text-xs text-pink-200">Across Garissa County</div>
                 </div>
               </div>
             </div>

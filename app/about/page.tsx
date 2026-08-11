@@ -70,14 +70,17 @@ export default function AboutPage() {
               <p className="text-gray-500 text-lg leading-relaxed mb-4 max-w-xl">
                 At Foundation of Hope, we believe in the power of collective action. 
                 Since our inception, we have been dedicated to creating sustainable change 
-                in underserved communities through education, healthcare, and empowerment programs.
+                in Garissa County through maternal and newborn health advocacy, education, 
+                and empowerment programs.
               </p>
               <p className="text-gray-400 text-base leading-relaxed mb-8 max-w-xl">
-                Our approach combines local knowledge with global best practices, ensuring 
-                that every initiative we undertake creates lasting, meaningful impact.
+                Our approach combines local knowledge with strategic partnerships — from 
+                county leadership and faith networks to global partners like ICRHK, FP2020, 
+                and Jhpiego — ensuring that every initiative we undertake creates lasting, 
+                meaningful impact.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button href="/donate" size="lg">
+                <Button href="/donations" size="lg">
                   Donate Now
                   <Heart size={18} className="fill-white" />
                 </Button>
@@ -96,7 +99,7 @@ export default function AboutPage() {
               <div className="absolute -inset-4 bg-gradient-to-br from-primary/10 via-transparent to-navy/5 rounded-3xl blur-2xl" />
               <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-black/10">
                 <Image
-                  src="/images/First.png"
+                  src="/images/fohhero2.jpeg"
                   alt="Smiling child giving a thumbs-up"
                   width={600}
                   height={500}
@@ -134,19 +137,19 @@ export default function AboutPage() {
                 icon: Target,
                 title: 'Our Mission',
                 description:
-                  'To empower underserved communities through sustainable education, healthcare, and economic development programs that create lasting, positive change.',
+                  'To improve the livelihoods and well-being of vulnerable community members in Garissa County through strategic partnerships and the implementation of sustainable programs.',
               },
               {
                 icon: Eye,
                 title: 'Our Vision',
                 description:
-                  'A world where every individual has equal access to opportunities, resources, and the support needed to build a better future for themselves and their communities.',
+                  'A healthy, literate and wealthy Garissa community — where every mother survives childbirth, every child learns, and every family thrives with dignity.',
               },
               {
                 icon: Heart,
                 title: 'Our Values',
                 description:
-                  'Integrity, compassion, transparency, and collaboration are at the heart of everything we do. We believe in dignity for all and accountability to those we serve.',
+                  'Community ownership, integrity, compassion, transparency, and collaboration are at the heart of everything we do. We believe in dignity for all and accountability to those we serve.',
               },
             ].map((item, i) => (
               <motion.div
@@ -185,12 +188,12 @@ export default function AboutPage() {
             {...stagger}
           >
             {[
-              { icon: Users, number: '50,000+', label: 'Lives Impacted' },
-              { icon: GraduationCap, number: '12,000+', label: 'Children Educated' },
-              { icon: Building2, number: '150+', label: 'Communities Served' },
-              { icon: HandHeart, number: '2,000+', label: 'Active Volunteers' },
-              { icon: Award, number: '85+', label: 'Programs Launched' },
-              { icon: Globe, number: '20+', label: 'Partner Organizations' },
+              { icon: Users, number: '10,500+', label: 'Children in Education' },
+              { icon: GraduationCap, number: '3,500+', label: 'Youth Trained' },
+              { icon: Building2, number: '1,400+', label: 'CHVs & CBDs Trained' },
+              { icon: HandHeart, number: '300,000+', label: 'Reached via Radio' },
+              { icon: Award, number: '14,000+', label: 'Peacebuilding Sensitized' },
+              { icon: Globe, number: '40+', label: 'Faith Leaders Engaged' },
             ].map((stat, i) => (
               <motion.div
                 key={stat.label}
@@ -223,7 +226,7 @@ export default function AboutPage() {
               <div className="absolute -inset-4 bg-gradient-to-tr from-primary/10 via-transparent to-navy/5 rounded-3xl blur-2xl" />
               <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-black/10">
                 <Image
-                  src="/images/Second.png"
+                  src="/images/foh11.jpeg"
                   alt="Four volunteers standing together"
                   width={600}
                   height={500}
@@ -247,19 +250,23 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-gray-500 leading-relaxed">
                 <p>
-                  Foundation of Hope was born from a simple yet powerful idea: that every person 
-                  deserves the opportunity to thrive. What started as a small community initiative 
-                  has grown into a global movement of compassion and change.
+                  Foundation of Hope works to improve the health, education, and livelihoods 
+                  of vulnerable community members in Garissa County — one of Kenya&apos;s most 
+                  marginalized regions. What started as a community initiative has grown into 
+                  a recognized force for maternal and newborn health advocacy.
                 </p>
                 <p>
-                  Over the years, we have evolved from providing immediate relief to implementing 
-                  sustainable, long-term solutions. Our programs now span across education, 
-                  healthcare, community development, and emergency response.
+                  Through the FP2020 project we championed post-partum family planning, 
+                  and with Jhpiego we drove gender-lensed advocacy against maternal deaths. 
+                  In 2025, the Okoa Mama na Mtoto Initiative (OMMI) — our partnership with 
+                  ICRHK — put maternal and newborn health on the county agenda.
                 </p>
                 <p>
-                  Today, we work with over 20 partner organizations and thousands of dedicated 
-                  volunteers, reaching more than 50,000 individuals across multiple communities. 
-                  Every step of our journey has been guided by the communities we serve.
+                  Today, we work with the County Government of Garissa, 40+ women religious 
+                  leaders, 15 youth champions, and community radio reaching 300,000+ listeners. 
+                  From education for 10,500 children to livelihoods for refugees and host 
+                  communities, every step of our journey has been guided by the communities 
+                  we serve.
                 </p>
               </div>
             </motion.div>
@@ -291,31 +298,31 @@ export default function AboutPage() {
                 icon: BookOpen,
                 title: 'Education',
                 description:
-                  'Providing quality education and learning resources to children and youth in underserved communities.',
+                  'Keeping 10,500 boys and girls in school with scholarships, learning materials, and teacher support across Garissa.',
               },
               {
                 icon: Stethoscope,
-                title: 'Healthcare',
+                title: 'Maternal & Newborn Health',
                 description:
-                  'Ensuring access to essential healthcare services and health awareness programs.',
+                  'Championing safe motherhood and child spacing through radio advocacy, faith leaders, and health system strengthening.',
               },
               {
                 icon: Home,
-                title: 'Community Dev.',
+                title: 'Economic Empowerment',
                 description:
-                  'Building resilient communities through infrastructure, clean water, and sanitation projects.',
+                  'Building sustainable livelihoods for 10,500 refugees and host community residents across the county.',
               },
               {
                 icon: Trees,
-                title: 'Environment',
+                title: 'Climate & Environment',
                 description:
-                  'Promoting environmental sustainability through conservation and reforestation initiatives.',
+                  'Building the capacity of 10,500 residents to adapt to climate change through WASH and conservation.',
               },
               {
                 icon: Shield,
-                title: 'Emergency Relief',
+                title: 'Peacebuilding & Resilience',
                 description:
-                  'Providing swift humanitarian aid and support during natural disasters and crises.',
+                  'Sensitizing 14,000 women and men against violent extremism and strengthening community response.',
               },
             ].map((item, i) => (
               <motion.div
@@ -353,15 +360,17 @@ export default function AboutPage() {
                 <span className="text-primary">Life Matters</span>
               </h2>
               <p className="text-gray-500 leading-relaxed mb-4">
-                In a world of plenty, millions still lack access to basic necessities. We believe 
-                that change is possible when we come together with purpose and determination.
+                In Garissa County, the maternal mortality ratio stands at 646 per 100,000 live 
+                births — nearly double the national average — and only 7.1% of married women use 
+                modern contraception. We believe change is possible when we come together with 
+                purpose and determination.
               </p>
               <p className="text-gray-500 leading-relaxed mb-6">
-                Your support doesn&apos;t just provide aid — it restores hope, creates opportunities, 
+                Your support doesn&apos;t just provide aid — it saves mothers, keeps children in school, 
                 and builds a foundation for a better tomorrow. Every contribution, no matter how 
                 small, has the power to transform lives.
               </p>
-              <Button href="/donate" size="lg">
+              <Button href="/donations" size="lg">
                 Join Our Mission
                 <ArrowRight size={18} />
               </Button>
@@ -434,7 +443,7 @@ export default function AboutPage() {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link
-                  href="/donate"
+                  href="/donations"
                   className="inline-flex items-center gap-2 h-[52px] px-8 rounded-full bg-white text-primary font-bold text-base uppercase tracking-[0.03em] shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
                 >
                   Donate Today

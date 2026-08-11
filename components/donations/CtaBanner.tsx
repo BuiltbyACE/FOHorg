@@ -41,7 +41,7 @@ export default function CtaBanner() {
             transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           >
             <a
-              href="/donate"
+              href="/donations"
               className="inline-flex items-center justify-center gap-2 h-[52px] px-8 rounded-[6px] bg-white text-[#E91E63] font-bold text-sm uppercase tracking-[0.07em] shadow-lg hover:-translate-y-0.5 hover:shadow-xl transition-all duration-300"
             >
               Donate Now

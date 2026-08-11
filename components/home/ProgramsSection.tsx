@@ -3,58 +3,63 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { BookOpen, Droplets, HeartPulse, Sparkles, UserCheck, ArrowUpRight } from 'lucide-react';
+import { BookOpen, HeartPulse, Sparkles, UserCheck, TreePine, ArrowUpRight } from 'lucide-react';
 
 const programs = [
   {
     id: 'education',
+    detailsId: 'education',
     title: 'Quality Education & Literacy',
     category: 'Education Access',
-    description: 'Providing scholarships, building modern school infrastructure, and supplying learning materials to rural communities.',
+    description: 'Keeping boys and girls in school with scholarships and learning materials to boost literacy and numeracy across Garissa.',
     icon: BookOpen,
-    image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop',
-    stat: '15,000+ Students Enrolled',
+    image: '/images/foh8.jpeg',
+    stat: '10,500+ Children Enrolled',
     color: 'from-pink-500 to-rose-600',
   },
   {
-    id: 'clean-water',
-    title: 'Clean Water & Sanitation',
-    category: 'Essential Resources',
-    description: 'Installing solar-powered water boreholes and filtration systems to ensure clean, safe drinking water for thousands.',
-    icon: Droplets,
-    image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?q=80&w=800&auto=format&fit=crop',
-    stat: '85+ Water Boreholes Constructed',
-    color: 'from-sky-500 to-blue-600',
-  },
-  {
     id: 'healthcare',
-    title: 'Community Healthcare & Nutrition',
-    category: 'Medical Services',
-    description: 'Operating mobile health clinics, providing maternal care, essential medicine, and emergency nutrition aid.',
+    detailsId: 'healthcare',
+    title: 'Maternal & Newborn Health',
+    category: 'OMMI Initiative',
+    description: 'Advocating safe motherhood and newborn care through radio campaigns, faith leaders and health system strengthening.',
     icon: HeartPulse,
-    image: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=800&auto=format&fit=crop',
-    stat: '32,000+ Patients Treated',
+    image: '/images/foh11.jpeg',
+    stat: '300,000+ Reached via Radio',
     color: 'from-[#E91E63] to-pink-600',
   },
   {
-    id: 'women-empowerment',
-    title: 'Women Empowerment & Micro-Grants',
-    category: 'Economic Growth',
-    description: 'Empowering women entrepreneurs through financial literacy, vocational training, and seed funding for small businesses.',
+    id: 'family-health',
+    detailsId: 'women-empowerment',
+    title: 'Family Planning & Safe Motherhood',
+    category: 'Women & Families',
+    description: 'Promoting child spacing and reproductive health among married women through faith-based dialogues and male involvement.',
     icon: Sparkles,
-    image: 'https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?q=80&w=800&auto=format&fit=crop',
-    stat: '4,500+ Women Entrepreneurs Funded',
+    image: '/images/foh12.jpeg',
+    stat: '40+ Faith Leaders Engaged',
     color: 'from-purple-500 to-indigo-600',
   },
   {
     id: 'youth-development',
-    title: 'Youth Leadership & Vocational Skills',
+    detailsId: 'youth-development',
+    title: 'Youth Leadership & Vocational Training',
     category: 'Future Leaders',
-    description: 'Mentoring young men and women in digital technology, trade crafts, and leadership to foster economic independence.',
+    description: 'Training young people in trade crafts and leadership so they can earn, lead and build economic independence.',
     icon: UserCheck,
-    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=800&auto=format&fit=crop',
-    stat: '6,200+ Youth Graduates',
+    image: '/images/foh13.jpeg',
+    stat: '3,500+ Youth Trained',
     color: 'from-emerald-500 to-teal-600',
+  },
+  {
+    id: 'peacebuilding',
+    detailsId: 'social-support',
+    title: 'Peacebuilding & Community Resilience',
+    category: 'Resilient Communities',
+    description: 'Sensitizing women and men against violent extremism while strengthening community health structures and emergency response.',
+    icon: TreePine,
+    image: '/images/foh10.jpeg',
+    stat: '14,000+ Sensitized',
+    color: 'from-sky-500 to-blue-600',
   },
 ];
 
@@ -76,7 +81,9 @@ export default function ProgramsSection() {
             Targeted Programs Creating Lasting Transformation
           </h2>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-            We focus on holistic development pillars that enable entire communities to break cycles of poverty and thrive independently.
+            We focus on holistic development pillars — health, education, skills
+            and resilience — that enable entire Garissa communities to break
+            cycles of poverty and thrive independently.
           </p>
         </div>
 
@@ -104,7 +111,7 @@ export default function ProgramsSection() {
                     alt={program.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
                   
@@ -137,12 +144,15 @@ export default function ProgramsSection() {
                   </div>
 
                   {/* Action Link */}
-                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-[#081B63] group-hover:text-[#E91E63] transition-colors">
+                  <Link
+                    href={`/programs#${program.detailsId}`}
+                    className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-[#081B63] group-hover:text-[#E91E63] transition-colors"
+                  >
                     <span>Learn More & Support</span>
                     <div className="w-8 h-8 rounded-full bg-slate-100 group-hover:bg-pink-50 flex items-center justify-center transition-colors">
                       <ArrowUpRight size={16} className="transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </div>
-                  </div>
+                  </Link>
                 </div>
               </motion.div>
             );

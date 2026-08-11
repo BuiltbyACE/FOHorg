@@ -29,7 +29,7 @@ export default function SponsorshipHero() {
           >
             <div className="relative rounded-2xl overflow-hidden h-[300px] sm:h-[380px] lg:h-[420px] shadow-xl">
               <Image
-                src="https://images.unsplash.com/photo-1599058918144-1ffabb6abce0?w=900&q=80"
+                src="/images/foh13.jpeg"
                 alt="Smiling children giving thumbs up"
                 fill
                 className="object-cover object-center"

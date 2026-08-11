@@ -43,7 +43,7 @@ export default function ProgramsOverview() {
             Programs Overview
           </h2>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-            Our programs span multiple sectors, reaching thousands of beneficiaries across Africa through strategic partnerships and community-led initiatives.
+            Our programs span multiple sectors, reaching thousands of beneficiaries across Garissa County through strategic partnerships and community-led initiatives.
           </p>
         </div>
 

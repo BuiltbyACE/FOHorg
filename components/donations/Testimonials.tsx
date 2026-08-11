@@ -6,31 +6,31 @@ import { Heart, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: 'Thanks to the scholarship program, I can now attend school and dream beyond my village. Thank you!',
-    name: 'Brian',
-    age: 16,
-    location: 'Nairobi, Kenya',
+    quote: 'The community radio talk show changed how our families think about safe motherhood. Mothers in our village now go for antenatal checkups.',
+    name: 'Hawa',
+    age: 32,
+    location: 'Balambala, Kenya',
     color: '#E91E63',
   },
   {
-    quote: 'The medical camp in our area saved my mother\'s life. We are forever grateful for your compassion.',
+    quote: 'Thanks to the faith leaders who spoke with us, my husband and I now practice child spacing and our family is healthier.',
     name: 'Amina',
     age: 28,
-    location: 'Mombasa, Kenya',
+    location: 'Dadaab, Kenya',
     color: '#081B63',
   },
   {
-    quote: 'The skills training program gave me the confidence to start my business and support my entire family.',
+    quote: 'The vocational training gave me the confidence to start my own business and support my entire family.',
     name: 'Grace',
     age: 24,
-    location: 'Kisumu, Kenya',
+    location: 'Ijara, Kenya',
     color: '#E91E63',
   },
   {
-    quote: 'Because of people like you, our community now has clean water and better sanitation for everyone.',
-    name: 'John',
+    quote: 'Because of your support, our school supplies reached hundreds of children who would have dropped out.',
+    name: 'Mohammed',
     age: 35,
-    location: 'Eldoret, Kenya',
+    location: 'Fafi, Kenya',
     color: '#081B63',
   },
 ];

@@ -71,7 +71,7 @@ export default function PartnershipsHero() {
         >
           <div className="relative rounded-2xl overflow-hidden h-[300px] sm:h-[380px] lg:h-[420px]">
             <Image
-              src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=900&q=80"
+              src="/images/foh2.jpeg"
               alt="Diverse hands stacked together in partnership"
               fill
               className="object-cover object-center"

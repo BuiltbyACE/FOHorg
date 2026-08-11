@@ -6,10 +6,10 @@ import { Heart, ShieldCheck, CheckCircle, Sparkles } from 'lucide-react';
 import Button from '@/components/common/Button';
 
 const donationTiers = [
-  { amount: 25, impact: 'Provides school supplies & textbooks for 2 children for a full term.' },
-  { amount: 50, impact: 'Supplies clean drinking water & hygiene kits for a family of 5.' },
-  { amount: 100, impact: 'Funds 1 month of mobile medical clinic services & emergency medicine.' },
-  { amount: 250, impact: 'Sponsors micro-grant seed capital for a female entrepreneur.' },
+  { amount: 25, impact: 'Keeps a Garissa child in school for a full term with fees & learning materials.' },
+  { amount: 50, impact: 'Powers a community radio health message reaching thousands of families.' },
+  { amount: 100, impact: 'Funds antenatal care supplies for expectant mothers in rural sub-counties.' },
+  { amount: 250, impact: 'Trains a community health volunteer (CHV) in maternal & newborn care.' },
 ];
 
 export default function DonationCTASection() {
@@ -18,7 +18,7 @@ export default function DonationCTASection() {
   const [customAmount, setCustomAmount] = useState<string>('');
 
   const currentImpact = donationTiers.find((t) => t.amount === selectedAmount)?.impact || 
-    'Provides direct emergency aid, food security, and education access to vulnerable families.';
+    'Provides direct support for maternal & newborn health, education, and livelihoods in Garissa County.';
 
   return (
     <section className="py-24 lg:py-32 bg-gradient-to-b from-slate-900 via-[#081B63] to-slate-950 text-white relative overflow-hidden">
@@ -40,7 +40,9 @@ export default function DonationCTASection() {
           </h2>
 
           <p className="text-slate-300 text-lg sm:text-xl font-normal leading-relaxed mb-12 max-w-2xl mx-auto">
-            Every contribution directly funds essential health, education, and clean water programs across Africa. Join thousands of compassionate donors.
+            Every contribution directly funds maternal &amp; newborn health, education,
+            and livelihood programs across Garissa County. Join thousands of
+            compassionate donors.
           </p>
 
           {/* Donation Box Card */}

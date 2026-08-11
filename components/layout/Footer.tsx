@@ -10,7 +10,6 @@ import {
   Mail,
   GraduationCap,
   HeartPulse,
-  Droplets,
   Users,
   Send,
   CheckCircle,
@@ -25,16 +24,16 @@ const quickLinks = [
   { label: 'About Us', href: '/about' },
   { label: 'Programs', href: '/programs' },
   { label: 'Gallery', href: '/gallery' },
-  { label: 'Events', href: '/events' },
+  { label: 'Achievements', href: '/achievements' },
   { label: 'Contact Us', href: '/contact' },
 ];
 
 const programLinks = [
   { label: 'Education & Scholarships', href: '/programs', icon: GraduationCap },
-  { label: 'Healthcare Access', href: '/programs', icon: HeartPulse },
-  { label: 'Clean Water Initiative', href: '/programs', icon: Droplets },
-  { label: 'Women & Youth Empowerment', href: '/programs', icon: Users },
-  { label: 'Emergency Relief', href: '/programs', icon: CheckCircle },
+  { label: 'Maternal & Newborn Health', href: '/programs', icon: HeartPulse },
+  { label: 'Family Planning & Safe Motherhood', href: '/programs', icon: Users },
+  { label: 'Youth & Vocational Training', href: '/programs', icon: Users },
+  { label: 'Peacebuilding & Resilience', href: '/programs', icon: CheckCircle },
 ];
 
 const contactDetails = [
@@ -52,7 +51,7 @@ const contactDetails = [
   },
   {
     label: 'Location',
-    value: ['Kilimani, Chania Avenue,', 'Kidgrove Court,', 'Nairobi, Kenya'],
+    value: ['Garissa County,', 'North Eastern Region,', 'Kenya'],
     icon: MapPin,
     href: null,
   },
@@ -106,7 +105,7 @@ export default function Footer() {
           <motion.div variants={itemVariants} className="sm:col-span-2 lg:col-span-3">
             <Logo height={48} width={155} priority={false} />
           <p className="mt-5 text-slate-300 text-sm leading-relaxed max-w-xs">
-              Fountain of Hope is a global organization dedicated to empowering vulnerable communities through education, clean water, healthcare, and sustainable growth.
+              Fountain of Hope is a non-profit organization dedicated to empowering vulnerable families in Garissa County through maternal &amp; newborn health, education, and sustainable livelihoods.
             </p>
             <SocialLinks variant="dark" className="mt-6" />
           </motion.div>
@@ -228,11 +227,13 @@ export default function Footer() {
                     placeholder="Enter your email"
                     className="w-full h-11 pl-10 pr-4 rounded-full bg-white/[0.06] border border-white/[0.1] text-white text-sm placeholder-slate-400 focus:outline-none focus:border-[#E91E63]/60 focus:bg-white/[0.08] transition-all duration-300"
                     aria-label="Email for newsletter"
+                    suppressHydrationWarning
                   />
                 </div>
                 <button
                   type="submit"
-                  className="h-11 px-6 rounded-full bg-gradient-to-r from-[#E91E63] to-[#D81B60] text-white text-xs font-bold uppercase tracking-wider hover:shadow-lg hover:shadow-pink-500/25 transition-all duration-300 flex items-center justify-center gap-2 flex-shrink-0 cursor-pointer">
+                  className="h-11 px-6 rounded-full bg-gradient-to-r from-[#E91E63] to-[#D81B60] text-white text-xs font-bold uppercase tracking-wider hover:shadow-lg hover:shadow-pink-500/25 transition-all duration-300 flex items-center justify-center gap-2 flex-shrink-0 cursor-pointer"
+                  suppressHydrationWarning>
                   <Send size={14} />
                   Subscribe
                 </button>

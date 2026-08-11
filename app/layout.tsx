@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import ScrollToTop from "@/components/layout/ScrollToTop";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -17,9 +18,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Fountain of Hope Foundation | Empowering Communities, Transforming Lives",
-  description: "Fountain of Hope is a global non-profit organization dedicated to empowering African communities through education, clean water, healthcare, women empowerment, and youth development.",
-  keywords: ["Fountain of Hope", "Nonprofit", "NGO", "Charity", "Community Empowerment", "Clean Water", "Education", "Africa"],
+  title: "Fountain of Hope Foundation | Empowering Garissa Communities",
+  description: "Fountain of Hope is a non-profit organization dedicated to improving the health, education, and livelihoods of vulnerable families in Garissa County, Kenya — through maternal & newborn health, education, and sustainable programs.",
+  keywords: ["Fountain of Hope", "Nonprofit", "NGO", "Charity", "Garissa", "Kenya", "Maternal Health", "Education", "Community Empowerment"],
 };
 
 export default function RootLayout({
@@ -35,6 +36,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col font-sans bg-slate-50 text-slate-900 selection:bg-pink-500 selection:text-white">
+        <ScrollToTop />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

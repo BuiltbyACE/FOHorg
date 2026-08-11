@@ -3,135 +3,181 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { Heart, ArrowRight } from 'lucide-react';
+import DonationWidget from './DonationWidget';
+import ImpactBar from './ImpactBar';
 
 const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 28 },
+  initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.75, delay, ease: [0.16, 1, 0.3, 1] as const },
+  transition: { duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] as const },
 });
 
 export default function HeroSection() {
   return (
     <section
       aria-label="Hero"
-      className="relative min-h-screen flex items-stretch overflow-hidden bg-white pt-[84px]"
+      className="relative w-full flex flex-col justify-between overflow-hidden bg-white pt-[84px] min-h-[720px] lg:min-h-[860px]"
     >
-      {/* ── Subtle radial background glows ── */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            'radial-gradient(ellipse 60% 55% at 0% 0%, rgba(248,250,252,0.95) 0%, transparent 70%), radial-gradient(ellipse 45% 45% at 100% 0%, rgba(233,30,99,0.06) 0%, transparent 65%)',
-        }}
-      />
-
       {/*
-       * Two-column wrapper:
-       * Left  → 42% content
-       * Right → 58% image (bleeds to viewport edge)
-       */}
-      <div className="relative z-10 w-full flex flex-col lg:flex-row">
+        DESKTOP BACKGROUND PHOTOGRAPH (lg+ screens)
+        Full-bleed with object-position tuned so BOTH child (center-left)
+        and mother (right) are clearly visible together.
+      */}
+      <div className="hidden lg:block absolute inset-0 z-0 pointer-events-none">
+        <Image
+          src="/images/heropagerefinnment.png"
+          alt="Foundation of Hope — mother and child together"
+          fill
+          priority
+          unoptimized
+          sizes="100vw"
+          className="object-cover"
+          style={{
+            objectPosition: '22% 35%',
+          }}
+        />
 
-        {/* ──────────────────────────────────────────
-            LEFT  –  Content Column
-        ────────────────────────────────────────── */}
-        <div className="flex items-center w-full lg:w-[42%] px-6 sm:px-10 lg:pl-16 xl:pl-24 2xl:pl-32 py-28 lg:py-0 lg:pr-10">
-          <div className="max-w-[560px] w-full">
+        {/*
+          DESKTOP LEFT-TO-RIGHT WHITE GRADIENT OVERLAY
+          Provides solid white for left text column (0-22%),
+          then rapidly dissolves to 0% by 44% so child & mother are 100% clear.
+        */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(90deg, ' +
+              'rgba(255,255,255,1.00) 0%, ' +
+              'rgba(255,255,255,1.00) 22%, ' +
+              'rgba(255,255,255,0.85) 28%, ' +
+              'rgba(255,255,255,0.40) 34%, ' +
+              'rgba(255,255,255,0.05) 40%, ' +
+              'rgba(255,255,255,0.00) 44%)',
+          }}
+        />
+      </div>
 
-            {/* Stacked editorial headline */}
-            <motion.h1
-              {...fadeUp(0.1)}
-              className="font-extrabold leading-[1.0] tracking-[-0.03em] mb-7"
-              style={{ fontSize: 'clamp(2.8rem, 6vw, 5rem)' }}
+      {/* 
+        MAIN CONTENT & LAYOUT CONTAINER
+      */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 lg:pt-10 pb-8 flex-grow flex flex-col justify-center">
+        <div className="max-w-[560px]">
+          
+          {/* Eyebrow Pill */}
+          <motion.div {...fadeUp(0.05)} className="mb-4">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFF3F8] border border-pink-100/80 text-[#E91E63] font-bold text-xs sm:text-sm tracking-wide uppercase">
+              <Heart className="w-3.5 h-3.5 fill-[#E91E63]" />
+              Together for a Brighter Tomorrow
+            </span>
+          </motion.div>
+
+          {/* Headline */}
+          <motion.h1
+            {...fadeUp(0.15)}
+            className="font-extrabold text-[#081B63] tracking-tight leading-[1.06] text-4xl sm:text-5xl lg:text-6xl xl:text-[64px] mb-5"
+          >
+            Building <span className="text-[#E91E63]">Hope,</span> <br />
+            Transforming <span className="text-[#E91E63]">Lives</span>
+          </motion.h1>
+
+          {/* Mission Description */}
+          <motion.p
+            {...fadeUp(0.25)}
+            className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-[520px] mb-6 font-normal"
+          >
+            Together, we empower communities, support vulnerable families, and create lasting opportunities through education, healthcare, clean water, and sustainable development.
+          </motion.p>
+
+          {/* Action CTAs */}
+          <motion.div
+            {...fadeUp(0.35)}
+            className="flex flex-wrap items-center gap-3.5 mb-6"
+          >
+            <Link
+              href="/donations"
+              className="h-13 sm:h-14 px-7 sm:px-8 rounded-full bg-[#E91E63] hover:bg-[#C2185B] text-white font-extrabold text-xs sm:text-sm tracking-wider uppercase shadow-lg shadow-[#E91E63]/30 hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2.5"
             >
-              <span className="block text-[#081B63]">Building</span>
-              <span className="block text-[#E91E63]">Hope,</span>
-              <span className="block text-[#081B63]">Transforming</span>
-              <span className="block text-[#081B63]">Lives</span>
-            </motion.h1>
+              <Heart className="w-4 h-4 fill-white" />
+              DONATE NOW
+            </Link>
 
-            {/* Body paragraph */}
-            <motion.p
-              {...fadeUp(0.2)}
-              className="text-slate-500 leading-[1.8] mb-10"
-              style={{ fontSize: 'clamp(1rem, 1.5vw, 1.125rem)', maxWidth: '480px' }}
+            <Link
+              href="/programs"
+              className="h-13 sm:h-14 px-7 sm:px-8 rounded-full bg-white border-2 border-[#081B63] text-[#081B63] hover:bg-[#081B63] hover:text-white font-extrabold text-xs sm:text-sm tracking-wider uppercase hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2 group"
             >
-              Together, we empower communities, support vulnerable families, and
-              create lasting opportunities through education, healthcare, clean
-              water, and sustainable development.
-            </motion.p>
+              <span>DISCOVER OUR WORK</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </motion.div>
 
-            {/* CTA Buttons */}
-            <motion.div
-              {...fadeUp(0.3)}
-              className="flex flex-wrap items-center gap-4"
-            >
-              {/* Primary — Donate */}
-              <Link
-                href="/donations"
-                className="inline-flex items-center gap-2.5 rounded-full bg-[#E91E63] hover:bg-[#C2185B] text-white font-bold text-sm uppercase tracking-[0.07em] shadow-lg shadow-[#E91E63]/30 hover:shadow-xl hover:shadow-[#E91E63]/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 select-none"
-                style={{ height: '54px', paddingLeft: '2rem', paddingRight: '2rem' }}
-              >
-                <svg
-                  width="17" height="17" viewBox="0 0 24 24"
-                  fill="currentColor" aria-hidden="true"
-                >
-                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                </svg>
-                Donate Now
-              </Link>
+          {/*
+            MOBILE & TABLET FEATURED PHOTOGRAPH CONTAINER (< lg screens)
+            Guarantees that on mobile screens, BOTH mother AND child are 100% visible
+            together in full 3:2 landscape ratio with zero face or body cropping!
+          */}
+          <motion.div
+            {...fadeUp(0.4)}
+            className="block lg:hidden my-6 w-full relative aspect-[3/2] rounded-3xl overflow-hidden shadow-2xl border border-pink-100/80"
+          >
+            <Image
+              src="/images/heropagerefinnment.png"
+              alt="Foundation of Hope — mother and child together"
+              fill
+              priority
+              unoptimized
+              className="object-cover object-center"
+            />
+          </motion.div>
 
-              {/* Secondary — Learn More */}
-              <Link
-                href="/about"
-                className="inline-flex items-center gap-2.5 rounded-full bg-white border-2 border-[#081B63] text-[#081B63] hover:bg-[#081B63] hover:text-white font-bold text-sm uppercase tracking-[0.07em] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 select-none"
-                style={{ height: '54px', paddingLeft: '2rem', paddingRight: '2rem' }}
-              >
-                Learn More
-                <svg
-                  width="16" height="16" viewBox="0 0 24 24"
-                  fill="none" stroke="currentColor" strokeWidth="2.5"
-                  strokeLinecap="round" strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M5 12h14" />
-                  <path d="m12 5 7 7-7 7" />
-                </svg>
-              </Link>
-            </motion.div>
+          {/* Overlapping Horizontal Donation Panel */}
+          <motion.div {...fadeUp(0.45)} className="w-full max-w-[560px]">
+            <DonationWidget />
+          </motion.div>
 
-            {/* Subtle trust line */}
-            <motion.p
-              {...fadeUp(0.4)}
-              className="mt-8 text-slate-400 text-xs tracking-wide"
-            >
-              Trusted by 50,000+ families across Kenya, Uganda, Ghana &amp; Rwanda.
-            </motion.p>
+        </div>
+      </div>
 
-          </div>
+      {/* 
+        LAYER 5: DECORATIVE BOTTOM SHAPES & IMPACT BAR
+        Stats bar raised ~48px higher as requested ("40-60px higher than current")
+      */}
+      <div className="relative z-10 w-full -mt-6 sm:-mt-10 lg:-mt-14 pb-6">
+        
+        {/* Decorative Wave Shapes Behind Impact Bar */}
+        <div aria-hidden="true" className="absolute inset-x-0 bottom-0 pointer-events-none h-32 overflow-hidden z-0">
+          {/* Left Pink Curved Wave Shape */}
+          <svg
+            className="absolute left-0 bottom-0 h-full w-[45%] text-[#E91E63]/80 opacity-90"
+            viewBox="0 0 500 150"
+            preserveAspectRatio="none"
+          >
+            <path
+              fill="currentColor"
+              d="M0,150 L0,80 Q250,140 500,60 L500,150 Z"
+            />
+          </svg>
+          {/* Right Navy Curved Wave Shape */}
+          <svg
+            className="absolute right-0 bottom-0 h-full w-[55%] text-[#0A1E5E]"
+            viewBox="0 0 600 150"
+            preserveAspectRatio="none"
+          >
+            <path
+              fill="currentColor"
+              d="M0,150 L0,50 Q300,130 600,40 L600,150 Z"
+            />
+          </svg>
         </div>
 
-        {/* ──────────────────────────────────────────
-            RIGHT  –  Full-bleed Image Column
-        ────────────────────────────────────────── */}
+        {/* Floating Impact Bar */}
         <motion.div
-          className="relative w-full lg:w-[58%] min-h-[420px] lg:min-h-0"
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          {...fadeUp(0.55)}
+          className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
         >
-          <Image
-            src="/images/hero%20page.png"
-            alt="Hands holding a Fountain of Hope pink heart logo"
-            fill
-            unoptimized
-            sizes="(max-width: 1024px) 100vw, 58vw"
-            className="object-contain object-center"
-            priority
-          />
+          <ImpactBar />
         </motion.div>
-
       </div>
     </section>
   );

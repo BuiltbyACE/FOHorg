@@ -69,7 +69,7 @@ export default function QuickInfoStrip() {
               index={2}
               icon={<MapPin size={18} />}
               label="Visit Us"
-              details={['Kilimani, Chania Avenue,', 'Kidgrove Court,', 'Nairobi, Kenya']}
+              details={['Garissa County,', 'North Eastern Region,', 'Kenya']}
               iconBg="primary"
             />
             <InfoItem

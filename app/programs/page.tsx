@@ -1,6 +1,7 @@
 import ProgramsHero from '@/components/programs/ProgramsHero';
 import ProgramsOverview from '@/components/programs/ProgramsOverview';
 import ProgramsGrid from '@/components/programs/ProgramsGrid';
+import ProgramDetails from '@/components/programs/ProgramDetails';
 import ImpactBanner from '@/components/programs/ImpactBanner';
 import ProgramApproach from '@/components/programs/ProgramApproach';
 import FeaturedStory from '@/components/programs/FeaturedStory';
@@ -13,6 +14,7 @@ export default function ProgramsPage() {
       <ProgramsHero />
       <ProgramsOverview />
       <ProgramsGrid />
+      <ProgramDetails />
       <ImpactBanner />
       <ProgramApproach />
       <FeaturedStory />

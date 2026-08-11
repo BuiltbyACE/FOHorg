@@ -85,7 +85,7 @@ export default function HeroSection() {
           >
             <div className="relative rounded-3xl overflow-hidden aspect-[4/5] lg:aspect-[5/6]">
               <Image
-                src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=900&q=80"
+                src="/images/foh3.jpeg"
                 alt="Our team connecting with communities"
                 fill
                 className="object-cover"

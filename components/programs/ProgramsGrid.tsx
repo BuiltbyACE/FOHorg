@@ -5,7 +5,7 @@ import ProgramCard from './ProgramCard';
 
 export default function ProgramsGrid() {
   return (
-    <section className="py-24 lg:py-32 bg-white relative overflow-hidden">
+    <section id="programs" className="py-24 lg:py-32 bg-white relative overflow-hidden scroll-mt-28">
       <div className="absolute top-0 left-0 w-96 h-96 bg-pink-100/30 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl pointer-events-none" />
 

@@ -28,7 +28,7 @@ export default function ProgramsCTA() {
           </h2>
 
           <p className="text-slate-300 text-lg sm:text-xl font-normal leading-relaxed mb-10 max-w-2xl mx-auto">
-            Every contribution — whether your time, resources, or voice — helps us build stronger, healthier, and more hopeful communities across Africa.
+            Every contribution — whether your time, resources, or voice — helps us build stronger, healthier, and more hopeful communities across Garissa County.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-5">

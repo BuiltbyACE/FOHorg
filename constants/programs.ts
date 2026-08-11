@@ -19,6 +19,7 @@ export interface Program {
   slug: string;
   description: string;
   features: string[];
+  impact: string[];
   icon: LucideIcon;
   image: string;
   color: string;
@@ -65,127 +66,163 @@ export const programs: Program[] = [
     title: 'Education For All',
     slug: 'education-for-all',
     description:
-      'Providing equitable access to quality education through scholarships, school infrastructure development, teacher training, and learning materials for underserved communities.',
+      'Keeping 10,500 boys and girls in school through scholarships, learning materials, and teacher capacity building so every child in Garissa attains quality basic education.',
     features: [
       'Scholarship programs for vulnerable children',
-      'School construction & classroom renovation',
+      'School supplies & learning materials',
       'Teacher training & capacity building',
-      'Learning material distribution',
-      'Digital literacy initiatives',
+      'Literacy & numeracy support',
+      'Keeping girls in school',
+    ],
+    impact: [
+      '10,500+ boys and girls kept in school',
+      'Scholarships for vulnerable children',
+      'Teacher training to lift quality',
+      "Girls' education prioritized",
     ],
     icon: BookOpen,
     image:
-      'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800&auto=format&fit=crop',
+      '/images/foh2.jpeg',
     color: 'from-pink-500 to-rose-600',
   },
   {
     id: 'healthcare',
-    title: 'Healthcare & Wellness',
-    slug: 'healthcare-wellness',
+    title: 'Maternal, Newborn & Child Health',
+    slug: 'maternal-newborn-child-health',
     description:
-      'Delivering essential healthcare services through mobile clinics, maternal care programs, nutrition support, and health education in remote communities.',
+      'Through the Okoa Mama na Mtoto Initiative (OMMI), we advocate for safe motherhood and newborn care — engaging faith leaders, youth champions, and community radio to save mothers and babies.',
     features: [
-      'Mobile medical clinic outreach',
-      'Maternal & child health programs',
-      'Nutrition & food security support',
-      'Disease prevention & awareness',
-      'Mental health counseling services',
+      'Okoa Mama na Mtoto (OMMI) advocacy',
+      'Radio campaigns reaching 300,000+',
+      'Women religious leader engagement',
+      'Youth champion mobilization',
+      'County health system strengthening',
+    ],
+    impact: [
+      '300,000+ reached via community radio',
+      '40 women religious leaders engaged',
+      '15 youth champions trained',
+      'County health systems strengthened',
     ],
     icon: HeartPulse,
     image:
-      'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop',
+      '/images/foh3.jpeg',
     color: 'from-[#E91E63] to-pink-600',
   },
   {
     id: 'women-empowerment',
-    title: 'Women Empowerment',
-    slug: 'women-empowerment',
+    title: 'Family Planning & Safe Motherhood',
+    slug: 'family-planning-safe-motherhood',
     description:
-      'Empowering women through vocational training, micro-enterprise development, financial literacy education, and leadership programs to foster economic independence.',
+      'Promoting child spacing and reproductive health among married women through faith-based dialogues, male involvement, and gender-lensed advocacy to reduce maternal deaths.',
     features: [
-      'Vocational & skills training',
-      'Micro-grant & loan programs',
-      'Financial literacy education',
-      'Leadership & advocacy training',
-      'Legal rights awareness',
+      'Postpartum family planning advocacy',
+      'Faith-based child spacing dialogues',
+      'Male involvement initiatives',
+      'SGBV response & referrals',
+      'Gender-lensed advocacy with partners',
+    ],
+    impact: [
+      'Faith-based child spacing dialogues',
+      'Male involvement in maternal health',
+      'SGBV response & referrals',
+      "Tackling Garissa's MMR of 646 per 100,000 births",
     ],
     icon: Sparkles,
     image:
-      'https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?q=80&w=800&auto=format&fit=crop',
+      '/images/foh4.jpeg',
     color: 'from-purple-500 to-indigo-600',
   },
   {
     id: 'youth-development',
-    title: 'Youth Development',
-    slug: 'youth-development',
+    title: 'Youth Leadership & Vocational Training',
+    slug: 'youth-vocational-training',
     description:
-      'Mentoring young people through leadership training, career guidance, digital skills development, and recreational programs that build character and confidence.',
+      'Training 3,500 young people in trade crafts, digital skills, and leadership so they can earn a living, lead change, and build economic independence.',
     features: [
+      'Vocational trade skills training',
+      'Digital & technology skills',
       'Leadership & mentorship programs',
-      'Digital skills & technology training',
-      'Career guidance & counseling',
+      'Entrepreneurship incubation',
       'Sports & recreation initiatives',
+    ],
+    impact: [
+      '3,500+ young people trained',
+      'Vocational & digital skills',
+      'Leadership & mentorship',
       'Entrepreneurship incubation',
     ],
     icon: UserCheck,
     image:
-      'https://images.unsplash.com/photo-1526976668912-1a811878dd37?q=80&w=800&auto=format&fit=crop',
+      '/images/foh5.jpeg',
     color: 'from-emerald-500 to-teal-600',
   },
   {
     id: 'social-support',
-    title: 'Social Support',
-    slug: 'social-support',
+    title: 'Peacebuilding & Community Resilience',
+    slug: 'peacebuilding-community-resilience',
     description:
-      'Providing comprehensive social welfare services including emergency relief, child protection, family reunification, and support for persons with disabilities.',
+      'Sensitizing 14,000 women and men against violent extremism while strengthening community health structures and supporting survivors of gender-based violence.',
     features: [
-      'Emergency relief & disaster response',
-      'Child protection & welfare services',
-      'Family reunification programs',
-      'Support for persons with disabilities',
-      'Community outreach & counseling',
+      'Counter-radicalization awareness',
+      'Community health structures (CHVs & CBDs)',
+      'SGBV survivor support & referrals',
+      'Emergency relief & response',
+      'Social cohesion dialogues',
+    ],
+    impact: [
+      '14,000+ women & men sensitized',
+      '1,400+ CHVs & CBDs trained',
+      'SGBV survivor support & referrals',
+      'Counter-radicalization awareness',
     ],
     icon: HandHeart,
     image:
-      'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=800&auto=format&fit=crop',
+      '/images/foh6.jpeg',
     color: 'from-amber-500 to-orange-600',
   },
   {
     id: 'environment',
-    title: 'Environment & Sustainability',
-    slug: 'environment-sustainability',
+    title: 'Climate Change & Environment',
+    slug: 'climate-change-environment',
     description:
-      'Promoting environmental conservation, sustainable agriculture, clean energy adoption, and climate resilience through community-led initiatives.',
+      'Building the capacity of 10,500 residents to adapt to climate change through water, sanitation, sustainable agriculture, and environmental conservation.',
     features: [
-      'Tree planting & reforestation',
+      'Climate change capacity building',
+      'Water & sanitation access',
       'Sustainable agriculture training',
-      'Clean energy solutions',
-      'Water conservation programs',
-      'Climate resilience education',
+      'Environmental conservation',
+      'Resilience education for refugees & hosts',
+    ],
+    impact: [
+      '10,500+ residents trained to adapt',
+      'Water & sanitation access',
+      'Sustainable agriculture training',
+      'Refugee & host community resilience',
     ],
     icon: Leaf,
     image:
-      'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=800&auto=format&fit=crop',
+      '/images/foh7.jpeg',
     color: 'from-green-500 to-emerald-600',
   },
 ];
 
 export const overviewStats: OverviewStat[] = [
   { value: 6, suffix: '', label: 'Core Program Areas', icon: Target },
-  { value: 45, suffix: '+', label: 'Active Programs', icon: ClipboardList },
-  { value: 78, suffix: '+', label: 'Communities Reached', icon: Building2 },
-  { value: 12500, suffix: '+', label: 'Beneficiaries', icon: UserCheck },
-  { value: 30, suffix: '+', label: 'Partners', icon: HandHeart },
-  { value: 15, suffix: '+', label: 'Awards', icon: BarChart3 },
+  { value: 10500, suffix: '+', label: 'Children in Education', icon: BookOpen },
+  { value: 3500, suffix: '+', label: 'Youth Trained', icon: UserCheck },
+  { value: 14000, suffix: '+', label: 'Peacebuilding Reached', icon: HandHeart },
+  { value: 1400, suffix: '+', label: 'CHVs & CBDs Trained', icon: HeartPulse },
+  { value: 40, suffix: '+', label: 'Faith Leaders Engaged', icon: Sparkles },
 ];
 
 export const impactStats: ImpactStat[] = [
-  { value: 12500, suffix: '+', label: 'Lives Impacted', icon: HeartPulse },
-  { value: 45, suffix: '+', label: 'Active Programs', icon: Target },
-  { value: 78, suffix: '+', label: 'Communities Served', icon: Building2 },
+  { value: 300000, suffix: '+', label: 'Reached via Community Radio', icon: HeartPulse },
+  { value: 10500, suffix: '+', label: 'Children in Education', icon: BookOpen },
+  { value: 3500, suffix: '+', label: 'Youth Trained', icon: UserCheck },
+  { value: 1400, suffix: '+', label: 'CHVs & CBDs Trained', icon: HandHeart },
+  { value: 14000, suffix: '+', label: 'Peacebuilding Sensitized', icon: Target },
   { value: 100, suffix: '%', label: 'Program Transparency', icon: BarChart3 },
-  { value: 30, suffix: '+', label: 'Global Partners', icon: HandHeart },
-  { value: 15, suffix: '+', label: 'Awards Received', icon: Sparkles },
 ];
 
 export const approachSteps: ApproachStep[] = [
@@ -216,41 +253,41 @@ export const approachSteps: ApproachStep[] = [
 ];
 
 export const successStory: SuccessStory = {
-  title: 'From Rural Village to Thriving Community',
+  title: 'Okoa Mama na Mtoto Initiative (OMMI)',
   description:
-    'In the remote village of Nkawkaw, Ghana, our integrated approach transformed a community struggling with poverty, lack of clean water, and limited educational opportunities. Over three years, we built a solar-powered borehole, established a primary school, launched a women&rsquo;s cooperative, and trained 30 community health workers. Today, Nkawkaw stands as a model of sustainable development.',
+    'In partnership with the International Centre for Reproductive Health Kenya (ICRHK), OMMI championed maternal and newborn health across Garissa County. From landscaping with county health leadership to a live radio talk show reaching 300,000 listeners, the initiative engaged 40 women religious leaders, trained 15 youth champions, and brought maternal mortality into the open. With Garissa&rsquo;s maternal mortality ratio at 646 per 100,000 live births &mdash; nearly double the national average &mdash; these voices are driving real change.',
   image:
-    'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200&auto=format&fit=crop',
+    '/images/foh8.jpeg',
   stats: [
-    { label: 'Clean Water Access', value: '3,200+' },
-    { label: 'Children Enrolled', value: '850+' },
-    { label: 'Women Empowered', value: '200+' },
+    { label: 'Radio Audience Reached', value: '300,000+' },
+    { label: 'Faith Leaders Engaged', value: '40' },
+    { label: 'Youth Champions', value: '15' },
   ],
 };
 
 export const testimonials: Testimonial[] = [
   {
     quote:
-      'Fountain of Hope transformed our entire community. They didn&rsquo;t just build a school — they restored our belief that a better future is possible. My daughter is now the first girl in our family to attend secondary school.',
-    name: 'Grace Mwangi',
-    role: 'Community Leader',
-    location: 'Nkawkaw, Ghana',
-    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop',
+      'The persistently high maternal and child mortality rates in Garissa remain one of our most urgent challenges. We must come together and strengthen our responsive systems in maternal and child health services.',
+    name: 'County Director of Health',
+    role: 'Ministry of Health, Garissa',
+    location: 'Garissa, Kenya',
+    avatar: '/images/foh10.jpeg',
   },
   {
     quote:
-      'The micro-grant program gave me the capital to start my tailoring business. Today I employ five women from my village. Fountain of Hope didn\'t just give me fish — they taught me how to fish and provided the fishing net.',
-    name: 'Amina Diallo',
-    role: 'Entrepreneur',
-    location: 'Ouagadougou, Burkina Faso',
-    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150&auto=format&fit=crop',
+      'Our religion, Islam, allows us to do child spacing and breastfeed our babies for 24 months. We will use our gatherings to inform our congregation about what we learned in this meeting.',
+    name: 'Women Religious Leader',
+    role: 'Faith Leader',
+    location: 'Garissa, Kenya',
+    avatar: '/images/foh11.jpeg',
   },
   {
     quote:
-      'As a local partner, I have witnessed firsthand the integrity and effectiveness of Fountain of Hope. Their approach is truly collaborative — they listen, they adapt, and they deliver measurable results that last.',
-    name: 'Dr. Samuel Osei',
-    role: 'Partner Organization Director',
-    location: 'Accra, Ghana',
-    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=150&auto=format&fit=crop',
+      'We, as county assembly members, commit to championing maternal health by advocating for adequate financial resources and ensuring every part of our health system functions effectively.',
+    name: 'Chair, County Assembly Health Committee',
+    role: 'Garissa County Assembly',
+    location: 'Garissa, Kenya',
+    avatar: '/images/foh12.jpeg',
   },
 ];

@@ -5,55 +5,41 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, MapPin } from 'lucide-react';
 
-const collageImages = [
+const galleryImages = [
   {
     id: 'featured',
-    src: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?q=80&w=1200&auto=format&fit=crop',
-    title: 'Clean Water Brings Hope to Turkana',
-    location: 'Turkana County, Kenya',
-    span: 'col-span-3 row-span-6',
+    src: '/images/foh1.jpeg',
+    title: 'Education Brings Hope to Garissa',
+    location: 'Garissa County, Kenya',
+    featured: true,
   },
   {
     id: 'img2',
-    src: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=600&auto=format&fit=crop',
+    src: '/images/foh2.jpeg',
     title: 'Bright Futures Begin in the Classroom',
-    location: 'Kumasi, Ghana',
-    span: 'col-span-1 row-span-2',
+    location: 'Fafi, Kenya',
+    featured: false,
   },
   {
     id: 'img3',
-    src: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=600&auto=format&fit=crop',
+    src: '/images/foh3.jpeg',
     title: 'Celebrating Academic Achievement',
-    location: 'Nairobi, Kenya',
-    span: 'col-span-1 row-span-2',
+    location: 'Garissa Town, Kenya',
+    featured: false,
   },
   {
     id: 'img4',
-    src: 'https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?q=80&w=600&auto=format&fit=crop',
+    src: '/images/foh4.jpeg',
     title: 'Women Artisans Cooperative',
-    location: 'Kigali, Rwanda',
-    span: 'col-span-1 row-span-2',
+    location: 'Ijara, Kenya',
+    featured: false,
   },
   {
     id: 'img5',
-    src: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=600&auto=format&fit=crop',
+    src: '/images/foh5.jpeg',
     title: 'Community-Led Development',
-    location: 'Lilongwe, Malawi',
-    span: 'col-span-1 row-span-1',
-  },
-  {
-    id: 'img6',
-    src: 'https://images.unsplash.com/photo-1526976668912-1a811878dd37?q=80&w=600&auto=format&fit=crop',
-    title: 'Youth Leadership Workshop',
-    location: 'Kampala, Uganda',
-    span: 'col-span-1 row-span-1',
-  },
-  {
-    id: 'img7',
-    src: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=800&auto=format&fit=crop',
-    title: 'Mobile Medical Clinic Outreach',
-    location: 'Gulu District, Uganda',
-    span: 'col-span-2 row-span-2',
+    location: 'Balambala, Kenya',
+    featured: false,
   },
 ];
 
@@ -65,30 +51,30 @@ const fadeUp = {
 };
 
 export default function GallerySection() {
-  const [selectedItem, setSelectedItem] = useState<(typeof collageImages)[0] | null>(null);
+  const [selectedItem, setSelectedItem] = useState<(typeof galleryImages)[0] | null>(null);
 
   return (
-    <section className="py-24 lg:py-32 bg-white relative overflow-hidden" id="gallery">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+    <section className="py-20 lg:py-24 bg-white relative overflow-hidden" id="gallery">
+      <div className="max-w-[1280px] mx-auto px-6">
         {/* Section Header */}
-        <motion.div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20" {...fadeUp}>
+        <motion.div className="text-center max-w-3xl mx-auto mb-12" {...fadeUp}>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#081B63] tracking-tight leading-tight">
             Our Impact in Pictures
           </h2>
-          <p className="text-slate-500 text-base sm:text-lg leading-relaxed mt-4">
-            Real moments captured across our field operations — each image tells a story of transformation, dignity, and lasting change.
+          <p className="text-slate-500 text-base sm:text-lg leading-relaxed mt-5">
+            Real moments captured across our field operations across Garissa County — each image tells a story of transformation, dignity, and lasting change.
           </p>
         </motion.div>
 
-        {/* Asymmetric Collage Grid */}
+        {/* Editorial Gallery Grid */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
           transition={{ staggerChildren: 0.06 }}
-          className="grid grid-cols-5 grid-rows-6 gap-3 sm:gap-4 h-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-[190px] sm:auto-rows-[210px] lg:auto-rows-[215px]"
         >
-          {collageImages.map((item) => (
+          {galleryImages.map((item) => (
             <motion.div
               key={item.id}
               variants={{
@@ -96,22 +82,32 @@ export default function GallerySection() {
                 visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
               }}
               onClick={() => setSelectedItem(item)}
-              className={`group relative rounded-2xl overflow-hidden cursor-pointer bg-slate-900 shadow-lg shadow-black/5 hover:shadow-2xl hover:shadow-black/15 transition-all duration-500 ${item.span}`}
+              className={`relative cursor-pointer overflow-hidden rounded-[18px] bg-slate-900 shadow-lg shadow-black/5 ${
+                item.featured ? 'row-span-2' : ''
+              }`}
             >
               <Image
                 src={item.src}
                 alt={item.title}
                 fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#081B63]/70 via-[#081B63]/5 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
-              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
-                <div className="flex items-center gap-1 text-pink-300 text-xs font-medium mb-1">
+
+              {/* Dark gradient for caption readability */}
+              <div
+                className={`absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent ${
+                  item.featured ? 'opacity-80' : 'opacity-70'
+                }`}
+              />
+
+              {/* Caption */}
+              <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
+                <div className="flex items-center gap-1 text-pink-200 text-xs font-semibold mb-1">
                   <MapPin size={11} />
                   <span>{item.location}</span>
                 </div>
-                <h3 className="text-white text-sm sm:text-base font-bold leading-snug group-hover:text-pink-200 transition-colors duration-300">
+                <h3 className="text-white text-sm sm:text-base font-bold leading-snug">
                   {item.title}
                 </h3>
               </div>
