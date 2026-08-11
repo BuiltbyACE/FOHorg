@@ -138,7 +138,7 @@ export default function GalleryPage() {
       {/* ════════════════════════════════════
           HERO
       ════════════════════════════════════ */}
-      <section className="pt-[84px] pb-20 lg:pb-28 bg-white relative overflow-hidden">
+      <section className="pt-[76px] pb-20 lg:pb-28 bg-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(233,30,99,0.05),transparent_55%)] pointer-events-none" />
 
         <Container>

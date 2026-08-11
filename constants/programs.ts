@@ -82,7 +82,7 @@ export const programs: Program[] = [
     ],
     icon: BookOpen,
     image:
-      '/images/foh2.jpeg',
+      '/images/foh17.jpeg',
     color: 'from-pink-500 to-rose-600',
   },
   {
@@ -106,7 +106,7 @@ export const programs: Program[] = [
     ],
     icon: HeartPulse,
     image:
-      '/images/foh3.jpeg',
+      '/images/foh21.jpeg',
     color: 'from-[#E91E63] to-pink-600',
   },
   {
@@ -130,7 +130,7 @@ export const programs: Program[] = [
     ],
     icon: Sparkles,
     image:
-      '/images/foh4.jpeg',
+      '/images/foh2.jpeg',
     color: 'from-purple-500 to-indigo-600',
   },
   {
@@ -154,7 +154,7 @@ export const programs: Program[] = [
     ],
     icon: UserCheck,
     image:
-      '/images/foh5.jpeg',
+      '/images/fohhero2.jpeg',
     color: 'from-emerald-500 to-teal-600',
   },
   {
@@ -178,7 +178,7 @@ export const programs: Program[] = [
     ],
     icon: HandHeart,
     image:
-      '/images/foh6.jpeg',
+      '/images/foh22.jpeg',
     color: 'from-amber-500 to-orange-600',
   },
   {
@@ -202,7 +202,7 @@ export const programs: Program[] = [
     ],
     icon: Leaf,
     image:
-      '/images/foh7.jpeg',
+      '/images/foh21.jpeg',
     color: 'from-green-500 to-emerald-600',
   },
 ];

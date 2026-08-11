@@ -12,7 +12,7 @@ export default function CtaBanner() {
       <div className="absolute -left-20 -bottom-20 w-80 h-80 rounded-full border-[55px] border-[#E91E63]/10 pointer-events-none" />
       <div className="absolute left-10 bottom-10 w-20 h-20 rounded-full border-[10px] border-[#E91E63]/12 pointer-events-none" />
 
-      <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-16 relative z-10">
+      <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-20">
 
           <motion.div

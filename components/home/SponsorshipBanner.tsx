@@ -8,7 +8,7 @@ import Button from '@/components/common/Button';
 export default function SponsorshipBanner() {
   return (
     <section className="py-20 lg:py-28 bg-slate-50 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Outer Card with Hope Pink & Navy Gradient */}
         <motion.div 

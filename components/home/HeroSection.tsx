@@ -17,31 +17,37 @@ export default function HeroSection() {
   return (
     <section
       aria-label="Hero"
-      className="relative w-full flex flex-col justify-between overflow-hidden bg-white pt-[84px] min-h-[720px] lg:min-h-[860px]"
+      className="relative w-full flex flex-col justify-between overflow-hidden bg-white pt-[76px] min-h-[680px] lg:min-h-[760px]"
     >
       {/*
-        DESKTOP BACKGROUND PHOTOGRAPH (lg+ screens)
-        Full-bleed with object-position tuned so BOTH child (center-left)
-        and mother (right) are clearly visible together.
+        DESKTOP PHOTOGRAPH PANEL (lg+ screens)
+        Photo is 1535x1024 (3:2 landscape). It is right-anchored and capped in
+        width so it no longer stretches across the full hero (which scaled the
+        subject up and cropped the scene). The woman now reads ~20% smaller
+        while the full mother + child composition stays visible. Starts below
+        the fixed navbar, fills the hero height, and is clipped at the bottom
+        by the section's overflow-hidden.
       */}
-      <div className="hidden lg:block absolute inset-0 z-0 pointer-events-none">
-        <Image
-          src="/images/heropagerefinnment.png"
-          alt="Foundation of Hope — mother and child together"
-          fill
-          priority
-          unoptimized
-          sizes="100vw"
-          className="object-cover"
-          style={{
-            objectPosition: '22% 35%',
-          }}
-        />
+      <div className="hidden lg:block absolute left-0 right-0 top-[76px] bottom-0 z-0 pointer-events-none">
+        <div className="absolute right-0 top-0 bottom-0 w-[78%] max-w-[1150px] overflow-hidden">
+          <Image
+            src="/images/heropagerefinnment.png"
+            alt="Foundation of Hope — mother and child together"
+            fill
+            priority
+            unoptimized
+            sizes="(max-width: 1680px) 78vw, 1150px"
+            className="object-cover"
+            style={{
+              objectPosition: '28% 28%',
+            }}
+          />
+        </div>
 
         {/*
           DESKTOP LEFT-TO-RIGHT WHITE GRADIENT OVERLAY
-          Provides solid white for left text column (0-22%),
-          then rapidly dissolves to 0% by 44% so child & mother are 100% clear.
+          Solid white over the text column, masks the panel's left edge at any
+          viewport width, then dissolves so the photo reads clearly on the right.
         */}
         <div
           aria-hidden="true"
@@ -50,11 +56,11 @@ export default function HeroSection() {
             background:
               'linear-gradient(90deg, ' +
               'rgba(255,255,255,1.00) 0%, ' +
-              'rgba(255,255,255,1.00) 22%, ' +
-              'rgba(255,255,255,0.85) 28%, ' +
-              'rgba(255,255,255,0.40) 34%, ' +
-              'rgba(255,255,255,0.05) 40%, ' +
-              'rgba(255,255,255,0.00) 44%)',
+              'rgba(255,255,255,1.00) 30%, ' +
+              'rgba(255,255,255,0.88) 36%, ' +
+              'rgba(255,255,255,0.45) 44%, ' +
+              'rgba(255,255,255,0.08) 52%, ' +
+              'rgba(255,255,255,0.00) 56%)',
           }}
         />
       </div>
@@ -62,11 +68,11 @@ export default function HeroSection() {
       {/* 
         MAIN CONTENT & LAYOUT CONTAINER
       */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 lg:pt-10 pb-8 flex-grow flex flex-col justify-center">
-        <div className="max-w-[560px]">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 lg:pt-8 pb-8 flex-grow flex flex-col justify-center">
+        <div className="max-w-[620px]">
           
           {/* Eyebrow Pill */}
-          <motion.div {...fadeUp(0.05)} className="mb-4">
+          <motion.div {...fadeUp(0.05)} className="mb-3">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFF3F8] border border-pink-100/80 text-[#E91E63] font-bold text-xs sm:text-sm tracking-wide uppercase">
               <Heart className="w-3.5 h-3.5 fill-[#E91E63]" />
               Together for a Brighter Tomorrow
@@ -76,7 +82,7 @@ export default function HeroSection() {
           {/* Headline */}
           <motion.h1
             {...fadeUp(0.15)}
-            className="font-extrabold text-[#081B63] tracking-tight leading-[1.06] text-4xl sm:text-5xl lg:text-6xl xl:text-[64px] mb-5"
+            className="font-extrabold text-[#081B63] tracking-tight leading-[1.06] text-4xl sm:text-5xl lg:text-6xl xl:text-[64px] mb-4"
           >
             Building <span className="text-[#E91E63]">Hope,</span> <br />
             Transforming <span className="text-[#E91E63]">Lives</span>
@@ -85,7 +91,7 @@ export default function HeroSection() {
           {/* Mission Description */}
           <motion.p
             {...fadeUp(0.25)}
-            className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-[520px] mb-6 font-normal"
+            className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-[560px] mb-5 font-normal"
           >
             Together, we empower communities, support vulnerable families, and create lasting opportunities through education, healthcare, clean water, and sustainable development.
           </motion.p>
@@ -93,7 +99,7 @@ export default function HeroSection() {
           {/* Action CTAs */}
           <motion.div
             {...fadeUp(0.35)}
-            className="flex flex-wrap items-center gap-3.5 mb-6"
+            className="flex flex-wrap items-center gap-3.5 mb-5"
           >
             <Link
               href="/donations"
@@ -119,7 +125,7 @@ export default function HeroSection() {
           */}
           <motion.div
             {...fadeUp(0.4)}
-            className="block lg:hidden my-6 w-full relative aspect-[3/2] rounded-3xl overflow-hidden shadow-2xl border border-pink-100/80"
+            className="block lg:hidden my-5 w-full relative aspect-[3/2] rounded-3xl overflow-hidden shadow-2xl border border-pink-100/80"
           >
             <Image
               src="/images/heropagerefinnment.png"
@@ -132,7 +138,7 @@ export default function HeroSection() {
           </motion.div>
 
           {/* Overlapping Horizontal Donation Panel */}
-          <motion.div {...fadeUp(0.45)} className="w-full max-w-[560px]">
+          <motion.div {...fadeUp(0.45)} className="w-full max-w-[620px]">
             <DonationWidget />
           </motion.div>
 

@@ -40,7 +40,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.2, ease: 'easeInOut' }}
-          className="fixed inset-x-0 top-[84px] bottom-0 z-40 bg-white border-t border-slate-100 lg:hidden flex flex-col shadow-2xl"
+          className="fixed inset-x-0 top-[76px] bottom-0 z-40 bg-white border-t border-slate-100 xl:hidden flex flex-col shadow-2xl"
         >
           <div className="flex flex-col flex-1 px-6 max-sm:px-4 py-6 overflow-y-auto">
             <ul className="flex flex-col gap-y-3">

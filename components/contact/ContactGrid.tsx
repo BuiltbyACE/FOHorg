@@ -67,7 +67,7 @@ export default function ContactGrid() {
 
   return (
     <section className="bg-slate-50 py-16 md:py-24" id="contact-form">
-      <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-16">
+      <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
 
         {/* Section header */}
         <div className="text-center mb-14">
@@ -256,45 +256,16 @@ export default function ContactGrid() {
             </div>
 
             <div className="relative mt-5 h-[420px] bg-slate-100 overflow-hidden">
-              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 420" preserveAspectRatio="none">
-                <rect width="400" height="420" fill="#EEF1F7" />
-                {/* Grid lines */}
-                <line x1="0" y1="140" x2="400" y2="140" stroke="#D6DAE8" strokeWidth="1.5" />
-                <line x1="0" y1="280" x2="400" y2="280" stroke="#D6DAE8" strokeWidth="1.5" />
-                <line x1="200" y1="0" x2="200" y2="420" stroke="#D6DAE8" strokeWidth="1.5" />
-                <line x1="80" y1="0" x2="80" y2="420" stroke="#D6DAE8" strokeWidth="1" />
-                <line x1="320" y1="0" x2="320" y2="420" stroke="#D6DAE8" strokeWidth="1" />
-                {/* Streets */}
-                <rect x="60" y="120" width="280" height="8" rx="2" fill="#D0D5E8" opacity="0.7" />
-                <rect x="80" y="100" width="8" height="200" rx="2" fill="#D0D5E8" opacity="0.6" />
-                <rect x="180" y="80" width="8" height="280" rx="2" fill="#D0D5E8" opacity="0.6" />
-                {/* Buildings */}
-                <rect x="100" y="150" width="60" height="40" rx="3" fill="#C8CDE0" opacity="0.5" />
-                <rect x="220" y="90" width="70" height="35" rx="3" fill="#C8CDE0" opacity="0.4" />
-                <rect x="280" y="155" width="50" height="45" rx="3" fill="#C8CDE0" opacity="0.4" />
-                <rect x="100" y="200" width="55" height="60" rx="3" fill="#C8CDE0" opacity="0.35" />
-              </svg>
-
-              {/* Pin */}
-              <div className="absolute top-[185px] left-[155px] -translate-x-1/2 -translate-y-full z-10">
-                <svg width="32" height="40" viewBox="0 0 24 36" fill="none">
-                  <path d="M12 0C5.373 0 0 5.373 0 12c0 12 12 24 12 24s12-12 12-24C24 5.373 18.627 0 12 0z" fill="#E91E63" />
-                  <circle cx="12" cy="12" r="5" fill="white" />
-                </svg>
-              </div>
-
-              {/* Label card */}
-              <div className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-white rounded-xl shadow-lg px-4 py-3 max-w-[200px] z-20 text-center">
-                <p className="text-[#081B63] font-bold text-xs">Fountain of Hope</p>
-                <p className="text-slate-400 text-[10px] leading-snug mt-0.5">
-                  Garissa County,<br />North Eastern Region, Kenya
-                </p>
-              </div>
-
-              {/* Landmark labels */}
-              <span className="absolute top-[138px] left-[78px] text-[9px] text-slate-400 font-semibold -translate-x-1/2">YAYA Centre</span>
-              <span className="absolute top-[138px] right-[72px] text-[9px] text-slate-400 font-semibold translate-x-1/2">Prestige Plaza</span>
-              <span className="absolute top-[278px] left-[155px] text-[9px] text-slate-400 font-semibold -translate-x-1/2">Chania Avenue</span>
+              <iframe
+                title="Foundation of Hope — Garissa County, Kenya"
+                src="https://www.google.com/maps?q=Garissa,+Kenya&z=11&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </motion.div>
 

@@ -35,7 +35,7 @@ const types = [
 export default function TypesSection() {
   return (
     <section className="bg-[#F7F8FC] py-16 lg:py-20">
-      <div className="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-16">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section label */}
         <div className="text-center mb-10 lg:mb-12">

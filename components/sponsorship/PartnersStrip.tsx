@@ -17,7 +17,7 @@ const partners = [
 export default function PartnersStrip() {
   return (
     <section className="bg-white py-14 lg:py-16">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         <motion.p
           className="text-center text-[#151640] font-bold text-sm uppercase tracking-[0.08em] mb-10"
           initial={{ opacity: 0, y: 10 }}

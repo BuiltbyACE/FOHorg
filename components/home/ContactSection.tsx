@@ -23,7 +23,7 @@ export default function ContactSection() {
 
   return (
     <section className="py-24 lg:py-32 bg-slate-50 relative overflow-hidden" id="contact">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">

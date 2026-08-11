@@ -115,7 +115,7 @@ export default function PartnersLogosSection() {
     <>
       {/* ── Desktop — grid of 5, enlarged ── */}
       <section className="hidden md:block bg-white py-16 lg:py-20">
-        <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-16">
+        <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#E91E63]">
               Our Valued Partners

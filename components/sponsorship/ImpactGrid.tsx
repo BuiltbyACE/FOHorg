@@ -37,13 +37,13 @@ const impacts: ImpactItem[] = [
     desc: 'Supporting women with skills training, resources, and economic opportunities.',
   },
   {
-    image: '/images/foh21.jpeg',
+    image: '/images/foh22.jpeg',
     icon: HandMetal,
     title: 'Community Outreach',
     desc: 'Reaching vulnerable families with essential supplies and support services.',
   },
   {
-    image: '/images/foh22.jpeg',
+    image: '/images/foh21.jpeg',
     icon: Sprout,
     title: 'Environment & Sustainability',
     desc: 'Promoting environmental conservation and sustainable community practices.',
@@ -63,7 +63,7 @@ const itemVariants = {
 export default function ImpactGrid() {
   return (
     <section className="bg-[#F7F7FB] py-16 lg:py-20">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-12 lg:mb-14"
           initial={{ opacity: 0, y: 20 }}

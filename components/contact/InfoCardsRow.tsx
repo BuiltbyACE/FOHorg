@@ -123,7 +123,7 @@ const cards = [
 export default function InfoCardsRow() {
   return (
     <section className="bg-white py-16 md:py-20">
-      <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-16">
+      <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-14">
           <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#E91E63] mb-3">

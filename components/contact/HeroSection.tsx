@@ -18,10 +18,10 @@ const trustItems = [
 
 export default function HeroSection() {
   return (
-    <section className="pt-[84px] pb-20 lg:pb-28 bg-white relative overflow-hidden">
+    <section className="pt-[76px] pb-20 lg:pb-28 bg-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(233,30,99,0.04)_0%,transparent_55%)] pointer-events-none" />
 
-      <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-16 relative z-10">
+      <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
           {/* Left */}

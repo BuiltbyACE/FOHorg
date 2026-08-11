@@ -172,7 +172,7 @@ const stories = [
     title: 'Commitment from the Top',
     date: 'October 2025',
     tag: 'County Executive Meeting',
-    img: '/images/foh11.jpeg',
+    img: '/images/foh13.jpeg',
     stat: 'Quarterly',
     statLabel: 'Reviews of MNCH performance agreed',
     excerpt: 'On 29 October 2025, the county\u2019s executive leadership met — chaired by the Deputy County Secretary — to turn advocacy into commitment.',
@@ -203,7 +203,7 @@ export default function AchievementsPage() {
   return (
     <div className="flex flex-col w-full overflow-hidden">
       {/* ─── HERO ─── */}
-      <section className="relative min-h-[600px] md:min-h-[650px] flex items-center pt-[84px]">
+      <section className="relative min-h-[600px] md:min-h-[650px] flex items-center pt-[76px]">
         <div className="relative w-full h-full flex flex-col lg:flex-row">
           {/* Left - Navy with angled edge */}
           <div

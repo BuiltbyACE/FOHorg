@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, MapPin } from 'lucide-react';
+import { X } from 'lucide-react';
 
 const galleryImages = [
   {
@@ -55,7 +55,7 @@ export default function GallerySection() {
 
   return (
     <section className="py-20 lg:py-24 bg-white relative overflow-hidden" id="gallery">
-      <div className="max-w-[1280px] mx-auto px-6">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div className="text-center max-w-3xl mx-auto mb-12" {...fadeUp}>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#081B63] tracking-tight leading-tight">
@@ -93,24 +93,6 @@ export default function GallerySection() {
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover"
               />
-
-              {/* Dark gradient for caption readability */}
-              <div
-                className={`absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent ${
-                  item.featured ? 'opacity-80' : 'opacity-70'
-                }`}
-              />
-
-              {/* Caption */}
-              <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
-                <div className="flex items-center gap-1 text-pink-200 text-xs font-semibold mb-1">
-                  <MapPin size={11} />
-                  <span>{item.location}</span>
-                </div>
-                <h3 className="text-white text-sm sm:text-base font-bold leading-snug">
-                  {item.title}
-                </h3>
-              </div>
             </motion.div>
           ))}
         </motion.div>
@@ -140,7 +122,7 @@ export default function GallerySection() {
               >
                 <X size={22} />
               </button>
-              <div className="relative h-[65vh] w-full bg-black">
+              <div className="relative h-[80vh] w-full bg-black">
                 <Image
                   src={selectedItem.src}
                   alt={selectedItem.title}
@@ -149,13 +131,6 @@ export default function GallerySection() {
                   className="object-contain"
                   priority
                 />
-              </div>
-              <div className="p-6 sm:p-8">
-                <div className="flex items-center gap-2 text-pink-400 text-xs font-semibold uppercase tracking-wider mb-1">
-                  <MapPin size={14} />
-                  <span>{selectedItem.location}</span>
-                </div>
-                <h3 className="text-xl sm:text-2xl font-bold">{selectedItem.title}</h3>
               </div>
             </motion.div>
           </motion.div>

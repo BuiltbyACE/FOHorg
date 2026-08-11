@@ -22,7 +22,7 @@ const impactItems = [
 export default function TransparencyPanel() {
   return (
     <section className="py-16 md:py-24 bg-slate-50">
-      <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-16">
+      <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
         <div className="bg-[#081B63] rounded-3xl p-8 md:p-12 lg:p-16 relative overflow-hidden">
           {/* Background decorations */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#E91E63]/8 rounded-full blur-3xl pointer-events-none -translate-y-1/3 translate-x-1/3" />

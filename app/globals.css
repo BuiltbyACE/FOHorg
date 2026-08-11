@@ -31,6 +31,9 @@
   /* Footer / Dark bg tones */
   --color-footer-text: #D5D9E8;
   --color-stat-label: #D6DAE8;
+
+  /* Container scale: widen the standard content wrapper (1280px -> 1600px) */
+  --container-7xl: 100rem;
 }
 
 

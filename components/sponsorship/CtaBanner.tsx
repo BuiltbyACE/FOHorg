@@ -27,7 +27,7 @@ export default function CtaBanner() {
         </div>
       </div>
 
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
           <div className="flex items-center gap-5">
             <div className="w-16 h-16 rounded-full bg-[#E01A6F] flex items-center justify-center text-white flex-shrink-0 shadow-lg shadow-pink-500/20">

@@ -13,8 +13,8 @@ const fadeUp = (delay = 0) => ({
 
 export default function SponsorshipHero() {
   return (
-    <section className="bg-white overflow-hidden pt-[84px]">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10 py-14 lg:py-20 flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-14">
+    <section className="bg-white overflow-hidden pt-[76px]">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20 flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-14">
         <div className="w-full lg:w-[56%] relative">
           <motion.span
             {...fadeUp(0.05)}

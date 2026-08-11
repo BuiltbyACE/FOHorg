@@ -4,7 +4,6 @@ import WhyPartnerSection from '@/components/partnerships/WhyPartnerSection';
 import TypesSection from '@/components/partnerships/TypesSection';
 import PartnersLogosSection from '@/components/partnerships/PartnersLogosSection';
 import ProcessSection from '@/components/partnerships/ProcessSection';
-import ImpactStoriesSection from '@/components/partnerships/ImpactStoriesSection';
 import CTABannerSection from '@/components/partnerships/CTABannerSection';
 
 export const metadata: Metadata = {
@@ -21,7 +20,6 @@ export default function PartnershipsPage() {
       <TypesSection />
       <PartnersLogosSection />
       <ProcessSection />
-      <ImpactStoriesSection />
       <CTABannerSection />
     </>
   );

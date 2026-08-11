@@ -13,8 +13,8 @@ const fadeUp = (delay = 0) => ({
 
 export default function PartnershipsHero() {
   return (
-    <section className="bg-white overflow-hidden pt-[84px]">
-      <div className="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-16 py-14 lg:py-20 flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
+    <section className="bg-white overflow-hidden pt-[76px]">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20 flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
 
         {/* ── Left: Content ── */}
         <div className="w-full lg:w-[44%] flex-shrink-0">
@@ -71,7 +71,7 @@ export default function PartnershipsHero() {
         >
           <div className="relative rounded-2xl overflow-hidden h-[300px] sm:h-[380px] lg:h-[420px]">
             <Image
-              src="/images/foh2.jpeg"
+              src="/images/foh22.jpeg"
               alt="Diverse hands stacked together in partnership"
               fill
               className="object-cover object-center"

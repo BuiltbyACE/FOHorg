@@ -22,9 +22,9 @@ export default function DonationWidget() {
   const donateUrl = `/donations?amount=${getFinalAmount()}&frequency=${frequency}`;
 
   return (
-    <div className="w-full max-w-[640px] bg-white/95 backdrop-blur-md rounded-3xl p-5 sm:p-6 border border-pink-100/80 shadow-2xl shadow-slate-300/50">
+    <div className="w-full bg-white/95 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-pink-100/80 shadow-xl shadow-slate-300/40">
       {/* Top Row: Title + Subtitle on Left, Frequency Toggle on Right */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
         <div className="flex items-center gap-3">
           <div className="w-11 h-11 rounded-full bg-[#FFF3F8] border border-pink-100 flex items-center justify-center text-[#E91E63] shrink-0">
             <Heart className="w-5 h-5 fill-[#E91E63]" />

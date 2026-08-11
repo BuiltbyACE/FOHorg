@@ -11,7 +11,7 @@ export default function ProgramsHero() {
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-pink-400/10 rounded-full blur-3xl pointer-events-none animate-pulse-subtle" />
       <div className="absolute top-10 right-10 w-[400px] h-[400px] bg-navy-500/10 rounded-full blur-3xl pointer-events-none animate-float" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 
           <motion.div
@@ -55,7 +55,7 @@ export default function ProgramsHero() {
             <div className="relative mx-auto max-w-md lg:max-w-none">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-navy-950/15 border-4 border-white aspect-[4/5] sm:aspect-[4/4.5]">
                 <Image
-                  src="/images/foh1.jpeg"
+                  src="/images/foh2.jpeg"
                   alt="Community programs transforming lives across Garissa County"
                   fill
                   sizes="(max-width: 1024px) 100vw, 45vw"

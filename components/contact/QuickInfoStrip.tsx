@@ -44,7 +44,7 @@ function InfoItem({ icon, label, details, iconBg = 'primary', index }: InfoItemP
 export default function QuickInfoStrip() {
   return (
     <section>
-      <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10 pb-16 md:pb-24">
+      <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8 pb-16 md:pb-24">
         <div className="bg-white rounded-2xl shadow-[0_15px_50px_rgba(8,27,99,0.10)] p-8 md:p-12 border border-slate-100">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 lg:gap-6">
             <InfoItem

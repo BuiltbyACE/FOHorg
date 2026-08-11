@@ -98,7 +98,7 @@ const cardVariants = {
 export default function PricingTiers() {
   return (
     <section className="bg-white py-16 lg:py-20">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-12 lg:mb-14"
           initial={{ opacity: 0, y: 20 }}

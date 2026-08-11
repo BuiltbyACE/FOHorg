@@ -25,7 +25,7 @@ const itemVariants = {
 export default function StatsStrip() {
   return (
     <div className="relative z-10 -mt-10 mb-4">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
           initial="initial"

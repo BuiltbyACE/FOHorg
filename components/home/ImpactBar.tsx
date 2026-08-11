@@ -33,7 +33,7 @@ export default function ImpactBar() {
   ];
 
   return (
-    <div className="w-full max-w-6xl mx-auto bg-white/95 backdrop-blur-md rounded-3xl p-5 sm:p-6 shadow-2xl shadow-slate-300/60 border border-slate-100">
+    <div className="w-full bg-white/95 backdrop-blur-md rounded-2xl p-5 sm:p-6 shadow-2xl shadow-slate-300/60 border border-slate-100">
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 divide-y sm:divide-y-0 lg:divide-x divide-slate-100">
         {stats.map((stat, index) => {
           const Icon = stat.icon;

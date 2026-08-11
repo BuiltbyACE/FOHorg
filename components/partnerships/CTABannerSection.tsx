@@ -13,7 +13,7 @@ export default function CTABannerSection() {
       {/* Left glow */}
       <div aria-hidden="true" className="pointer-events-none absolute -left-20 -bottom-20 w-72 h-72 rounded-full border-[40px] border-white/10" />
 
-      <div className="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
 
           {/* Left: Icon + Text */}

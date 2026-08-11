@@ -23,11 +23,11 @@ export default function Navbar({ onMenuToggle, isMenuOpen }: NavbarProps) {
   };
 
   return (
-    <div className="max-w-7xl mx-auto flex items-center justify-between h-[84px] px-6 lg:px-12 transition-all duration-300">
+    <div className="max-w-7xl mx-auto flex items-center justify-between h-[76px] px-4 sm:px-6 lg:px-8 transition-all duration-300">
       <Logo height={56} width={175} priority />
 
-      <div className="hidden lg:flex items-center">
-        <ul className="flex items-center gap-x-7 xl:gap-x-9">
+      <div className="hidden xl:flex items-center">
+        <ul className="flex items-center gap-x-6 xl:gap-x-8">
           {navItems.map((item) => {
             const active = isActive(item.href);
             return (
@@ -59,7 +59,7 @@ export default function Navbar({ onMenuToggle, isMenuOpen }: NavbarProps) {
         </ul>
       </div>
 
-      <div className="hidden lg:flex items-center flex-shrink-0">
+      <div className="hidden xl:flex items-center flex-shrink-0">
         <Button href="/donations" variant="primary" size="md">
           Donate Now
           <Heart size={17} className="fill-white animate-pulse" />
@@ -67,7 +67,7 @@ export default function Navbar({ onMenuToggle, isMenuOpen }: NavbarProps) {
       </div>
 
       <button
-        className="lg:hidden flex items-center justify-center w-11 h-11 rounded-full bg-slate-100 text-[#081B63] hover:text-[#E91E63] hover:bg-pink-50 transition-colors"
+        className="xl:hidden flex items-center justify-center w-11 h-11 rounded-full bg-slate-100 text-[#081B63] hover:text-[#E91E63] hover:bg-pink-50 transition-colors"
         onClick={onMenuToggle}
         aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
         aria-expanded={isMenuOpen}
