@@ -15,7 +15,7 @@ const galleryImages = [
   },
   {
     id: 'img2',
-    src: '/images/foh2.jpeg',
+    src: '/images/quality education.jpeg',
     title: 'Bright Futures Begin in the Classroom',
     location: 'Fafi, Kenya',
     featured: false,

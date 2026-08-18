@@ -169,7 +169,6 @@ export default function HeroSection() {
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
-                unoptimized
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#081B63]/30 via-transparent to-transparent" />
             </div>

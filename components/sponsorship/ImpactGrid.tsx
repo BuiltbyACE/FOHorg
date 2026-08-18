@@ -13,19 +13,19 @@ interface ImpactItem {
 
 const impacts: ImpactItem[] = [
   {
-    image: '/images/foh15.jpeg',
+    image: '/images/quality education.jpeg',
     icon: Book,
     title: 'Education for All',
     desc: 'Providing quality education and learning resources to children in underserved communities.',
   },
   {
-    image: '/images/foh16.jpeg',
+    image: '/images/foh21.jpeg',
     icon: Heart,
     title: 'Healthcare & Wellness',
     desc: 'Ensuring access to essential healthcare services and wellness programs.',
   },
   {
-    image: '/images/foh17.jpeg',
+    image: '/images/foh22.jpeg',
     icon: Footprints,
     title: 'Youth Development',
     desc: 'Empowering young people through sports, mentorship, and leadership training.',
@@ -37,7 +37,7 @@ const impacts: ImpactItem[] = [
     desc: 'Supporting women with skills training, resources, and economic opportunities.',
   },
   {
-    image: '/images/foh22.jpeg',
+    image: '/images/foh17.jpeg',
     icon: HandMetal,
     title: 'Community Outreach',
     desc: 'Reaching vulnerable families with essential supplies and support services.',
@@ -102,7 +102,6 @@ export default function ImpactGrid() {
                     fill
                     className="object-cover object-center"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    unoptimized
                   />
                 </div>
                 <div className="relative px-5 pb-6 pt-3">

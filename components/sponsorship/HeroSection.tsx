@@ -35,7 +35,6 @@ export default function SponsorshipHero() {
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 56vw"
                 priority
-                unoptimized
               />
             </div>
 

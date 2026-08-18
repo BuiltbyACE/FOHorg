@@ -226,7 +226,7 @@ export default function AboutPage() {
               <div className="absolute -inset-4 bg-gradient-to-tr from-primary/10 via-transparent to-navy/5 rounded-3xl blur-2xl" />
               <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-black/10">
                 <Image
-                  src="/images/foh11.jpeg"
+                  src="/images/our story in the about page.jpeg"
                   alt="Four volunteers standing together"
                   width={600}
                   height={500}

@@ -82,7 +82,7 @@ export const programs: Program[] = [
     ],
     icon: BookOpen,
     image:
-      '/images/foh17.jpeg',
+      '/images/quality education.jpeg',
     color: 'from-pink-500 to-rose-600',
   },
   {

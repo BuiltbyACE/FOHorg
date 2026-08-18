@@ -31,11 +31,10 @@ export default function HeroSection() {
       <div className="hidden lg:block absolute left-0 right-0 top-[76px] bottom-0 z-0 pointer-events-none">
         <div className="absolute right-0 top-0 bottom-0 w-[78%] max-w-[1150px] overflow-hidden">
           <Image
-            src="/images/heropagerefinnment.png"
+            src="/images/hero-optimized.webp"
             alt="Foundation of Hope — mother and child together"
             fill
             priority
-            unoptimized
             sizes="(max-width: 1680px) 78vw, 1150px"
             className="object-cover"
             style={{
@@ -128,11 +127,10 @@ export default function HeroSection() {
             className="block lg:hidden my-5 w-full relative aspect-[3/2] rounded-3xl overflow-hidden shadow-2xl border border-pink-100/80"
           >
             <Image
-              src="/images/heropagerefinnment.png"
+              src="/images/hero-optimized.webp"
               alt="Foundation of Hope — mother and child together"
               fill
               priority
-              unoptimized
               className="object-cover object-center"
             />
           </motion.div>

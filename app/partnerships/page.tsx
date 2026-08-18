@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import HeroSection from '@/components/partnerships/HeroSection';
 import WhyPartnerSection from '@/components/partnerships/WhyPartnerSection';
 import TypesSection from '@/components/partnerships/TypesSection';
+import PartnershipImagesSection from '@/components/partnerships/PartnershipImagesSection';
 import PartnersLogosSection from '@/components/partnerships/PartnersLogosSection';
 import ProcessSection from '@/components/partnerships/ProcessSection';
 import CTABannerSection from '@/components/partnerships/CTABannerSection';
@@ -18,6 +19,7 @@ export default function PartnershipsPage() {
       <HeroSection />
       <WhyPartnerSection />
       <TypesSection />
+      <PartnershipImagesSection />
       <PartnersLogosSection />
       <ProcessSection />
       <CTABannerSection />

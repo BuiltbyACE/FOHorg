@@ -50,7 +50,6 @@ export default function PartnersStrip() {
                 fill
                 className="object-contain"
                 sizes="120px"
-                unoptimized
               />
             </motion.div>
           ))}

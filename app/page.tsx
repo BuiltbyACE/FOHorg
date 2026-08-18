@@ -1,42 +1,58 @@
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
+import type { Metadata } from 'next';
 import HeroSection from '@/components/home/HeroSection';
-import ProgramsSection from '@/components/home/ProgramsSection';
-import ImpactSection from '@/components/home/ImpactSection';
-import PartnershipsSection from '@/components/home/PartnershipsSection';
-import SponsorshipBanner from '@/components/home/SponsorshipBanner';
-import GallerySection from '@/components/home/GallerySection';
-import DonationCTASection from '@/components/home/DonationCTASection';
-import AboutSection from '@/components/home/AboutSection';
-import ContactSection from '@/components/home/ContactSection';
+
+export const metadata: Metadata = {
+  title: 'Fountain of Hope Foundation | Empowering Garissa Communities',
+  description: 'Fountain of Hope is a non-profit organization dedicated to improving the health, education, and livelihoods of vulnerable families in Garissa County, Kenya.',
+};
+
+const ProgramsSection = dynamic(() => import('@/components/home/ProgramsSection'));
+const ImpactSection = dynamic(() => import('@/components/home/ImpactSection'));
+const PartnershipsSection = dynamic(() => import('@/components/home/PartnershipsSection'));
+const SponsorshipBanner = dynamic(() => import('@/components/home/SponsorshipBanner'));
+const GallerySection = dynamic(() => import('@/components/home/GallerySection'));
+const DonationCTASection = dynamic(() => import('@/components/home/DonationCTASection'));
+const AboutSection = dynamic(() => import('@/components/home/AboutSection'));
+const ContactSection = dynamic(() => import('@/components/home/ContactSection'));
 
 export default function HomePage() {
   return (
     <div className="flex flex-col w-full overflow-hidden">
-      {/* 2. Hero Section */}
       <HeroSection />
 
-      {/* 3. Programs */}
-      <ProgramsSection />
+      <Suspense fallback={<div className="h-96 animate-pulse bg-gray-100" />}>
+        <ProgramsSection />
+      </Suspense>
 
-      {/* 4. Impact Section */}
-      <ImpactSection />
+      <Suspense fallback={<div className="h-96 animate-pulse bg-gray-100" />}>
+        <ImpactSection />
+      </Suspense>
 
-      {/* 5. Partnerships */}
-      <PartnershipsSection />
+      <Suspense fallback={<div className="h-64 animate-pulse bg-gray-100" />}>
+        <PartnershipsSection />
+      </Suspense>
 
-      {/* 6. Sponsorship Banner */}
-      <SponsorshipBanner />
+      <Suspense fallback={<div className="h-64 animate-pulse bg-gray-100" />}>
+        <SponsorshipBanner />
+      </Suspense>
 
-      {/* 7. Gallery */}
-      <GallerySection />
+      <Suspense fallback={<div className="h-96 animate-pulse bg-gray-100" />}>
+        <GallerySection />
+      </Suspense>
 
-      {/* 8. Donation CTA */}
-      <DonationCTASection />
+      <Suspense fallback={<div className="h-64 animate-pulse bg-gray-100" />}>
+        <DonationCTASection />
+      </Suspense>
 
-      {/* 9. About Section */}
-      <AboutSection />
+      <Suspense fallback={<div className="h-96 animate-pulse bg-gray-100" />}>
+        <AboutSection />
+      </Suspense>
 
-      {/* 10. Contact */}
-      <ContactSection />
+      <Suspense fallback={<div className="h-64 animate-pulse bg-gray-100" />}>
+        <ContactSection />
+      </Suspense>
     </div>
   );
 }

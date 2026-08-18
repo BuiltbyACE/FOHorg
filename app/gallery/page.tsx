@@ -24,8 +24,8 @@ const categories = [
 ];
 
 const galleryItems = [
-  { id: '1',  title: 'Bright Futures Begin in the Classroom',      location: 'Fafi, Kenya',              category: 'education',   aspect: 'aspect-[3/4]',  image: '/images/foh1.jpeg' },
-  { id: '2',  title: 'Maternal Health Outreach in the Community',   location: 'Dadaab, Kenya',            category: 'healthcare',  aspect: 'aspect-[4/3]',  image: '/images/foh2.jpeg' },
+  { id: '1',  title: 'Bright Futures Begin in the Classroom',      location: 'Fafi, Kenya',              category: 'education',   aspect: 'aspect-[3/4]',  image: '/images/quality education.jpeg' },
+  { id: '2',  title: 'Maternal Health Outreach in the Community',   location: 'Dadaab, Kenya',            category: 'healthcare',  aspect: 'aspect-[4/3]',  image: '/images/foh21.jpeg' },
   { id: '3',  title: 'Women Artisans Building Independence',        location: 'Ijara, Kenya',             category: 'women',       aspect: 'aspect-[3/4]',  image: '/images/foh3.jpeg' },
   { id: '4',  title: 'Community Health & Resilience Training',      location: 'Balambala, Kenya',         category: 'community',   aspect: 'aspect-[16/9]', image: '/images/foh4.jpeg' },
   { id: '5',  title: 'Youth Leadership Workshop',                  location: 'Lagdera, Kenya',           category: 'education',   aspect: 'aspect-[4/3]',  image: '/images/foh5.jpeg' },
@@ -36,7 +36,7 @@ const galleryItems = [
   { id: '10', title: 'Faith Leaders on Child Spacing',             location: 'Garissa Town, Kenya',      category: 'events',      aspect: 'aspect-[3/4]',  image: '/images/foh11.jpeg' },
   { id: '11', title: 'Community Health Volunteers in Action',       location: 'Dadaab, Kenya',            category: 'community',   aspect: 'aspect-[4/3]',  image: '/images/foh12.jpeg' },
   { id: '12', title: 'Celebrating Graduation & New Beginnings',     location: 'Balambala, Kenya',         category: 'education',   aspect: 'aspect-[3/4]',  image: '/images/foh13.jpeg' },
-  { id: '13', title: 'Healthcare Workers on the Frontline',         location: 'Ijara, Kenya',             category: 'healthcare',  aspect: 'aspect-[4/3]',  image: '/images/foh15.jpeg' },
+  { id: '13', title: 'Healthcare Workers on the Frontline',         location: 'Ijara, Kenya',             category: 'healthcare',  aspect: 'aspect-[4/3]',  image: '/images/foh21.jpeg' },
   { id: '14', title: 'Peacebuilding & Social Cohesion Dialogues',   location: 'Lagdera, Kenya',           category: 'events',      aspect: 'aspect-[16/9]', image: '/images/foh16.jpeg' },
   { id: '15', title: 'Smiles of Hope and Transformation',           location: 'Hulugho, Kenya',           category: 'community',   aspect: 'aspect-[3/4]',  image: '/images/foh17.jpeg' },
 ];
@@ -211,7 +211,7 @@ export default function GalleryPage() {
                 <div className="col-span-7 row-span-10 relative rounded-3xl overflow-hidden shadow-xl shadow-black/10">
                   <Image
                     src="/images/heropage14.jpeg"
-                    alt="Smiling children" fill priority unoptimized
+                    alt="Smiling children" fill priority
                     sizes="40vw" className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#081B63]/40 to-transparent" />
@@ -220,7 +220,7 @@ export default function GalleryPage() {
                 <div className="col-span-5 row-span-5 relative rounded-3xl overflow-hidden shadow-lg shadow-black/10">
                   <Image
                     src="/images/foh20.jpeg"
-                    alt="Classroom" fill priority unoptimized
+                    alt="Classroom" fill priority
                     sizes="25vw" className="object-cover"
                   />
                 </div>
@@ -228,7 +228,7 @@ export default function GalleryPage() {
                 <div className="col-span-2 row-span-5 relative rounded-3xl overflow-hidden shadow-md shadow-black/8">
                   <Image
                     src="/images/foh21.jpeg"
-                    alt="Women" fill priority unoptimized
+                    alt="Women" fill priority
                     sizes="10vw" className="object-cover"
                   />
                 </div>
@@ -236,7 +236,7 @@ export default function GalleryPage() {
                 <div className="col-span-3 row-span-5 relative rounded-3xl overflow-hidden shadow-md shadow-black/8">
                   <Image
                     src="/images/foh22.jpeg"
-                    alt="Community" fill priority unoptimized
+                    alt="Community" fill priority
                     sizes="15vw" className="object-cover"
                   />
                 </div>
@@ -359,21 +359,9 @@ export default function GalleryPage() {
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover"
-                      unoptimized
                     />
                     {/* Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent opacity-60" />
-                    {/* Info */}
-                    <div className="absolute bottom-0 left-0 right-0 p-5">
-                      <span className="inline-block px-2.5 py-0.5 rounded-full bg-[#E91E63] text-white text-[10px] font-bold uppercase tracking-[0.1em] mb-2 capitalize">
-                        {item.category}
-                      </span>
-                      <h3 className="text-white font-bold text-sm leading-snug">{item.title}</h3>
-                      <p className="text-white/60 text-xs mt-1 flex items-center gap-1">
-                        <MapPin size={10} className="flex-shrink-0" />
-                        {item.location}
-                      </p>
-                    </div>
                   </div>
                 </div>
               ))}
@@ -435,7 +423,7 @@ export default function GalleryPage() {
                 </p>
                 <div className="flex items-center gap-3 mt-6 pt-5 border-t border-slate-100">
                   <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0 border-2 border-[#E91E63]/20">
-                    <Image src={t.image} alt={t.name} fill sizes="48px" className="object-cover" unoptimized />
+                    <Image src={t.image} alt={t.name} fill sizes="48px" className="object-cover" />
                   </div>
                   <div>
                     <p className="text-[#081B63] font-bold text-sm">{t.name}</p>
@@ -464,7 +452,7 @@ export default function GalleryPage() {
                 </p>
                 <div className="flex items-center gap-3 mt-6 pt-5 border-t border-slate-100">
                   <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0 border-2 border-[#E91E63]/20">
-                    <Image src={testimonials[testimonialIndex].image} alt={testimonials[testimonialIndex].name} fill sizes="48px" className="object-cover" unoptimized />
+                    <Image src={testimonials[testimonialIndex].image} alt={testimonials[testimonialIndex].name} fill sizes="48px" className="object-cover" />
                   </div>
                   <div>
                     <p className="text-[#081B63] font-bold text-sm">{testimonials[testimonialIndex].name}</p>
@@ -603,7 +591,6 @@ export default function GalleryPage() {
                   fill
                   sizes="90vw"
                   className="object-contain"
-                  unoptimized
                 />
               </div>
               <div className="mt-5 text-center">

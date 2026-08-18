@@ -89,7 +89,6 @@ export default function TransparencyPanel() {
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  unoptimized
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#081B63]/40 to-transparent" />
               </div>

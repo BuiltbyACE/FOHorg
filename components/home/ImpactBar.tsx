@@ -1,5 +1,3 @@
-'use client';
-
 import { Users, MapPin, BookOpen, Heart } from 'lucide-react';
 
 interface ImpactStat {
