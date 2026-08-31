@@ -17,7 +17,20 @@ export default function HeroSection() {
       aria-label="Hero"
       className="relative w-full bg-white overflow-hidden"
     >
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 lg:pt-24 pb-24 lg:pb-32">
+      {/* ── Mobile background image (absolute, behind text) ── */}
+      <div className="absolute inset-0 lg:hidden z-0">
+        <Image
+          src="/images/hero page better.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-bottom"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-white/40 to-transparent" />
+      </div>
+
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 lg:pt-24 pb-8 lg:pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
 
           {/* ── LEFT: Text content (6 cols) ── */}
@@ -75,7 +88,7 @@ export default function HeroSection() {
           <div className="hidden lg:block lg:col-span-6 xl:col-span-6 relative flex items-center justify-center">
             <motion.div
               {...fadeUp(0.2)}
-              className="relative w-full max-w-[520px] mx-auto"
+              className="relative w-full max-w-[520px] mx-auto rounded-3xl overflow-hidden"
             >
               <Image
                 src="/images/hero page better.png"
@@ -86,30 +99,14 @@ export default function HeroSection() {
                 sizes="(max-width: 1024px) 100vw, 520px"
                 className="w-full h-auto object-contain"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#081B63]/50 via-transparent to-transparent" />
             </motion.div>
           </div>
         </div>
       </div>
 
-      {/* Mobile & tablet featured photograph */}
-      <div className="block lg:hidden px-4 sm:px-6">
-        <motion.div
-          {...fadeUp(0.4)}
-          className="w-full max-w-[520px] mx-auto relative"
-        >
-          <Image
-            src="/images/hero page better.png"
-            alt="Fountain of Hope — mother and child together in Garissa"
-            width={1222}
-            height={1287}
-            priority
-            className="w-full h-auto object-contain"
-          />
-        </motion.div>
-      </div>
-
       {/* Decorative bottom wave — sits below content, never overlaps CTAs */}
-      <div aria-hidden="true" className="relative w-full mt-2">
+      <div aria-hidden="true" className="relative z-10 w-full mt-2">
         <div className="absolute inset-x-0 -bottom-1 pointer-events-none h-24 sm:h-28 overflow-hidden z-0">
           <svg
             className="absolute left-0 bottom-0 h-full w-[45%] text-[#E91E63]/70 opacity-90"
