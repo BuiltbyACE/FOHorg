@@ -105,24 +105,35 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Decorative bottom wave — sits below content, never overlaps CTAs */}
-      <div aria-hidden="true" className="relative z-10 w-full mt-2">
-        <div className="absolute inset-x-0 -bottom-1 pointer-events-none h-24 sm:h-28 overflow-hidden z-0">
-          <svg
-            className="absolute left-0 bottom-0 h-full w-[45%] text-[#E91E63]/70 opacity-90"
-            viewBox="0 0 500 150"
-            preserveAspectRatio="none"
-          >
-            <path fill="currentColor" d="M0,150 L0,80 Q250,140 500,60 L500,150 Z" />
-          </svg>
-          <svg
-            className="absolute right-0 bottom-0 h-full w-[55%] text-[#0A1E5E]"
-            viewBox="0 0 600 150"
-            preserveAspectRatio="none"
-          >
-            <path fill="currentColor" d="M0,150 L0,50 Q300,130 600,40 L600,150 Z" />
-          </svg>
-        </div>
+      {/* Bottom wave — same sinusoidal path split at center: pink left, navy right */}
+      <div aria-hidden="true" className="relative w-full overflow-hidden h-28 sm:h-36 md:h-40">
+        <svg
+          viewBox="0 0 1440 140"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="absolute inset-0 w-full h-full"
+        >
+          <defs>
+            <clipPath id="hero-wave-pink">
+              <rect x="0" y="0" width="630" height="140" />
+            </clipPath>
+            <clipPath id="hero-wave-navy">
+              <rect x="630" y="0" width="810" height="140" />
+            </clipPath>
+          </defs>
+          {/* Pink — left portion of the sine wave */}
+          <path
+            clipPath="url(#hero-wave-pink)"
+            fill="#E91E63"
+            d="M0,140 L0,80 C55,25 160,6 295,18 C420,30 515,82 630,102 C745,82 850,30 1100,18 C1250,6 1385,25 1440,80 L1440,140 Z"
+          />
+          {/* Navy — right portion of the exact same path */}
+          <path
+            clipPath="url(#hero-wave-navy)"
+            fill="#0A1E5E"
+            d="M0,140 L0,80 C55,25 160,6 295,18 C420,30 515,82 630,102 C745,82 850,30 1100,18 C1250,6 1385,25 1440,80 L1440,140 Z"
+          />
+        </svg>
       </div>
     </section>
   );

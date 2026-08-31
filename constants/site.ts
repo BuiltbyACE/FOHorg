@@ -6,5 +6,5 @@ export const siteConfig: SiteConfig = {
   email: 'cflgarissa007@gmail.com',
   phone: '+254700123456',
   address: 'Garissa County, North Eastern Region, Kenya',
-  logoPath: '/images/Foh%20logo.png',
+  logoPath: '/fohlogo.png',
 };

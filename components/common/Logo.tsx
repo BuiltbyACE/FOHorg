@@ -15,11 +15,12 @@ export default function Logo({ className, height = 65, width = 180, priority = t
       <Image
         src={siteConfig.logoPath}
         alt={siteConfig.name}
-        width={0}
+        width={width}
         height={height}
         className="object-contain"
         style={{ height: `${height}px`, width: 'auto' }}
         priority={priority}
+        unoptimized
       />
     </Link>
   );

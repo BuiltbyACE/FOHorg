@@ -49,7 +49,7 @@ export default function RootLayout({
       className={`${plusJakarta.variable} ${inter.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col font-sans bg-slate-50 text-slate-900 selection:bg-pink-500 selection:text-white">
+      <body className="min-h-full flex flex-col font-sans bg-slate-50 text-slate-900 selection:bg-pink-500 selection:text-white" suppressHydrationWarning>
         <ScrollToTop />
         <Header />
         <main className="flex-1">{children}</main>
