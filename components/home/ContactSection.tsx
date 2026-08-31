@@ -74,7 +74,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <div className="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-0.5">Email Us Directly</div>
-                  <div className="text-sm font-semibold text-white">info@fountainofhope.org</div>
+                  <div className="text-sm font-semibold text-white">cflgarissa007@gmail.com</div>
                 </div>
               </div>
 

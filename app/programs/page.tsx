@@ -5,8 +5,9 @@ import ProgramsHero from '@/components/programs/ProgramsHero';
 import ProgramsOverview from '@/components/programs/ProgramsOverview';
 
 export const metadata: Metadata = {
-  title: 'Our Programs | Fountain of Hope Foundation',
-  description: 'Explore our education, maternal health, youth training, peacebuilding, and economic empowerment programs transforming lives in Garissa County.',
+  title: 'Our Programs | Fountain of Hope — RMNCAH & Community Resilience, Garissa',
+  description:
+    'Explore Fountain of Hope programs across two pillars — RMNCAH (maternal health, menstrual health, family planning, non-communicable diseases) and Community Resilience (peace building, climate change, empowerment) — transforming lives in Garissa County.',
 };
 
 const ProgramsGrid = dynamic(() => import('@/components/programs/ProgramsGrid'));

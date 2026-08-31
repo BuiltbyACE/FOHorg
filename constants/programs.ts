@@ -1,15 +1,15 @@
 import {
-  BookOpen,
   HeartPulse,
-  Sparkles,
-  UserCheck,
+  Droplets,
+  HeartHandshake,
+  Stethoscope,
   HandHeart,
   Leaf,
+  Users,
   Target,
   ClipboardList,
   Building2,
   BarChart3,
-  Quote,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -23,6 +23,16 @@ export interface Program {
   icon: LucideIcon;
   image: string;
   color: string;
+  category?: string;
+  children?: { id: string; title: string }[];
+}
+
+export interface ProgramCategory {
+  id: string;
+  title: string;
+  shortTitle: string;
+  subtitle: string;
+  programs: Program[];
 }
 
 export interface OverviewStat {
@@ -60,166 +70,232 @@ export interface Testimonial {
   avatar: string;
 }
 
-export const programs: Program[] = [
+export const programCategories: ProgramCategory[] = [
   {
-    id: 'education',
-    title: 'Education For All',
-    slug: 'education-for-all',
-    description:
-      'Keeping 10,500 boys and girls in school through scholarships, learning materials, and teacher capacity building so every child in Garissa attains quality basic education.',
-    features: [
-      'Scholarship programs for vulnerable children',
-      'School supplies & learning materials',
-      'Teacher training & capacity building',
-      'Literacy & numeracy support',
-      'Keeping girls in school',
+    id: 'rmncah',
+    title: 'RMNCAH',
+    shortTitle: 'RMNCAH',
+    subtitle:
+      'Reproductive, Maternal, Newborn, Child & Adolescent Health — safeguarding the health of mothers, children and families across Garissa.',
+    programs: [
+      {
+        id: 'maternal',
+        title: 'Maternal Health',
+        slug: 'maternal-health',
+        description:
+          'Through the Okoa Mama na Mtoto Initiative (OMMI), we advocate for safe motherhood and newborn care — engaging faith leaders, youth champions, and community radio to save mothers and babies.',
+        features: [
+          'Okoa Mama na Mtoto (OMMI) advocacy',
+          'Radio campaigns reaching 300,000+',
+          'Women religious leader engagement',
+          'Youth champion mobilization',
+          'County health system strengthening',
+        ],
+        impact: [
+          '300,000+ reached via community radio',
+          '40 women religious leaders engaged',
+          '15 youth champions trained',
+          'County health systems strengthened',
+        ],
+        icon: HeartPulse,
+        image: '/images/foh21.jpeg',
+        color: 'from-[#E91E63] to-pink-600',
+      },
+      {
+        id: 'menstrual-health',
+        title: 'Menstrual Health',
+        slug: 'menstrual-health',
+        description:
+          'Promoting menstrual health and hygiene through education, dignity kits, and safe facilities so that girls and women in Garissa can manage their periods with dignity and stay in school.',
+        features: [
+          'Menstrual health education',
+          'Dignity kits & sanitary products',
+          'Girl-friendly WASH facilities',
+          'Breaking stigma & taboos',
+          'School retention support for girls',
+        ],
+        impact: [
+          'Menstrual health education for girls',
+          'Dignity kits distributed',
+          'Girl-friendly facilities',
+          'Keeping girls in school',
+        ],
+        icon: Droplets,
+        image: '/images/foh7.jpeg',
+        color: 'from-purple-500 to-fuchsia-600',
+      },
+      {
+        id: 'family-planning',
+        title: 'Family Planning',
+        slug: 'family-planning',
+        description:
+          'Promoting child spacing and reproductive health among married couples through faith-based dialogues and gender-lensed outreach to support healthy families.',
+        features: [
+          'Postpartum family planning advocacy',
+          'Faith-based child spacing dialogues',
+          'Reproductive health education',
+          'Couple & community dialogues',
+          'Referrals to quality health services',
+        ],
+        impact: [
+          'Faith-based child spacing dialogues',
+          'Reproductive health education',
+          'Couple & community dialogues',
+          "Supporting reduced maternal deaths in Garissa",
+        ],
+        icon: HeartHandshake,
+        image: '/images/foh2.jpeg',
+        color: 'from-purple-500 to-indigo-600',
+      },
+      {
+        id: 'male-involvement',
+        title: 'Male Involvement in Child Spacing Advocacy',
+        slug: 'male-involvement-child-spacing',
+        description:
+          'Advocating for the meaningful involvement of men in child spacing and maternal health — engaging husbands, faith leaders, and community champions as partners in healthy families.',
+        features: [
+          'Men as partners in child spacing',
+          'Male faith & community champions',
+          'Couple-based health dialogues',
+          'SGBV response & referrals',
+          'Gender-lensed advocacy with partners',
+        ],
+        impact: [
+          'Men engaged in child spacing',
+          'Male faith & community champions',
+          'Couple-based health dialogues',
+          'Gender-lensed advocacy with partners',
+        ],
+        icon: Users,
+        image: '/images/foh11.jpeg',
+        color: 'from-indigo-500 to-violet-600',
+      },
+      {
+        id: 'non-communicable-diseases',
+        title: 'Non-Communicable Diseases & Nutrition',
+        slug: 'non-communicable-diseases-nutrition',
+        description:
+          'Screening and caring for non-communicable diseases while delivering nutrition support — including milk for children — so vulnerable families stay healthy and well-nourished.',
+        features: [
+          'NCD screening & awareness',
+          'Nutrition & milk support for children',
+          'Chronic illness care & referrals',
+          'Healthy diet & lifestyle education',
+          'Malnutrition prevention',
+        ],
+        impact: [
+          'NCD screening & awareness',
+          'Nutrition support with milk for children',
+          'Chronic illness referrals',
+          'Malnutrition prevention',
+        ],
+        icon: Stethoscope,
+        image: '/images/kidssited.jpeg',
+        color: 'from-amber-500 to-yellow-600',
+      },
     ],
-    impact: [
-      '10,500+ boys and girls kept in school',
-      'Scholarships for vulnerable children',
-      'Teacher training to lift quality',
-      "Girls' education prioritized",
-    ],
-    icon: BookOpen,
-    image:
-      '/images/quality education.jpeg',
-    color: 'from-pink-500 to-rose-600',
   },
   {
-    id: 'healthcare',
-    title: 'Maternal, Newborn & Child Health',
-    slug: 'maternal-newborn-child-health',
-    description:
-      'Through the Okoa Mama na Mtoto Initiative (OMMI), we advocate for safe motherhood and newborn care — engaging faith leaders, youth champions, and community radio to save mothers and babies.',
-    features: [
-      'Okoa Mama na Mtoto (OMMI) advocacy',
-      'Radio campaigns reaching 300,000+',
-      'Women religious leader engagement',
-      'Youth champion mobilization',
-      'County health system strengthening',
+    id: 'community-resilience',
+    title: 'Community Resilience',
+    shortTitle: 'Community Resilience',
+    subtitle:
+      'Strengthening the social, economic and environmental resilience of Garissa communities so they can thrive in the face of challenges.',
+    programs: [
+      {
+        id: 'peace',
+        title: 'Peace Building',
+        slug: 'peace-building',
+        description:
+          'Sensitizing women and men against violent extremism while strengthening community structures, promoting social cohesion, and supporting survivors of gender-based violence.',
+        features: [
+          'Counter-radicalization awareness',
+          'Community health structures (CHVs & CBDs)',
+          'SGBV survivor support & referrals',
+          'Emergency relief & response',
+          'Social cohesion dialogues',
+        ],
+        impact: [
+          '14,000+ women & men sensitized',
+          '1,400+ CHVs & CBDs trained',
+          'SGBV survivor support & referrals',
+          'Counter-radicalization awareness',
+        ],
+        icon: HandHeart,
+        image: '/images/foh22.jpeg',
+        color: 'from-amber-500 to-orange-600',
+      },
+      {
+        id: 'climate-change',
+        title: 'Climate Change & Environment',
+        slug: 'climate-change-environment',
+        description:
+          'Building the capacity of residents to adapt to climate change through water, sanitation, sustainable agriculture, and environmental conservation.',
+        features: [
+          'Climate change capacity building',
+          'Water & sanitation access',
+          'Sustainable agriculture training',
+          'Environmental conservation',
+          'Resilience education for refugees & hosts',
+        ],
+        impact: [
+          '10,500+ residents trained to adapt',
+          'Water & sanitation access',
+          'Sustainable agriculture training',
+          'Refugee & host community resilience',
+        ],
+        icon: Leaf,
+        image: '/images/climate.jpeg',
+        color: 'from-green-500 to-emerald-600',
+      },
+      {
+        id: 'empowerment',
+        title: 'Empowerment',
+        slug: 'empowerment',
+        description:
+          'Equipping young people with leadership, mentorship, trade skills, and digital literacy so they can lead change, earn a living, and build economic independence.',
+        features: [
+          'Youth leadership & mentorship',
+          'Vocational trade skills training',
+          'Digital & technology skills',
+          'Entrepreneurship incubation',
+          'Sports & recreation initiatives',
+        ],
+        impact: [
+          '3,500+ young people trained',
+          'Leadership & mentorship',
+          'Vocational & digital skills',
+          'Entrepreneurship incubation',
+        ],
+        icon: Users,
+        image: '/images/fohhero2.jpeg',
+        color: 'from-emerald-500 to-teal-600',
+        children: [
+          { id: 'youth-leadership', title: 'Youth Leadership' },
+          { id: 'youth-mentorship', title: 'Youth Mentorship' },
+        ],
+      },
     ],
-    impact: [
-      '300,000+ reached via community radio',
-      '40 women religious leaders engaged',
-      '15 youth champions trained',
-      'County health systems strengthened',
-    ],
-    icon: HeartPulse,
-    image:
-      '/images/foh21.jpeg',
-    color: 'from-[#E91E63] to-pink-600',
-  },
-  {
-    id: 'women-empowerment',
-    title: 'Family Planning & Safe Motherhood',
-    slug: 'family-planning-safe-motherhood',
-    description:
-      'Promoting child spacing and reproductive health among married women through faith-based dialogues, male involvement, and gender-lensed advocacy to reduce maternal deaths.',
-    features: [
-      'Postpartum family planning advocacy',
-      'Faith-based child spacing dialogues',
-      'Male involvement initiatives',
-      'SGBV response & referrals',
-      'Gender-lensed advocacy with partners',
-    ],
-    impact: [
-      'Faith-based child spacing dialogues',
-      'Male involvement in maternal health',
-      'SGBV response & referrals',
-      "Tackling Garissa's MMR of 646 per 100,000 births",
-    ],
-    icon: Sparkles,
-    image:
-      '/images/foh2.jpeg',
-    color: 'from-purple-500 to-indigo-600',
-  },
-  {
-    id: 'youth-development',
-    title: 'Youth Leadership & Vocational Training',
-    slug: 'youth-vocational-training',
-    description:
-      'Training 3,500 young people in trade crafts, digital skills, and leadership so they can earn a living, lead change, and build economic independence.',
-    features: [
-      'Vocational trade skills training',
-      'Digital & technology skills',
-      'Leadership & mentorship programs',
-      'Entrepreneurship incubation',
-      'Sports & recreation initiatives',
-    ],
-    impact: [
-      '3,500+ young people trained',
-      'Vocational & digital skills',
-      'Leadership & mentorship',
-      'Entrepreneurship incubation',
-    ],
-    icon: UserCheck,
-    image:
-      '/images/fohhero2.jpeg',
-    color: 'from-emerald-500 to-teal-600',
-  },
-  {
-    id: 'social-support',
-    title: 'Peacebuilding & Community Resilience',
-    slug: 'peacebuilding-community-resilience',
-    description:
-      'Sensitizing 14,000 women and men against violent extremism while strengthening community health structures and supporting survivors of gender-based violence.',
-    features: [
-      'Counter-radicalization awareness',
-      'Community health structures (CHVs & CBDs)',
-      'SGBV survivor support & referrals',
-      'Emergency relief & response',
-      'Social cohesion dialogues',
-    ],
-    impact: [
-      '14,000+ women & men sensitized',
-      '1,400+ CHVs & CBDs trained',
-      'SGBV survivor support & referrals',
-      'Counter-radicalization awareness',
-    ],
-    icon: HandHeart,
-    image:
-      '/images/foh22.jpeg',
-    color: 'from-amber-500 to-orange-600',
-  },
-  {
-    id: 'environment',
-    title: 'Climate Change & Environment',
-    slug: 'climate-change-environment',
-    description:
-      'Building the capacity of 10,500 residents to adapt to climate change through water, sanitation, sustainable agriculture, and environmental conservation.',
-    features: [
-      'Climate change capacity building',
-      'Water & sanitation access',
-      'Sustainable agriculture training',
-      'Environmental conservation',
-      'Resilience education for refugees & hosts',
-    ],
-    impact: [
-      '10,500+ residents trained to adapt',
-      'Water & sanitation access',
-      'Sustainable agriculture training',
-      'Refugee & host community resilience',
-    ],
-    icon: Leaf,
-    image:
-      '/images/foh21.jpeg',
-    color: 'from-green-500 to-emerald-600',
   },
 ];
 
+export const programs: Program[] = programCategories.flatMap((category) =>
+  category.programs.map((program) => ({ ...program, category: category.shortTitle }))
+);
+
 export const overviewStats: OverviewStat[] = [
-  { value: 6, suffix: '', label: 'Core Program Areas', icon: Target },
-  { value: 10500, suffix: '+', label: 'Children in Education', icon: BookOpen },
-  { value: 3500, suffix: '+', label: 'Youth Trained', icon: UserCheck },
+  { value: 2, suffix: '', label: 'Program Pillars', icon: Target },
+  { value: 10500, suffix: '+', label: 'Children in Education', icon: HeartPulse },
+  { value: 3500, suffix: '+', label: 'Youth Trained', icon: Users },
   { value: 14000, suffix: '+', label: 'Peacebuilding Reached', icon: HandHeart },
-  { value: 1400, suffix: '+', label: 'CHVs & CBDs Trained', icon: HeartPulse },
-  { value: 40, suffix: '+', label: 'Faith Leaders Engaged', icon: Sparkles },
+  { value: 1400, suffix: '+', label: 'CHVs & CBDs Trained', icon: Droplets },
+  { value: 40, suffix: '+', label: 'Faith Leaders Engaged', icon: HeartHandshake },
 ];
 
 export const impactStats: ImpactStat[] = [
   { value: 300000, suffix: '+', label: 'Reached via Community Radio', icon: HeartPulse },
-  { value: 10500, suffix: '+', label: 'Children in Education', icon: BookOpen },
-  { value: 3500, suffix: '+', label: 'Youth Trained', icon: UserCheck },
+  { value: 10500, suffix: '+', label: 'Children in Education', icon: Stethoscope },
+  { value: 3500, suffix: '+', label: 'Youth Trained', icon: Users },
   { value: 1400, suffix: '+', label: 'CHVs & CBDs Trained', icon: HandHeart },
   { value: 14000, suffix: '+', label: 'Peacebuilding Sensitized', icon: Target },
   { value: 100, suffix: '%', label: 'Program Transparency', icon: BarChart3 },

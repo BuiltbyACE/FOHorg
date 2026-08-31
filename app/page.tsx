@@ -4,50 +4,43 @@ import type { Metadata } from 'next';
 import HeroSection from '@/components/home/HeroSection';
 
 export const metadata: Metadata = {
-  title: 'Fountain of Hope Foundation | Empowering Garissa Communities',
-  description: 'Fountain of Hope is a non-profit organization dedicated to improving the health, education, and livelihoods of vulnerable families in Garissa County, Kenya.',
+  title: 'Fountain of Hope | Community-Based Organization in Garissa, Kenya',
+  description:
+    'Fountain of Hope is a community-based organization in Garissa County, Kenya, improving the health, education and livelihoods of vulnerable communities through strategic partnerships and sustainable programmes.',
 };
 
+const BuildingHopeSection = dynamic(() => import('@/components/home/BuildingHopeSection'));
 const ProgramsSection = dynamic(() => import('@/components/home/ProgramsSection'));
-const ImpactSection = dynamic(() => import('@/components/home/ImpactSection'));
+const MaternalHealthSection = dynamic(() => import('@/components/home/MaternalHealthSection'));
 const PartnershipsSection = dynamic(() => import('@/components/home/PartnershipsSection'));
-const SponsorshipBanner = dynamic(() => import('@/components/home/SponsorshipBanner'));
 const GallerySection = dynamic(() => import('@/components/home/GallerySection'));
-const DonationCTASection = dynamic(() => import('@/components/home/DonationCTASection'));
-const AboutSection = dynamic(() => import('@/components/home/AboutSection'));
 const ContactSection = dynamic(() => import('@/components/home/ContactSection'));
+
+const fallback = <div className="h-96 animate-pulse bg-gray-100" />;
 
 export default function HomePage() {
   return (
     <div className="flex flex-col w-full overflow-hidden">
       <HeroSection />
 
-      <Suspense fallback={<div className="h-96 animate-pulse bg-gray-100" />}>
+      <Suspense fallback={fallback}>
+        <BuildingHopeSection />
+      </Suspense>
+
+      <Suspense fallback={fallback}>
         <ProgramsSection />
       </Suspense>
 
-      <Suspense fallback={<div className="h-96 animate-pulse bg-gray-100" />}>
-        <ImpactSection />
+      <Suspense fallback={fallback}>
+        <MaternalHealthSection />
       </Suspense>
 
       <Suspense fallback={<div className="h-64 animate-pulse bg-gray-100" />}>
         <PartnershipsSection />
       </Suspense>
 
-      <Suspense fallback={<div className="h-64 animate-pulse bg-gray-100" />}>
-        <SponsorshipBanner />
-      </Suspense>
-
-      <Suspense fallback={<div className="h-96 animate-pulse bg-gray-100" />}>
+      <Suspense fallback={fallback}>
         <GallerySection />
-      </Suspense>
-
-      <Suspense fallback={<div className="h-64 animate-pulse bg-gray-100" />}>
-        <DonationCTASection />
-      </Suspense>
-
-      <Suspense fallback={<div className="h-96 animate-pulse bg-gray-100" />}>
-        <AboutSection />
       </Suspense>
 
       <Suspense fallback={<div className="h-64 animate-pulse bg-gray-100" />}>

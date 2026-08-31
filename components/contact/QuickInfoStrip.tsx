@@ -62,7 +62,7 @@ export default function QuickInfoStrip() {
                 </div>
               }
               label="Email Us"
-              details={['info@fountainofhope.org', 'partnerships@fountainofhope.org']}
+              details={['cflgarissa007@gmail.com']}
               iconBg="navy"
             />
             <InfoItem

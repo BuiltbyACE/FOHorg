@@ -8,7 +8,6 @@ import {
   MapPin,
   Phone,
   Mail,
-  GraduationCap,
   HeartPulse,
   Users,
   Send,
@@ -29,11 +28,12 @@ const quickLinks = [
 ];
 
 const programLinks = [
-  { label: 'Education & Scholarships', href: '/programs', icon: GraduationCap },
-  { label: 'Maternal & Newborn Health', href: '/programs', icon: HeartPulse },
-  { label: 'Family Planning & Safe Motherhood', href: '/programs', icon: Users },
-  { label: 'Youth & Vocational Training', href: '/programs', icon: Users },
-  { label: 'Peacebuilding & Resilience', href: '/programs', icon: CheckCircle },
+  { label: 'Maternal Health', href: '/programs/maternal-health', icon: HeartPulse },
+  { label: 'Menstrual Health', href: '/programs/menstrual-health', icon: HeartPulse },
+  { label: 'Family Planning', href: '/programs/family-planning', icon: Users },
+  { label: 'Non-Communicable Diseases', href: '/programs/non-communicable-diseases-nutrition', icon: HeartPulse },
+  { label: 'Peace Building', href: '/programs/peace-building', icon: Users },
+  { label: 'Empowerment', href: '/programs/empowerment', icon: Users },
 ];
 
 const contactDetails = [
@@ -45,9 +45,9 @@ const contactDetails = [
   },
   {
     label: 'Email',
-    value: 'info@fountainofhope.org',
+    value: 'cflgarissa007@gmail.com',
     icon: Mail,
-    href: 'mailto:info@fountainofhope.org',
+    href: 'mailto:cflgarissa007@gmail.com',
   },
   {
     label: 'Location',

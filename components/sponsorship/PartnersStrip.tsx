@@ -4,14 +4,11 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 const partners = [
-  { name: 'Kenya Red Cross', src: '/logo/kenya-red-cross-logo.png' },
-  { name: 'UNDP', src: '/logo/united-nations-logo-500x281.png' },
-  { name: 'Safaricom', src: '/logo/Safaricom.png' },
-  { name: 'Equity Bank', src: '/logo/Equity_Bank_Logo.png' },
-  { name: 'KCB Foundation', src: '/logo/Safaricom.png' },
-  { name: 'CBA', src: '/logo/Equity_Bank_Logo.png' },
-  { name: 'Standard Chartered', src: '/logo/united-nations-logo-500x281.png' },
-  { name: 'Britam', src: '/logo/kenya-red-cross-logo.png' },
+  { name: 'Government of Kenya', src: '/images/government of kenya.png' },
+  { name: 'Government of Garissa', src: '/images/governmentofGarissa.jpg' },
+  { name: 'Okoa Mama Initiative', src: '/images/okoamamalogo-removebg-preview.png' },
+  { name: 'Jhpiego', src: '/images/jheiphgo.png' },
+  { name: 'ICHR-Kenya', src: '/images/ICHR.png' },
 ];
 
 export default function PartnersStrip() {
@@ -29,11 +26,11 @@ export default function PartnersStrip() {
         </motion.p>
 
         <motion.div
-          className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6"
+          className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, staggerChildren: 0.06 }}
+          transition={{ duration: 0.6 }}
         >
           {partners.map((partner) => (
             <motion.div
@@ -42,14 +39,14 @@ export default function PartnersStrip() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4 }}
-              className="relative h-9 w-[120px] grayscale hover:grayscale-0 opacity-50 hover:opacity-100 transition-all duration-300"
+              className="relative h-14 w-[150px] grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300"
             >
               <Image
                 src={partner.src}
                 alt={partner.name}
                 fill
                 className="object-contain"
-                sizes="120px"
+                sizes="150px"
               />
             </motion.div>
           ))}

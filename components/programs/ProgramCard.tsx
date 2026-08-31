@@ -57,7 +57,7 @@ export default function ProgramCard({ program, index }: ProgramCardProps) {
         </ul>
 
         <Link
-          href={`/programs#${program.id}`}
+          href={`/programs/${program.slug}`}
           className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-[#081B63] group-hover:text-[#E91E63] transition-colors"
         >
           <span>Learn More</span>

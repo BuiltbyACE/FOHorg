@@ -20,9 +20,21 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Fountain of Hope Foundation | Empowering Garissa Communities",
-  description: "Fountain of Hope is a non-profit organization dedicated to improving the health, education, and livelihoods of vulnerable families in Garissa County, Kenya — through maternal & newborn health, education, and sustainable programs.",
-  keywords: ["Fountain of Hope", "Nonprofit", "NGO", "Charity", "Garissa", "Kenya", "Maternal Health", "Education", "Community Empowerment"],
+  title: {
+    default: "Fountain of Hope | Community-Based Organization in Garissa, Kenya",
+    template: "%s | Fountain of Hope",
+  },
+  description:
+    "Fountain of Hope is a community-based organization with its roots in Garissa County, Kenya. We improve the health, education and livelihoods of vulnerable communities through strategic partnerships and sustainable programmes.",
+  keywords: ["Fountain of Hope", "NGO", "Nonprofit", "Garissa", "Kenya", "Maternal Health", "RMNCAH", "Community Resilience", "Education", "Peace Building"],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "Fountain of Hope",
+    title: "Fountain of Hope | Community-Based Organization in Garissa, Kenya",
+    description:
+      "Fountain of Hope is a community-based organization in Garissa County, Kenya, improving health, education and livelihoods through strategic partnerships and sustainable programmes.",
+  },
 };
 
 export default function RootLayout({

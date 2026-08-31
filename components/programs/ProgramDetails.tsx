@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Check, ArrowUpRight, HandHeart } from 'lucide-react';
-import { programs } from '@/constants/programs';
+import { programCategories } from '@/constants/programs';
 import Button from '@/components/common/Button';
 
 export default function ProgramDetails() {
@@ -23,94 +23,125 @@ export default function ProgramDetails() {
         </div>
 
         <div className="flex flex-col gap-24 lg:gap-32">
-          {programs.map((program, index) => {
-            const Icon = program.icon;
-            const isEven = index % 2 === 1;
-
-            return (
-              <div
-                key={program.id}
-                id={program.id}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center scroll-mt-28"
-              >
-                {/* Image */}
-                <div className={`relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-900/10 group ${isEven ? 'lg:order-2' : ''}`}>
-                  <div className="relative h-72 sm:h-80 lg:h-[440px] w-full">
-                    <Image
-                      src={program.image}
-                      alt={program.title}
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
-                  </div>
-
-                  <div className={`absolute top-5 left-5 w-14 h-14 rounded-2xl bg-gradient-to-br ${program.color} flex items-center justify-center text-white shadow-lg shadow-black/20 transform group-hover:scale-110 transition-transform duration-300`}>
-                    <Icon size={24} />
-                  </div>
-
-                  <div className="absolute bottom-5 left-5 right-5">
-                    <span className="inline-block px-3 py-1 bg-white/90 backdrop-blur-md rounded-full text-xs font-bold text-[#081B63] mb-2">
-                      {String(index + 1).padStart(2, '0')} · Core Program
-                    </span>
-                    <h3 className="text-2xl font-extrabold text-white leading-tight">
-                      {program.title}
-                    </h3>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className={isEven ? 'lg:order-1' : ''}>
-                  <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-8">
-                    {program.description}
-                  </p>
-
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-[#E91E63] mb-4">
-                    What We Do
-                  </h4>
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 mb-8">
-                    {program.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-2.5 text-sm text-slate-600">
-                        <span className="w-5 h-5 rounded-full bg-pink-50 flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <Check size={12} className="text-[#E91E63]" />
-                        </span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-[#081B63] mb-4">
-                    Proven Impact
-                  </h4>
-                  <div className="flex flex-wrap gap-2.5 mb-10">
-                    {program.impact.map((item) => (
-                      <span
-                        key={item}
-                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white border border-slate-200 text-xs font-semibold text-[#081B63]"
-                      >
-                        <HandHeart size={13} className="text-[#E91E63]" />
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Button href="/donations" variant="primary" size="md">
-                      Support This Program
-                      <ArrowUpRight size={16} />
-                    </Button>
-                    <Link
-                      href="#programs"
-                      className="inline-flex items-center justify-center gap-2 rounded-full text-sm font-semibold text-[#081B63] hover:text-[#E91E63] transition-colors px-2"
-                    >
-                      Back to All Programs
-                    </Link>
-                  </div>
+          {programCategories.map((category) => (
+            <div key={category.id} className="flex flex-col gap-24 lg:gap-32">
+              <div className="text-center max-w-3xl mx-auto">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 text-[#081B63] text-xs font-semibold uppercase tracking-wider border border-blue-200/50">
+                  {category.title}
                 </div>
               </div>
-            );
-          })}
+
+              {category.programs.map((program, progIndex) => {
+                const Icon = program.icon;
+                const isEven = progIndex % 2 === 1;
+
+                return (
+                  <div key={program.id}>
+                  <div
+                    id={program.id}
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center scroll-mt-28"
+                  >
+                    {/* Image */}
+                    <div className={`relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-900/10 group ${isEven ? 'lg:order-2' : ''}`}>
+                      <div className="relative h-72 sm:h-80 lg:h-[440px] w-full">
+                        <Image
+                          src={program.image}
+                          alt={program.title}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 50vw"
+                          className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
+                      </div>
+
+                      <div className={`absolute top-5 left-5 w-14 h-14 rounded-2xl bg-gradient-to-br ${program.color} flex items-center justify-center text-white shadow-lg shadow-black/20 transform group-hover:scale-110 transition-transform duration-300`}>
+                        <Icon size={24} />
+                      </div>
+
+                      <div className="absolute bottom-5 left-5 right-5">
+                        <span className="inline-block px-3 py-1 bg-white/90 backdrop-blur-md rounded-full text-xs font-bold text-[#081B63] mb-2">
+                          {program.category}
+                        </span>
+                        <h3 className="text-2xl font-extrabold text-white leading-tight">
+                          {program.title}
+                        </h3>
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className={isEven ? 'lg:order-1' : ''}>
+                      <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-8">
+                        {program.description}
+                      </p>
+
+                      <h4 className="text-xs font-bold uppercase tracking-wider text-[#E91E63] mb-4">
+                        What We Do
+                      </h4>
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 mb-8">
+                        {program.features.map((feature) => (
+                          <li key={feature} className="flex items-start gap-2.5 text-sm text-slate-600">
+                            <span className="w-5 h-5 rounded-full bg-pink-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <Check size={12} className="text-[#E91E63]" />
+                            </span>
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+
+                      <h4 className="text-xs font-bold uppercase tracking-wider text-[#081B63] mb-4">
+                        Proven Impact
+                      </h4>
+                      <div className="flex flex-wrap gap-2.5 mb-10">
+                        {program.impact.map((item) => (
+                          <span
+                            key={item}
+                            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white border border-slate-200 text-xs font-semibold text-[#081B63]"
+                          >
+                            <HandHeart size={13} className="text-[#E91E63]" />
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div className="flex flex-col sm:flex-row gap-4">
+                        <Button href="/donations" variant="primary" size="md">
+                          Support This Program
+                          <ArrowUpRight size={16} />
+                        </Button>
+                        <Link
+                          href="#programs"
+                          className="inline-flex items-center justify-center gap-2 rounded-full text-sm font-semibold text-[#081B63] hover:text-[#E91E63] transition-colors px-2"
+                        >
+                          Back to All Programs
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+
+                  {program.children?.map((child) => (
+                    <div
+                      key={child.id}
+                      id={child.id}
+                      className="mt-20 max-w-3xl scroll-mt-28"
+                    >
+                      <div className="bg-white rounded-3xl border border-slate-100 shadow-xl shadow-slate-900/5 p-8 sm:p-10">
+                        <h4 className="inline-flex items-center gap-2 text-lg font-extrabold text-[#081B63] mb-3">
+                          <span className="w-2.5 h-2.5 rounded-full bg-[#E91E63]" />
+                          {child.title}
+                        </h4>
+                        <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                          Part of our {program.title} pillar — delivered across
+                          Garissa County to build confidence, skills and leadership
+                          among young people.
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                  </div>
+                );
+              })}
+            </div>
+          ))}
         </div>
       </div>
     </section>

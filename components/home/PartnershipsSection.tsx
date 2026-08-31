@@ -1,58 +1,82 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Globe, Building2, Heart, Award, ShieldCheck, Zap } from 'lucide-react';
 
 const partners = [
-  { name: 'ICRH Kenya', category: 'MNH Advocacy Partner', icon: Heart },
-  { name: 'County Government of Garissa', category: 'County Health Partner', icon: Globe },
-  { name: 'Star FM Garissa', category: 'Community Radio Partner', icon: Zap },
-  { name: 'FP2020', category: 'Family Planning Funder', icon: ShieldCheck },
-  { name: 'Jhpiego', category: 'Gender-Lensed Advocacy', icon: Award },
-  { name: 'BMG', category: 'Corporate Partner', icon: Building2 },
+  {
+    name: 'Government of Kenya',
+    category: 'National Partner',
+    src: '/images/government of kenya.png',
+  },
+  {
+    name: 'Government of Garissa',
+    category: 'County Partner',
+    src: '/images/governmentofGarissa.jpg',
+  },
+  {
+    name: 'Okoa Mama Initiative',
+    category: 'Maternal Health Partner',
+    src: '/images/okoamamalogo-removebg-preview.png',
+  },
+  {
+    name: 'Jhpiego',
+    category: 'Health & Advocacy Partner',
+    src: '/images/jheiphgo.png',
+  },
+  {
+    name: 'ICHR-Kenya',
+    category: 'Reproductive Health Partner',
+    src: '/images/ICHR.png',
+  },
 ];
 
 export default function PartnershipsSection() {
   return (
-    <section className="py-20 lg:py-28 bg-white relative overflow-hidden">
+    <section className="py-20 lg:py-28 bg-slate-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-slate-100 text-[#081B63] text-xs font-semibold uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white text-[#081B63] text-xs font-semibold uppercase tracking-wider mb-3 border border-slate-200">
             Our Collaborations
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#081B63] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#081B63] tracking-tight">
             Trusted Partners Working Hand-in-Hand
           </h2>
+          <p className="text-slate-600 text-base sm:text-lg leading-relaxed mt-4">
+            Together with government, institutional and community partners, we
+            deliver programmes that change lives across Garissa County.
+          </p>
         </div>
 
-        {/* Partners Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
-          {partners.map((partner, index) => {
-            const Icon = partner.icon;
-            return (
-              <motion.div
-                key={partner.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="group rounded-2xl bg-slate-50 border border-slate-200/70 p-6 flex flex-col items-center justify-center text-center hover:bg-white hover:border-pink-300 hover:shadow-xl hover:shadow-pink-500/10 hover:-translate-y-1 transition-all duration-300 cursor-pointer min-h-[140px]"
-              >
-                <div className="w-12 h-12 rounded-xl bg-pink-50 text-[#E91E63] group-hover:bg-[#E91E63] group-hover:text-white flex items-center justify-center mb-3 transition-colors duration-300">
-                  <Icon size={24} />
-                </div>
-                <h3 className="text-xs font-bold text-[#081B63] group-hover:text-[#E91E63] transition-colors leading-tight mb-1">
-                  {partner.name}
-                </h3>
-                <span className="text-[10px] text-slate-500 uppercase tracking-wider">{partner.category}</span>
-              </motion.div>
-            );
-          })}
+        <div className="flex flex-wrap items-stretch justify-center gap-5">
+          {partners.map((partner, index) => (
+            <motion.div
+              key={partner.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              className="group flex flex-col items-center justify-center text-center bg-white rounded-2xl border border-slate-200/70 p-6 pb-5 hover:border-pink-300 hover:shadow-xl hover:shadow-pink-500/10 hover:-translate-y-1 transition-all duration-300 w-[200px]"
+            >
+              <div className="relative h-16 w-32">
+                <Image
+                  src={partner.src}
+                  alt={partner.name}
+                  fill
+                  sizes="128px"
+                  className="object-contain"
+                />
+              </div>
+              <h3 className="text-xs font-bold text-[#081B63] group-hover:text-[#E91E63] transition-colors leading-tight mt-4 mb-1 text-center">
+                {partner.name}
+              </h3>
+              <span className="text-[10px] text-slate-500 uppercase tracking-wider">
+                {partner.category}
+              </span>
+            </motion.div>
+          ))}
         </div>
 
-        {/* Strategic Call to Action Banner */}
         <div className="mt-12 text-center">
           <p className="text-sm text-slate-500 font-medium">
             Interested in becoming a corporate sponsor or institutional partner?{' '}
@@ -61,7 +85,6 @@ export default function PartnershipsSection() {
             </a>
           </p>
         </div>
-
       </div>
     </section>
   );
