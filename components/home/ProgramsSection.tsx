@@ -63,8 +63,8 @@ export default function ProgramsSection() {
             Where Our Work Happens
           </h2>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-            We focus on the pillars that enable entire Garissa communities to thrive —
-            maternal health, peace, education and youth empowerment.
+            We focus on the pillars that enable the Northern communities to thrive —
+            health, education and community resilience.
           </p>
         </div>
 
