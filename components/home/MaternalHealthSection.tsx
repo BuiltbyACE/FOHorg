@@ -64,7 +64,7 @@ export default function MaternalHealthSection() {
             <div className="lg:col-span-5 relative">
               <div className="relative mx-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 aspect-[4/4] sm:aspect-[4/3.8]">
                 <Image
-                  src="/images/foh8.jpeg"
+                  src="/images/foh2.jpeg"
                   alt="Maternal health outreach supporting mothers and newborns in Garissa"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"

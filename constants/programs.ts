@@ -98,7 +98,7 @@ export const programCategories: ProgramCategory[] = [
           'County health systems strengthened',
         ],
         icon: HeartPulse,
-        image: '/images/foh21.jpeg',
+        image: '/images/foh7.jpeg',
         color: 'from-[#E91E63] to-pink-600',
       },
       {
@@ -121,7 +121,7 @@ export const programCategories: ProgramCategory[] = [
           'Keeping girls in school',
         ],
         icon: Droplets,
-        image: '/images/foh7.jpeg',
+        image: '/images/foh16.jpeg',
         color: 'from-purple-500 to-fuchsia-600',
       },
       {
@@ -167,7 +167,7 @@ export const programCategories: ProgramCategory[] = [
           'Gender-lensed advocacy with partners',
         ],
         icon: Users,
-        image: '/images/foh11.jpeg',
+        image: '/images/kidssited.jpeg',
         color: 'from-indigo-500 to-violet-600',
       },
       {
@@ -190,7 +190,7 @@ export const programCategories: ProgramCategory[] = [
           'Malnutrition prevention',
         ],
         icon: Stethoscope,
-        image: '/images/kidssited.jpeg',
+        image: '/images/quality education.jpeg',
         color: 'from-amber-500 to-yellow-600',
       },
     ],

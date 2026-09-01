@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export interface CarouselSlide {
   src: string;
@@ -134,16 +134,6 @@ export default function AboutCarousel({
           <ChevronRight size={20} />
         </button>
 
-        {/* Pause / Play control */}
-        {autoPlay && (
-          <button
-            onClick={() => setPaused((p) => !p)}
-            aria-label={paused ? 'Resume slideshow' : 'Pause slideshow'}
-            className="absolute top-3 right-3 w-9 h-9 rounded-full bg-black/40 text-white flex items-center justify-center hover:bg-black/60 transition-colors backdrop-blur-sm"
-          >
-            {paused ? <Play size={16} /> : <Pause size={16} />}
-          </button>
-        )}
       </div>
 
       {/* Dots */}

@@ -133,7 +133,7 @@ export default function AboutPageContent() {
             >
               <div className="absolute -inset-4 bg-gradient-to-br from-primary/10 via-transparent to-navy/5 rounded-3xl blur-2xl" />
               <div className="relative">
-                <AboutCarousel slides={carouselSlides} interval={4500} />
+                <AboutCarousel slides={carouselSlides} interval={500} />
               </div>
             </motion.div>
           </div>
